@@ -2,3 +2,4 @@
 backend/venv/
 
 # Python Cache Files
+backend/app/__pycache__/

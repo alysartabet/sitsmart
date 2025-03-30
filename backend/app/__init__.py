@@ -1,0 +1,20 @@
+# Initializes the Flask application (imports the Config class from config.py)
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from .config import Config
+
+# Initialize db
+db = SQLAlchemy()
+
+# Function that creates application
+def create_app():
+    app = Flask(__name__)
+    app.config.from_object(Config)
+
+    db.init_app(app)
+
+    # Registering the 'blueprints'/routes -> all the tables that will be in the DB
+    from .routes import main
+    app.register_blueprint(main)
+
+    return app
