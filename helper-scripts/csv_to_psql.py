@@ -1,4 +1,4 @@
-# Importing CSV file to PSQL database
+# Importing CSV file to PSQL datab
 import pandas as pd
 from sqlalchemy import create_engine
 from sqlalchemy.exc import SQLAlchemyError

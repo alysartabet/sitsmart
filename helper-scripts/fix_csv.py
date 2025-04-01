@@ -1,4 +1,4 @@
-# Cleaning spreadsheet data for DB importing (only called once, not needed anymore; kept for reference)
+# Cleaning spreadsheet data for DB imting (only called once, not needed anymore; kept for reference)
 import pandas as pd
 import numpy as np
 
