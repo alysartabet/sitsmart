@@ -35,7 +35,8 @@ class Rooms(db.Model):
 
 
 class RoomRate(db.Model):
-    """RoomRate Table - room_id (foreign key), event_id (foreign key), event_rate, noise_rate, equipment_rate"""
+    """RoomRate Table - room_id (foreign key), event_id (foreign key), event_rate, noise_rate, equipment_rate
+    ONLY UPDATE WHEN EVENT IS MADE."""
     __tablename__ = 'room_rate'
 
     room_id = db.Column(db.String(10), db.ForeignKey('room.room_id'), primary_key=True, nullable=False)
@@ -49,7 +50,8 @@ class RoomRate(db.Model):
 
 
 class RoomEvent(db.Model):
-    """Room Event Table - event_id (primary key), room_id (foreign key), event_name, event_organizer, organizer_id, is_faculty"""
+    """Room Event Table - event_id (primary key), room_id (foreign key), event_name, event_organizer, organizer_id, is_faculty
+    ONLY UPDATE WHEN EVENT IS MADE."""
     __tablename__ = 'room_event'
 
     event_id = db.Column(UUID(as_uuid=True), primary_key=True, nullable=False)
@@ -64,12 +66,13 @@ class RoomEvent(db.Model):
 
 
 class RoomAvailability(db.Model):
-    """Room Availability Table - room_id (foreign key), event_id (foreign key), event_date, start_time, end_time, available"""
+    """Room Availability Table - room_id (foreign key), event_id (foreign key), event_day, event_date, start_time, end_time, available"""
     __tablename__ = 'room_availability'
 
     room_id = db.Column(db.String(10), db.ForeignKey('room.room_id'), primary_key=True, nullable=False)
     event_id = db.Column(UUID(as_uuid=True), db.ForeignKey('room_event.event_id'), primary_key=True, nullable=False)
-    event_day = db.Column(db.Date, nullable=False)
+    event_day = db.Column(db.String(10), nullable=False)
+    event_date = db.Column(db.Date, nullable=True)
     start_time = db.Column(db.Time, nullable=False)
     end_time = db.Column(db.Time, nullable=False)
     available = db.Column(db.Boolean, default=True)
@@ -78,25 +81,24 @@ class RoomAvailability(db.Model):
         return f'<RoomAvailability {self.room_id}>'
 
 
-class Department(db.Model):
-    """Department Table - department_id (primary key), department_name"""
-    __tablename__ = 'department'
+# class Department(db.Model):
+#     """Department Table - department_id (primary key), department_name"""
+#     __tablename__ = 'department'
 
-    dept_id = db.Column(db.String(5), primary_key=True, nullable=False)
-    dept_name = db.Column(db.String(50), nullable=False)
+#     dept_id = db.Column(db.String(5), primary_key=True, nullable=False)
+#     dept_name = db.Column(db.String(50), nullable=False)
 
-    def __repr__(self):
-        return f'<Department {self.department_id}>'
+#     def __repr__(self):
+#         return f'<Department {self.department_id}>'
 
 
 class Course(db.Model):
     """Course Table - course_id (primary key), event_id (foreign key), dept_id (foreign key), course_name"""
     __tablename__ = 'course'
 
-    course_id = db.Column(db.String(10), primary_key=True, nullable=False)
+    course_id = db.Column(db.String(20), primary_key=True, nullable=False)
     event_id = db.Column(UUID(as_uuid=True), db.ForeignKey('room_event.event_id'), nullable=False)
-    dept_id = db.Column(db.String(5), db.ForeignKey('department.dept_id'), nullable=False)
-    course_name = db.Column(db.String(50), nullable=False)
+    course_name = db.Column(db.String(100), nullable=False)
 
     def __repr__(self):
         return f'<Course {self.course_id}>'
@@ -107,7 +109,6 @@ class Faculty(db.Model):
     __tablename__ = 'faculty'
 
     faculty_id = db.Column(db.String(10), primary_key=True, nullable=False)
-    dept_id = db.Column(db.String(5), db.ForeignKey('department.dept_id'), nullable=False)
     faculty_name = db.Column(db.String(75), nullable=False)
     faculty_email = db.Column(db.String(100), nullable=False)
     faculty_type = db.Column(db.String(15), nullable=False)

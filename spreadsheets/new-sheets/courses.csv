@@ -1,0 +1,532 @@
+course_id,event_id,course_name
+AAID101-M01,be382a33-8ace-4163-a04a-cd4fc19a1f0d,Design Fundamentals I
+AAID102-M01,3d390429-8661-4095-a242-80945273df48,Design Fundamentals II
+AAID102-M02,fd63c274-b1d1-4cb5-b2ab-599b5de2fa7e,Design Fundamentals II
+AAID102-M03,6a7f812e-b203-4cc8-9285-1a7618353ec1,Design Fundamentals II
+AAID102-M04,67f18800-0590-451d-9bd3-0e1b5d03cfe7,Design Fundamentals II
+AAID102-M05,eceb5425-b8b6-4cef-8e42-ef172e630daf,Design Fundamentals II
+AAID102-M08,6406494e-8293-40da-b595-88640d961ae1,Design Fundamentals II
+AAID102-M09,9b1b37fa-9b3c-4e37-86fe-469f32c19507,Design Fundamentals II
+AAID140-M01,4a3fb4fc-727f-4655-8ed4-a9647515005c,Visualization I
+AAID240-M01,4ea6dbae-4fc8-4227-9ede-6ebbf2431350,Visualization II
+AAID240-M02,156ba743-a3fe-4cbf-ad2e-664ecdd0b136,Visualization II
+AAID240-M03,4d399e00-2a51-4028-a42a-7c18978bd73c,Visualization II
+AAID240-M05,c19b1a5f-a365-4b1f-9fd5-36938ffbb603,Visualization II
+AAID240-M09,6c1b2a25-76a9-4a5e-bc5b-dc16be19630c,Visualization II
+ACCT101-M01,f070035f-a0a2-489c-a0cf-270827bd6578,Accounting I
+ACCT102-M01,a1baab12-a1e9-4759-a07a-8c49684ff448,Accounting II
+ACCT110-M01,f4be393d-39f1-4ff5-9bd5-90f7acfdda7f,Managerial Accounting
+ACCT501-M01,e6200591-81c4-4c73-8d94-d94457e0e205,Accounting I
+ACCT601-E25,65dfb6b6-83f0-4862-ae31-3a713cb9271a,Managerial Accounting
+ACCT601-M01,ba8b756a-338b-4997-811e-5cccf07be9e7,Managerial Accounting
+ACCT601-M02,8723f725-3dd6-4635-a33f-e4bd94e7cb0a,Managerial Accounting
+ACCT601-M03,b0fb0bbf-3c2a-43a8-9df7-9d171db73673,Managerial Accounting
+ARCH161-M01,a7a0bcb0-580c-44cf-bf28-980557f7bcce,Global Hist of Architecture I
+ARCH161-M02,c8f93573-9e66-40a3-8ef8-3600295a2b3e,Global Hist of Architecture I
+ARCH161-M03,f2e51874-bc7c-48c4-9794-2eb6bfe65475,Global Hist of Architecture I
+ARCH161-M04,25b9e4d7-a019-4b73-9fcd-718a94dcac15,Global Hist of Architecture I
+ARCH202-M01,de2e36fc-5f24-4082-a745-113fe9c5edde,Architectural Design II
+ARCH202-M02,5afb6dc6-6453-45ce-a7b8-86a1d75d78f8,Architectural Design II
+ARCH202-M03,6ea3b14e-89e4-48a4-91bb-c4a095334969,Architectural Design II
+ARCH202-M04,6a5da1d2-63a9-4aad-9739-45da698dfa6e,Architectural Design II
+ARCH202-M05,b0d61240-f0cd-4d96-bb2b-93fe87a04503,Architectural Design II
+ARCH202-M06,890d603a-26da-4bdc-94d9-08b6afabeb80,Architectural Design II
+ARCH202-M07,a2eeb14b-496a-482e-a5f5-caacfb321df5,Architectural Design II
+ARCH211-M01,e814ca4a-e548-47d7-952b-6b8811e9e1b1,Statics & Strength of Material
+ARCH211-M03,03fd5bc2-6918-446c-b86f-d56bca53e1be,Statics & Strength of Material
+ARCH222-M01,73ced73f-a1d5-462d-9ecd-38eae80adacb,Building Construction II
+ARCH222-M02,05fa8afd-ae62-4daa-b012-86ab54e988c7,Building Construction II
+ARCH302-M01,50a3d8c4-366d-41f9-b053-48920cadae7b,Architectural Design IV
+ARCH302-M02,f6ea7d78-b9f3-4e17-8634-8b6d18912084,Architectural Design IV
+ARCH302-M03,d2034924-404f-4d20-9e46-50475c755dd8,Architectural Design IV
+ARCH302-M04,6f037419-c9e6-44fa-afe2-5c2dfc8aaa73,Architectural Design IV
+ARCH302-M05,94866cd2-16ac-4a5c-9773-1d1c6a7273c6,Architectural Design IV
+ARCH310-M01,3f689b31-5471-447c-98a3-e36b9f74e499,Structural Design
+ARCH325-M02,b1b0ecd1-17fa-45d4-be2b-b6860e6d3f4c,Environmental Systems II
+ARCH325-M03,eb401355-51f2-4703-8ea5-deeaec6fe16a,Environmental Systems II
+ARCH327-M21,cfa28f8e-0d30-40fe-b703-642eb0b07d28,Comp Aided Con Drwgs
+ARCH327-M23,658a6736-2a27-49b4-8684-78a15ca9a8ca,Comp Aided Con Drwgs
+ARCH361-M01,3076ad6a-6bd3-4235-a477-25bb28855d25,Arch Hist Sem
+ARCH361-M02,acf9eaad-0982-4ef6-bc00-dd1dfa9981f5,Arch Hist Sem
+ARCH361-M03,1a550104-0cd3-4ff8-8d34-f5310c269a66,Arch Hist Sem
+ARCH361-M04,71da568d-8c88-491b-940c-a073232a0818,Arch Hist Sem
+ARCH362-M01,3b3d5ada-2161-4247-8de2-344b316d28a8,History and Theory of the City
+ARCH362-M02,3fd2df9f-e511-49a7-bf53-729bcaedae42,History and Theory of the City
+ARCH362-M03,c51b0041-9148-4c96-94ee-faa3147cfa04,History and Theory of the City
+ARCH402-M01,e739b346-6821-45e6-a165-c99917c89ec7,Design VI- Community Design
+ARCH402-M02,b01633c9-d08e-4d50-9827-6dee0d8fa264,Design VI- Community Design
+ARCH402-M03,e31c3891-301b-4ccf-9b70-a9f07d79c858,Design VI- Community Design
+ARCH402-M04,66f436b7-eff3-4afb-828c-2e1b18e8d60e,Design VI- Community Design
+ARCH411-M01,6fb1e396-5f6b-4872-8877-0b1705e2f0ef,Advanced Structural Concepts I
+ARCH411-M03,61f7bd5c-1194-445c-b7ac-53cc1fe71bf7,Advanced Structural Concepts I
+ARCH481-M13,72927fe8-f81a-406c-a3a2-926acb5f215b,Professional Practice I
+ARCH481-M21,cb3b9b77-1a93-420c-9223-d5072fab4c07,Professional Practice I
+ARCH481-M22,6d454315-23e2-4aa8-9823-96baa5db979a,Professional Practice I
+ARCH502-M01,69f4fb6a-3baa-421f-8fa3-b2df362a8bf7,Architectural Design VIII
+ARCH502-M02,e2692365-56c3-4811-b917-23bd07395e05,Architectural Design VIII
+ARCH502-M03,496ca164-6183-4f0a-a02e-13eb0e181e79,Architectural Design VIII
+ARCH502-M04,0c80798c-487a-476b-b410-627111c04ed7,Architectural Design VIII
+ARCH502-M05,c9b1c84c-9e35-4f6b-b2a5-4921170377bf,Architectural Design VIII
+ARCH602-M01,a74ccb8d-248c-41e9-931e-6154b4493667,M. ARCH Studio 2
+ARCH621-M01,5baaadf5-9cca-4ba0-9fe3-690e9002fd6d,Building Systems I
+ARCH644-M11,b9a236d8-0093-428c-be7c-ea020138e620,Arch Visual Communication 2
+ARCH662-M11,4d706589-a36a-4264-8595-e10604da811a,Global History of Architecture
+ARCH702-M01,08e9ce43-0661-46db-ae17-29705ee74174,Urban Design Studio II
+ARCH702B-M01,c9ee2d7e-a202-4d42-8a41-2b2a4a86d969,Computational Design Studio 2
+ARCH702C-M01,c11972f6-2d5e-4901-ab96-f78ff52334b3,Health and Design Studio 2
+ARCH705-M01,c1125676-3eb4-443b-8360-67af1f24327c,M. ARCH Studio 5
+ARCH705-M02,10e6c83c-2567-4856-ac0d-df2df931d14c,M. ARCH Studio 5
+ARCH722-M01,960bffa1-e555-4f77-9906-36468c844b9b,Building Systems 2
+ARCH724-M12,f0c68e6a-2091-47e1-b1c4-65863ba9ad08,Material Tectonics II
+ARCH725-M01,8259f7bf-0a3c-4eec-b7ed-055d2730a5c6,Theories & Studies of Urbanism
+ARCH727-M01,0df30500-703f-4ab9-8474-5e401e2749a1,Construction Documents
+ARCH752-M01,e038e711-ee0c-4ddd-9618-d91543881ed4,Multidisciplinary Design
+ARCH755-M01,b16befb6-8ff1-4ad3-88d1-8c5de3eb1c8d,Envt Behav & Dsgn Intelligence
+ARCH756-M01,5fb74d37-ab56-4576-ab0a-b7f3736973f5,Medical & Mobility Prototypes
+ARCH776-M01,09ffbf57-3aff-48e4-af31-eb3a1fcc8a1b,Fabrication Optimization
+ARCH782-M01,6645b165-d20d-41e7-8a49-2639c7c340c8,Computational Design II
+ARCH784-M01,34d04762-c3c1-465d-9172-ede3d190213d,Fabrication and Robotics II
+ARCH791-M11,25ed7db3-6964-4bda-8491-86b1c6be606b,Special Studies in Arch
+ARCH791-M12,95bc1507-0682-43db-8b23-1679f9787fd9,Special Studies in Arch
+ARCH802-M01,78d29ba0-87b7-496d-b653-07c52b537640,M. ARCH Studio 7
+ARCH802-M02,fdf56309-ec67-42da-989d-2541e6db9859,M. ARCH Studio 7
+ARCH842-M01,dc1eb151-d57b-419d-a9a0-ae33d6d56bc2,Digi Technique & Media Dsgn II
+ARCH880-M11,9f193ac9-20b1-445d-93ae-4e7bf292da3c,Practice Models & Strategies
+ARTA803-M01,905c12da-6d30-4b36-8904-567f621db106,Visual Comm & Emerging Tech
+ARTC251-M01,bcf635c1-e5b7-46c1-a0cc-91743eaf43b7,Computer Graphics II
+ARTC251-M02,dbc6ee71-f72d-4247-ac28-8765a9e739c1,Computer Graphics II
+ARTC270-M01,1c597a6d-f079-4185-b62e-d1a3836cb9bc,Game Theory & History
+ARTC351-M01,97ca0fcb-f3e3-4e79-a2d4-59275652a510,Digital Compositing
+ARTC371-M01,e7665526-a1dd-4b72-87be-82cb686d71d0,Game Design II
+ARTC400-M01,4472b356-136a-49f7-8e70-dfeba466c12b,Thesis Proposal
+ARTC406-M01,4c39777b-6a46-47f5-996d-b9fb6c7b99a8,Thesis Production II
+ARTC406-M02,677ee116-c72a-4c22-9dbb-ccc82f8222d2,Thesis Production II
+ARTC410-M01,b4a7fc94-b6c3-4cef-b7f3-0179d46dc389,Portfolio
+ARTC410-M01,870d0731-ab4e-488e-973f-9d1b2d83226d,Portfolio
+ARTC410-M02,1abba395-5481-49c4-8de1-fe08fc148d11,Portfolio
+ARTD102-M01,67d0444c-5f0a-477e-af36-f4eb30f54ca1,Form and Space
+ARTD102-M02,5d5b2fde-a099-4bec-85f8-f197cd2f6c15,Form and Space
+ARTE801-M01,befe9c1e-a4cb-415a-b800-9650074491e4,Dig Comp & Visl Effect
+ARTG251-M01,c3b2dc9e-3738-4daa-9541-8901cfec26c3,Visual Identity
+ARTG260-M01,e249a52c-5bbc-47c8-9d45-d28c58ebe191,Web Design
+ARTG260-M01,9eab97ab-dbbf-4379-9846-ee1404e65174,Web Design
+ARTG303-M01,3f35741f-a5ef-460f-a634-bc7231a34090,Illustration
+ARTG352-M01,9010c3bf-2ea2-43ab-93e1-0fe23d6446f8,Editorial Design
+ARTG451-M01,cddb5c72-1b96-48c3-992d-86ebfc65c122,Portfolio
+ARTG655-M01,19160148-23a9-44e4-9146-da3938f4a171,Branding Design and Strategy
+ARTG656-M01,d0c02e21-ecd8-4745-92bb-bea745010915,Environmental Graphic Design
+ARTG751-M01,2d2f6b0e-535d-4878-87c3-3a599ebd0e50,Info Dsgn & Data Visualization
+ARTG751-M01,22fa08d1-4468-4e3e-9bdc-2f0f08c82fe6,Info Dsgn & Data Visualization
+ARTG801-M01,c4ea6e13-b871-4de2-96bf-f228089bfb15,Advertising Design
+ARTG801-M01,0a7cd51e-38e3-4bc2-8bb7-7a9ceedb2c33,Advertising Design
+ARTI601-M01,59b6d951-491a-4a85-86de-64468391e4d9,UX Design Foundations
+ARTI601-M01,050f82c8-e415-4f72-9376-cd45734cfdc4,UX Design Foundations
+ARTI602-M01,ba1adf72-e13a-4ab0-a40d-b4700a15aebc,Human Computer Interaction Dsg
+ARTI602-M01,6142f8e6-14b2-4e3e-80cb-166e7fff1ac8,Human Computer Interaction Dsg
+ARTI603-M01,38c9841b-4b35-4bb3-9aaa-247a43fc9ca6,User Interface & Prototyping
+ARTI604-M01,36cebe78-eb06-412c-8cef-2a8455d58427,UX/UI Design for VR/AR/MR
+ARTI604-M02,a1c5fe58-09d0-4e6a-93ef-f0b56b397618,UX/UI Design for VR/AR/MR
+ARTI605-M01,4d2e4e2f-b645-4d85-a6bf-b3bc804edee1,Unity Design
+ARTI605-M01,dc4cbfb1-64f6-492e-8a5c-9e93a9ecfbb3,Unity Design
+ARTI606-M01,08c0079d-6a62-4076-93b0-91be1280ad3d,UX Research & Data Analytics
+ARTI607-M01,e4d0ca45-302d-478e-b879-bf3fd10feaff,Info Arch & Content Strategy
+ARTI608-M01,55a19bca-7b0b-429f-8239-7ad50f4d28e5,Adv Research: Usability & Test
+ARTI609-M01L,e2040b3e-e092-4713-b87f-2592717ada55,Web & Mobile Development
+ARTI609-M02,536f8e1f-7eca-40c3-a3e8-3f56b3d7235f,Web & Mobile Development
+ARTI609-M02L,412dda85-0d37-47a9-b8a4-1e62cda73109,Web & Mobile Development
+ARTP802-M01,9b106b9f-2556-4966-90f0-c2fee2161ad2,Master Project
+ARTP802-M01,9430e8ac-9724-4cfd-b949-b511972779f4,Master Project
+ARTP802-M02,313ae5b4-4bd7-4cea-88a9-99e00c34cf67,Master Project
+ARTQ452-M01,8ad12233-ded2-4454-a564-10defc6394b4,Technical Artist Studio
+ARTQ452-M01,75bd75f4-6147-47b6-aab2-a7f989ba5d99,Technical Artist Studio
+ARTQ453-M01,a6b8df85-90bd-4b53-af78-2df55c9119c4,Emerging Tech for Games
+ARTS201-M01,d5612775-b209-4fc1-b523-0df0d5dae414,Sculpture I
+ARTS251-M01,01ef21af-6ca7-43bd-95c1-a68f50b5429b,Sculpture II
+ARTU872-M01,bc696b16-8b4e-4c32-8eac-4733d51aaff4,Thesis II: Production
+ARTW151-M01,13a43e49-5c4e-41b4-8c27-fa2079cf56e3,Drawing II
+ARTW151-M02,f4f46409-0d7a-4fc2-8968-d165c458393f,Drawing II
+ARTW255-M01,04dfe95d-b9ca-431c-940e-0a06b045caa1,Concept & Visual Storytelling
+BIOE320-M01,e4e91eb9-c30b-448a-b8a2-97083bab1deb,Statistics for Bioengineers
+BIOE440-M01,e9d76652-e252-442d-b223-7926522d32e2,Process Control Biotechnology
+BIOE650-M01,d9af9387-9335-4ccf-a210-e9b069488ab5,Medical Devices
+BIOL101-M01,118a65bf-389e-45e8-badd-4107cc7b4178,Humanity & the Biological UnIv
+BIOL107-M01,c60caf21-ec46-4ac3-a022-00aeab919c21,Environmental Sciences
+BIOL110-M01,0d6f4d18-7ff0-4fb0-a25e-8b1ef4f4e3a3,General Biology I
+BIOL110-M01L,b11a5205-fb05-4263-b927-732eee556b20,General Biology I
+BIOL110-M02L,3fc9f094-68f8-46df-9857-1ddbfd059f1d,General Biology I
+BIOL150-M01,8cf46bf4-5173-43f0-9431-7cb9752e44ac,General Biology II
+BIOL150-M02,a6e989d2-613d-493c-92ce-844af6cfc243,General Biology II
+BIOL150-M02L,4fc01cbc-8f50-47ec-b6af-038fc887cf32,General Biology II
+BIOL150-M03B,bbf1f533-fa95-4730-98a8-65c4d49d0f6a,General Biology II
+BIOL150-M03L,35dacab8-fa8e-4a5e-805d-f72e8740c750,General Biology II
+BIOL150-M04L,a62f4574-0cfe-42a6-a755-8b94d5584163,General Biology II
+BIOL150-M05L,c726482a-7d5b-4ea8-bb50-94aed8ed096f,General Biology II
+BIOL155-M01,e7263f43-814f-4bbc-818d-7ca84285547a,Osteo Prin/Prac
+BIOL233-M01,554897fb-92ac-43ca-8b3b-284dd1165967,Genetics
+BIOL233-M01L,8af85643-7fee-48df-ab7d-d418b17d8332,Genetics
+BIOL235-M01,5e5e2342-5bf2-4168-9393-cbcd7183b4c9,Microbiology
+BIOL235-M01L,27e1c0c5-a29d-4d07-a337-042736bb08ec,Microbiology
+BIOL238-M01,7afc3df8-ad3c-4efa-9e17-cc08f906ce0e,Introduction to Biotechnology
+BIOL250-M01,447b9780-282f-43da-9d2c-b81f3407b612,Biostatistics
+BIOL310-M01,552e907b-4ef1-4700-9482-d9015acabe87,Human Physiology
+BIOL310-M01L,ecdb1619-b489-45d2-a33d-be0a5c05aefb,Human Physiology
+BIOL310-M02L,f8638c83-3d01-4174-995d-f7cae33eb64d,Human Physiology
+BIOL315-M01,7a780fa8-5521-4299-90a7-a4ca54a1cec3,Neuroscience
+BIOL325-M01,4c384211-70ba-4c36-be4b-a880aceed673,Evolutionary Biology
+BIOL340-M02B,f9adcbf7-dbd8-48fd-8e99-5dacf40d924d,Biochemistry
+BIOL340-M02L,d28d6e03-0bcb-4c65-aa9c-ace0c4653c76,Biochemistry
+BIOL340-M03L,7bdeecf5-e031-49d9-aef2-74a6b967ec76,Biochemistry
+BIOL341-M01,f43d71dd-333a-4919-8d91-beb177af2f18,Genetic Engineering
+BIOL350-M01,8f0f45b2-8308-44ab-8792-8c07426a0286,Bioinformatics & Funct Genomic
+BIOL395-M01,55b344b9-cbed-4fd6-bcf3-c7123d47a1af,Intro to Research Literature
+BIOL432-M01,77d0321a-b061-478b-a4a2-222d42f3887f,Cell Biology
+BIOL435-M01,2eb0e67c-8f9c-4ae6-b3f7-da94db4479bd,Evolutionary Biology
+BUSA701-M02,231c7753-08ce-483e-bbee-96eaef4f9a06,Data Interact & Visualization
+BUSI650-M01,2017abb8-c957-49f7-9de2-51d4a05d52c7,Business Analytics & Decision
+BUSI775-M01,ecec3073-c7e8-4526-98b4-da718e8ec498,Risk Management Integrated Sem
+CHEM107-M01,384fcee4-5217-4168-99cc-2da2995855db,Engineering Chemistry I
+CHEM110-M01,6a7bf5c0-17de-4f05-8c57-ef9a3df8b849,General Chemistry I
+CHEM110-M01L,296a33e0-08de-45d3-bb10-f6140d73e57a,General Chemistry I
+CHEM110-M02L,097fa61f-c0f0-4e30-876e-ef740cdfe2e4,General Chemistry I
+CHEM150-M01,febb70d0-cdb0-496e-857e-37fad50e6835,General Chemistry II
+CHEM150-M01L,626d50d9-2732-4915-beda-77cc5ba0735c,General Chemistry II
+CHEM150-M02B,6a36527d-78eb-41c9-83f9-cb3bbcae116e,General Chemistry II
+CHEM150-M02L,f1762aac-b96e-4ce1-b8a9-4ac41f2e37dc,General Chemistry II
+CHEM150-M03,c5c004d2-3eeb-4266-80e8-a7874f3e2a5b,General Chemistry II
+CHEM150-M03L,66ff4662-e9fe-4a98-8d15-bc476dc6cdd6,General Chemistry II
+CHEM150-M04L,30625d4b-1107-4e1f-ad8c-66bd0c13c8fa,General Chemistry II
+CHEM210-M01,87ca509b-a634-4993-81a2-b12c3efdca47,Organic Chemistry I
+CHEM210-M01L,c22f075a-0460-473a-a19a-38c37e48f7fc,Organic Chemistry I
+CHEM250-M01,8c46ec6c-8c43-4e57-b899-4597553972df,Organic Chemistry II
+CHEM250-M01L,6b34d74d-aaca-4e99-9ac1-c65ebb579d14,Organic Chemistry II
+CHEM250-M02B,0db8b945-fcc2-4724-88e6-c9a7cc3ea084,Organic Chemistry II
+CHEM250-M02L,827c5afe-7ef2-4083-b350-5376ee376a29,Organic Chemistry II
+CHEM395-M01,281461f0-910e-4e66-8ce8-9e719661ddbc,Intro to Research Design
+CHEM440-M01,62065d86-ffb9-4d71-8323-7f81a812fd8c,Drug Discovery & Development
+CHEM493-M01,e022b08b-48fa-4512-b04c-9e4cf4477cdc,Independent Research III
+CSCI125-M01,2f476629-d26a-49b0-89b5-d17810e0ca71,Computer Programming I
+CSCI125-M01,807c0df9-1e94-4ee3-a13e-23e87d702257,Computer Programming I
+CSCI125-M02,52fc9963-5655-4b92-8b7d-82a06cdff87f,Computer Programming I
+CSCI125-M02,a75643aa-ed1d-444e-86ab-a57378e773a5,Computer Programming I
+CSCI125-M03,331abae7-0c33-414d-b969-17e734f75508,Computer Programming I
+CSCI125-M04,deca9153-3f89-483d-8181-6c88a816d62d,Computer Programming I
+CSCI125-M05,36e6e55a-72d8-4385-9e8b-b9eba5483391,Computer Programming I
+CSCI125-M06,0b4d6c3b-e20c-48b7-b942-3f0a1708cb67,Computer Programming I
+CSCI125-M07,bec5af15-5170-4354-8e73-6f58816a7b0d,Computer Programming I
+CSCI125-M07,633044e1-f74b-4129-a3a8-c6437f7b52ca,Computer Programming I
+CSCI125-M08,41fc25ee-0a7b-4013-a322-e07bf12acb39,Computer Programming I
+CSCI125-M08,a02e91a4-664a-457b-82db-6ec0df980be1,Computer Programming I
+CSCI130-M02,a8ecebf5-6099-45c7-9db7-9ff1e84a9973,Computer Organization
+CSCI135-M01,116947ca-127a-4c9d-89bc-0e7c636e49e8,Digital Logic Design Fund
+CSCI135-M02,6216a8cb-3022-478d-abd1-a223efc7aac5,Digital Logic Design Fund
+CSCI135-M03,cffe73f6-664a-4476-8302-eb8652baa073,Digital Logic Design Fund
+CSCI155-M03,f54e77f5-0a56-4f92-befc-0959953d6b2e,Computer Org and Architecture
+CSCI155-M04,08d07af4-5540-4445-9522-7a0df967d1d3,Computer Org and Architecture
+CSCI155-M05,8809bde0-b340-41db-8975-5b518bdf1c15,Computer Org and Architecture
+CSCI155-M06,d6151316-b311-4095-a376-f5a7b556393c,Computer Org and Architecture
+CSCI185-M01,7d028c26-19a3-4cee-90ed-baa54f200487,Computer Programming II
+CSCI185-M03,3ab541a5-46ea-428d-8f90-32e7bbdc109e,Computer Programming II
+CSCI185-M04,11a3084c-4198-4e99-98a3-ed0696f84667,Computer Programming II
+CSCI185-M05,b591863a-916b-45ae-ae53-77924691de3a,Computer Programming II
+CSCI185-M06,6db75ffe-077a-44a0-b0f8-b89221110671,Computer Programming II
+CSCI185-M07,730666bd-7df7-459f-937d-c5394b1092c5,Computer Programming II
+CSCI202-M01,9462284b-56cd-4cbb-a4c6-cbaeeca60258,Introduction to CS and AI
+CSCI235-M01,daa77385-130c-4232-8d4a-a11ba16fa8e6,Elements of Discrete Structure
+CSCI235-M02,85f2ce56-f4c8-4b36-a342-55e24343f821,Elements of Discrete Structure
+CSCI235-M03,93d0f1ac-6d40-4b0a-ad6d-2ded338c6f82,Elements of Discrete Structure
+CSCI235-M04,9eb3d474-3b7a-4f10-a053-9a1761d9db03,Elements of Discrete Structure
+CSCI260-M01,32344aa3-b571-4116-8914-d5fadcdaf417,Data Structures
+CSCI260-M02,35907945-91f2-46af-bc27-af616648d755,Data Structures
+CSCI260-M05,b97d8f06-a075-4a6a-81a4-022952bb2553,Data Structures
+CSCI260-M06,373afa9e-d75d-4487-b43e-21fd6594020f,Data Structures
+CSCI270-M01,1b75ca8d-777f-4df6-87aa-7fefd6dde170,Statistics Com Sci
+CSCI300-M01,b68827a2-b815-4315-9dd3-e7806a17c441,Database Management
+CSCI312-M01,1f9712a1-3505-497b-a69d-65100299cf34,Theory of Computation
+CSCI318-M01,a40c0e04-af3a-4c64-a659-d0432d3a775c,Programming Language Concepts
+CSCI330-M01,f6754e63-f341-4865-a6ce-c25b27de2b39,Operating Systems
+CSCI330-M02,a3ec219c-b59c-48ea-85da-b290422b7a19,Operating Systems
+CSCI330-M03,9a92d244-fa51-44d6-b60d-49d8eee04662,Operating Systems
+CSCI330-M04,7d1cf155-33b6-4b2a-8376-2d3971b00acf,Operating Systems
+CSCI335-M01,fc8b7760-153d-4250-90c3-34f63539690e,Des Anal Algor
+CSCI345-M01,4077ad85-415c-4672-9211-5a472d4743f2,Computer Networks
+CSCI355-M01,0545b345-5879-4645-9ec1-6637ea00ebff,Artificial Intelligence I
+CSCI357-M01,4e6497a3-9c91-4fe4-9f58-59cb6793a275,Cisco Academy Level I
+CSCI362-M01,1c034d61-b799-4455-b0a3-2c454ee9ca9c,Info System Sec Engin & Admin
+CSCI380-M01,6eb504b2-becc-4360-b17f-2e8f807bae36,Intro to Software Engineering
+CSCI405-M01,dac20418-f32c-45f6-ac94-bce41ea5d043,Distributed Database Systems
+CSCI415-M01,3a34b689-b2a9-41c3-948d-6c15c01a1ed9,Introduction to Data Mining
+CSCI426-M01,13b0e6df-0fe2-4319-9a4b-7b1f90ae3a77,Information Retrieval
+CSCI436-M01,dc132839-e8a5-4c8c-9f42-80221ca3bf80,Big Data Mgmt
+CSCI440-M01,82dea466-758f-4d15-901b-389135c3cfaf,Adv Network & Intern Security
+CSCI445-M01,c800087b-cac1-492e-9046-430c53b1d498,Operating System Security
+CSCI445-M02,0a754fba-af41-4a85-b9e2-2e172b560434,Operating System Security
+CSCI502-M05,52a03e9d-3a8d-48d2-8dd7-fbd9d9d4eb2d,Computer Programming I
+CSCI502-M07,883c1755-e9bc-4fc8-ba36-d1c62a3c8554,Computer Programming I
+CSCI502-M07,9079918b-3591-4236-858d-611e771fb861,Computer Programming I
+CSCI503-M03,2c8687a8-df0c-49a5-9ba7-73b96254f625,Organ and Arch
+CSCI503-M05,f22f435a-1267-4208-a9da-4a9ecb642755,Organ and Arch
+CSCI504-M03,4a205cb4-b15d-44fa-ba5c-304346dbc9ba,Computer Programming II
+CSCI504-M07,569d53dc-fff2-4ee0-a16f-91c2ac7efa25,Computer Programming II
+CSCI507-M01,12fdeda0-8d09-498a-b6fc-eccf1eeec80f,Data Structures
+CSCI507-M05,ada9656a-931a-4b9f-9c94-c038532bd3f0,Data Structures
+CSCI509-M01,5e7f61c9-2596-445b-ac40-91bc5b1a83b3,Operating Systems
+CSCI509-M03,7fabfe5f-90e8-4b27-9516-bb729337366b,Operating Systems
+CSCI610-M01,c6ebc338-341a-4f37-93f0-3a622fc2ad2a,Theor Conc in Computers & Comp
+CSCI620-M01,cb3bfb67-e636-4720-ac34-5f8ee5148ab7,Operating System Security
+CSCI620-M02,56a29bf7-867d-4d1f-bd90-85aef3ba9c08,Operating System Security
+CSCI621-M01,9ccb6888-3836-49a4-910e-d46781b1ea6f,Programming Languages
+CSCI626-M01,e6afe29b-299a-43c8-b903-3113ef62d76d,Information Retrieval
+CSCI636-M01,b77544df-242a-4517-afcc-f56de3e08d48,Big Data Analytics
+CSCI636-M02,18449bb7-6d4a-434d-b515-917efd62f15f,Big Data Analytics
+CSCI651-M03,8ef9d40a-2379-4da1-a93f-b63d5aeeef62,Algorithm Concepts
+CSCI657-M01,e031fd95-4c25-4f16-a1ab-0c571cf35139,Introduction to Data Mining
+CSCI662-M01,1e977a25-bf0e-4c32-a4d1-5c9a5784ae7e,Inf. Sys. Sec. Eng. Admin.
+CSCI665-M01,d38363f5-2128-4f4c-9413-cc97765e0a77,Software Engineering
+CSCI690-M01,87caa231-b57b-4698-8c5f-42dc434c5d82,Computer Networks
+CSCI755-M01,3ba06319-563e-46e9-a784-8a83d9df5370,Artificial Intelligence I
+CSCI760-M01,af051d58-674a-4f48-8cb2-99dbf8973f04,Database Systems
+CSCI860-M01,5c9ca19a-6a73-43e3-88d6-d6ce4e81329b,Special Topics
+CTEC208-M01,0d94f446-6095-4b12-a37b-6624c80028bc,Programming Techniques II
+CTEC216-M01,f178151e-fa68-4cb1-985a-1f70167c7cdf,Digital Electronics
+CTEC216-M01L,5f4b5ffe-35fb-4742-a608-e596c4cb65cc,Digital Electronics
+CTEC241-M01,667031d9-6fb4-415e-9b29-5b9d1c6396f1,Circuit Design and Fabrication
+CTEC241-M01L,b2c9c382-0d04-4e62-b612-898d02f16c4f,Circuit Design and Fabrication
+CTEC243-M01,e84c40af-5058-44fd-8fe3-e3fb06b2bed5,Appld Computational Analysis I
+CTEC336-M01,97f632ed-1fed-44af-b116-0b3167b37990,Embedded Sys & Inter of Things
+CTEC336-M01L,c5f5fad0-f87e-41df-a70a-231502ea6086,Embedded Sys & Inter of Things
+CTEC350-M01,8b317981-5ac2-4c51-b5d1-b23ae10a0932,Microcontroller Based Systems
+DATA101-M01,6e7257bf-42d9-4de4-97bb-fc1d34f68c2b,Making Sense of a Data-Society
+DATA101-M02,038ed5ca-d259-43af-9197-4150813e613d,Making Sense of a Data-Society
+DATA101-M03,0329f287-6dbb-4680-aee4-961530bd9e24,Making Sense of a Data-Society
+DATA101-M05,b6a660eb-83bf-4178-b9c1-3407f8f5adc5,Making Sense of a Data-Society
+DATA101-M06,da284bcc-055a-43b2-af78-a4b2e57c8d96,Making Sense of a Data-Society
+DATA101-M08,bf406e95-b4a8-4fde-affd-fb6128689824,Making Sense of a Data-Society
+DATA101-M09,e347119b-356a-4445-bbd5-536c707dafb4,Making Sense of a Data-Society
+DATA101-M10,18d06d7b-57ee-4bfe-a411-f374abaa1166,Making Sense of a Data-Society
+DSGN102-M01,e4d318ab-8e70-4599-a600-146a5782d498,Interior Environments I
+DSGN102-M02,10b1b04c-7315-4c11-ab9c-579d71e6da13,Interior Environments I
+DSGN160-M01,b9f82f98-100b-42b1-92a5-6127c81308e7,Design Theory: History/Context
+DSGN160-M02,7d27539d-2967-4b4e-88c2-70cddfcae83f,Design Theory: History/Context
+DSGN204-M01,87b4c10a-13a2-4d1d-a024-27d5eb7009e9,Interior Environments III
+DSGN221-M01,4ab1c154-1947-448b-bb7c-0f604c506e48,Working Drawings
+DSGN243-M01,e8e2ca79-d212-4220-8a25-352f80a29173,"Modeling, Rendering & Comm II"
+DSGN304-M01,eda6da0e-2484-4bf7-931d-a0a174a435d5,Furniture Design/Detailing/Mat
+DSGN363-M01,6fbebd85-379e-4ef1-a0c1-2ee8d6a2c3d5,History of Interiors II
+DSGN382-M01,6a9b81ed-a7bc-4e4c-93a3-73571935e12b,Building Codes and Regulations
+DSGN383-M01,0b4fd371-11f7-4ac3-9abc-21a64eea506e,Design Marketing and Branding
+DSGN402-M01,cff778a5-bf1f-412d-85b0-a1617142fc4a,Senior Proj in Interior Design
+DSGN402-M02,5738d192-eac1-47eb-8c0b-c89d4562d740,Senior Proj in Interior Design
+DTSC610-M01,9b9e2a29-217e-4292-b0cd-5d585c233a87,Programming for Data Science
+DTSC615-M01,b80be382-83d3-414c-abf5-4b3cbac4470c,Optim Methods for Data Science
+DTSC620-M01,c09f5cdb-aa5e-47ff-ae0e-6ef3e648beff,Statistics for Data Science
+DTSC630-M01,d7e21733-7d42-41b8-b80e-f5b6ec058004,Data Visualization
+DTSC701-M01,54caea2f-3a64-40cf-be30-7993a1717c6b,Introduction to Big Data
+DTSC701-M02,7c9471ab-9f87-460b-ac6e-6467c1d08a85,Introduction to Big Data
+DTSC710-M01,a5f8b0d4-29b7-4948-a32e-c960ee1496ef,Machine Learning
+DTSC740-M01,de6a70c0-5013-4cdb-bb1f-395805eb3850,Deep Learning
+ECON202-M01,009bac62-dcf5-4488-8db4-84ef23650bda,Principles of Economics I
+ECON204-M01,c172a14c-4cf8-4200-8feb-4ca3f5e7cebf,Principles of Economics II
+ECON501-M01,c41485e3-cf4d-41d3-9c7d-81d282865001,Principles of Economics I
+ECON601-M01,5978e10c-b261-425f-bd98-1b2e4436afbe,Managerial Econ for Dec Making
+ECON601-M02,c966d384-3c2b-4333-85ca-995985370e80,Managerial Econ for Dec Making
+ECON601-M03,85d7fb26-7aae-4399-a0c2-0ed007bfb397,Managerial Econ for Dec Making
+EDCO705-M01,e3208ba1-1796-4254-9e35-685c3305759c,Career Couns/Lifestyle Develop
+EENG125-M01,5cef4df1-526d-429c-b1b2-c5937cc94563,Fundamentals of Digital Logic
+EENG125-M02,775467c8-f4d3-4516-83c8-c3620a80ce9e,Fundamentals of Digital Logic
+EENG125-M03,16f9680b-cdeb-455e-a5bb-b876ee951ccf,Fundamentals of Digital Logic
+EENG211-M01,4ae33a13-ae4f-42ce-92eb-dad31365b24f,Electrical Circuits I
+EENG212-M01,97d9070d-1878-42a1-bace-f40a933e306c,Elect Cir I Tls
+EENG212-M01L,d91ec542-6317-4d7b-9824-c6696db0055e,Elect Cir I Tls
+EENG221-M01,1b5cec50-aa21-4fc1-90c4-41aa23579e53,Comput/Engr Tools
+EENG270-M01,a48a2276-4762-4d76-aef2-e7e4f368ec73,Electronics I
+EENG275-M01,fab08adf-cd06-4796-882d-0097be6858b6,Electronics Laboratory I
+EENG281-M01,cf5e6a30-33d0-4981-88ab-103fcb3e93b3,Electrical Circuits II
+EENG310-M01,910d6856-e078-484d-bb04-93d23f2ef65b,Electronics II
+EENG315-M01,f4551734-f2f5-4de2-b3e5-42417eb96b1c,Electronics Laboratory II
+EENG320-M01,9cde7c10-3c61-4f51-8e83-29c98061046e,Control Systems
+EENG330-M01,64be0593-697b-4d24-b8be-0e3f96e8ceb9,Electromagnetic Theory I
+EENG341-M01,021c6c77-0881-4987-8402-47b40ab5f5a0,Signals and Systems
+EENG341-M01,1009e0dd-a51c-4a7b-ade2-e2e5d0c2b922,Signals and Systems
+EENG360-M01,a7f5cb74-3310-4f88-8c69-55a454db79fa,Electronics Laboratory III
+EENG371-M01,c56d8a7f-bda3-42d7-8f19-b5f8dd2d9777,Microprocessors & Embedded Sys
+EENG382-M01,967ecf59-3f3e-4843-8002-23275327d4f2,Random Signals and Statistics
+EENG401-M01,ac4c476f-34a2-4488-b1bd-92df390df703,Communication Theory
+EENG403-M01,aeae847d-ff9c-446c-9535-046461d66e64,Electronics Laboratory IV
+EENG419-M01,9ea51bd3-ad47-45a5-8866-b7d9b9d210c4,Med Devices: Embedded Sys App
+EENG483-M01,be1091d6-6dea-4601-9914-8e0852fce0cf,Introduction to Vlsi Design
+EENG489-M01,27535d83-ee33-40cb-ad47-a36322a811fd,Senior Design Project I
+EENG491-M01,1e114f56-7322-409c-ba48-c91255714eb5,Senior Design Project II
+EENG502-M01,8d41562a-b87d-4698-a9f6-f3214151d81c,Elect Cir I Tls
+EENG502-M01L,99de5e1f-1c73-432a-be79-7a4bba81232c,Elect Cir I Tls
+EENG504-M01,f218d60a-a47a-4d7d-af44-7d3754eb0af0,Intro Electr Cir
+EENG505-M01,9041fd45-30f6-4663-b825-889e187313c0,Fundamentals of Digital Logic
+EENG505-M02,4fbd3cee-7aff-4262-bf5b-ff442b426e73,Fundamentals of Digital Logic
+EENG508-M01,3d130a83-b793-4516-83c6-473d78078ffd,Electrical Circuits II
+EENG512-M01,0e923784-30a7-49e7-a3b3-ba87713eeb49,Control Systems
+EENG514-M01,b50b2bb7-f59b-4423-9c4a-7bb452b19958,Signals and Systems
+EENG514-M01,90a425be-adcb-4290-9a80-ce85ca36d848,Signals and Systems
+EENG515-M01,b821fd2e-171d-4bc4-af68-b092a3e95e35,Random Signals and Statistics
+EENG518-M01,7facbb53-0ca7-4ab2-a4ea-d85a01517982,Communication Theory
+EENG611-M01,494d8b23-1aec-4799-9346-67d28c362b6a,Radar System Analysis
+EENG650-M01,4cb1c16c-ae1b-4d4f-afb7-e2471f9fde36,Medical Devices: Embed Systems
+EENG661-M01,637f9db1-d458-4079-abc9-3bd046980ae3,Introduction to Vlsi Design
+EENG665-M01,535f7b00-af7a-4634-b5e2-585a6dddde2c,Linear Systems
+EENG751-M01,22852f9f-b013-4314-8675-eb4b85bdea18,Signal Processing I
+EENG755-M01,a386ec24-7694-4f44-bc93-b1e8433454e0,Computer Networks
+EENG765-M01,afd0c7c2-c219-4c98-b8e8-1949264142e0,Microwave Circts
+EENG770-M01,27af5775-577b-47e2-b22e-9c834a0e20cb,Digital Communications
+EENG860-M02,271e20cc-1d44-49d3-bd91-69ca8ec586e1,Special Topics
+ENGY710-M01,d88d4302-99fe-4199-9e5b-bf1c211c6266,Power Plant Systems
+ENGY830-M01,d09d3aee-8cd0-48cd-a817-f0a77531f1eb,Internship Program
+ETCS105-M01,4d926fe1-05ab-4f72-8054-57519d8a2f03,Career Discovery
+ETCS105-M02,e0f53b65-41a4-4cfc-8d9b-29c25bebe74c,Career Discovery
+ETCS108-M01,e5fb5208-a84b-4cb9-85da-a8546fae77b0,"Computer, Internet and Society"
+ETEC110-M01,7323fac0-9593-4d4b-8b7a-f1fb5f771fca,Electrical Technology I
+ETEC110-M01L,6907f0b3-9032-498b-9426-37342e81f04b,Electrical Technology I
+ETEC120-M01,cfd21e4e-6c73-4fa7-bf26-ea046449ce7e,Electrical Technology II
+ETEC120-M01L,dfcebfb4-5d1e-47f2-a27b-cff33e8ac8f8,Electrical Technology II
+ETEC131-M01,26cd07f6-6751-4ea7-8cae-a7d1fadbd7ae,Electronic Tech I
+ETEC131-M01L,751a5351-d915-4e02-a2fe-716a4e994945,Electronic Tech I
+ETEC231-M01,81946f3d-c599-46e5-af64-59935e00c57f,Electronics Technology II
+ETEC231-M01L,0449f9ad-a013-44c0-920a-b0d6cb72eae4,Electronics Technology II
+ETEC325-M01,ac883d03-9756-44b8-9616-c69e803a0ad4,Applied Statistics
+ETEC410-M01,eac0da7e-c822-4009-988c-dfa26765cfe7,Control Systems Technology
+ETEC410-M01L,a289f8a9-c341-4f16-8d5a-a727ba1f7e2c,Control Systems Technology
+FCWR101-M01,cee41e77-f432-404c-83a0-a148055211ee,Writing I:Found Coll Comp
+FCWR101-M02,fd1a60c4-47f0-4d4f-b009-15a4e5f73ea6,Writing I:Found Coll Comp
+FCWR101-M03,5181fbb1-0717-433b-830c-b460d0da50dd,Writing I:Found Coll Comp
+FCWR111-M01,0327dc69-484f-46b7-8a26-b718561b3c50,Writing I:Comp Intl Stds
+FCWR111-M02,b024e78b-b183-4ad4-9578-e13994348c84,Writing I:Comp Intl Stds
+FCWR111-M03,d06ec42b-dbba-41f3-949b-b98085c77ccc,Writing I:Comp Intl Stds
+FCWR151-M01,f628f151-af66-4562-aa95-108f97ce3265,Writing II:Fnd Rsrch Writ
+FCWR151-M02,1bd208d3-ce13-45b7-8ac9-3850776d2377,Writing II:Fnd Rsrch Writ
+FCWR151-M03,a37a77dc-4b2a-4ac1-85a7-f406bae8fd60,Writing II:Fnd Rsrch Writ
+FCWR151-M04,2c80ce19-b42f-4ce8-9ce6-f785fd984a89,Writing II:Fnd Rsrch Writ
+FCWR151-M05,8ae011f4-9e87-4690-880f-3c4456f8f005,Writing II:Fnd Rsrch Writ
+FCWR151-M06,9abb2914-3494-4ab9-9b06-df32af2520c1,Writing II:Fnd Rsrch Writ
+FCWR151-M07,92cf5d8a-79c9-4260-bff9-6ba10b4de03e,Writing II:Fnd Rsrch Writ
+FCWR151-M08,d32eaa88-395f-425d-b5b1-d439bce10e1b,Writing II:Fnd Rsrch Writ
+FCWR161-M01,0d713ecb-6780-4692-9347-487cb0d5e514,Writing II:Comp Intl Stds
+FCWR161-M02,a194a891-21d0-4fa5-a03d-9a6159218db0,Writing II:Comp Intl Stds
+FCWR161-M03,ad049568-f20c-4cd4-be59-c942823d5369,Writing II:Comp Intl Stds
+FCWR303-M01,ddc2c843-cef9-4811-971b-3ea16a70fd6a,Art Design Comm
+FINC201-M01,438034af-fdf8-43ea-bd14-922439a3c4c7,Corporation Finance
+FINC601-M02,f8dade50-5632-4076-835c-573cdc89a174,Financial Management
+FINC601-M03,71a9d40f-1b19-4c4c-ba16-5471976f5243,Financial Management
+FINC635-M01,4fb19b80-e48e-4937-97f2-dd4cbcf44c4c,Insurance and Risk Management
+HNRS101-M01,b7cc2a5e-c876-4ba0-aecf-103d96c0ceca,Honors Seminar I
+ICBS301-M01,cc0785ad-098d-4a25-8518-c8de4672f8a0,Cross Cult Date
+ICBS302-M01,9abb49d8-0a1f-40b4-831d-becc5ba0684f,Intergroup Rel
+ICBS305-M01,16515742-e797-4945-a829-9b974d22cdd2,Gender Identity
+ICLT300-M01,e0956804-b2a6-4fde-89fc-464d61a68a13,Core Seminar in Literature
+ICLT308-M01,f727773a-a378-42d1-bdae-8a35d309ba3a,Contemporary Poetry
+ICLT327-M02,8e5c4eca-eb50-4e52-acf3-7e6e74b5799d,The Literature of Initiation
+ICSS308-M01,1521f651-6428-436a-b5cc-4fb8761a9818,Seminar in Eco Sustain
+IDSP099-M01,2eaa0a4f-5777-4bdc-82bb-6da2e48387ef,Skills for College Success II
+IENG240-M01,f60e0a63-17f3-412b-b9ea-7336a0a93f17,Engineering Economics
+IENG251-M01,624aee30-0f26-4492-82b5-bf992596a76d,Project Engineering
+IENG345-M01,0074b42c-c5eb-441e-b53f-afd089c56a73,Statistical Design II
+IENG400-M01,078758e6-837b-4d16-958f-5a4ee478062a,Technology and Global Issues
+INCS615-M01,68f0b916-dd9a-4d1e-a043-38835ab3ad1f,Adv Netwk & Internet Security
+INCS735-M01,0526ca03-d91e-4b31-8141-09609e9ba13d,Secure Software Engineering
+INCS745-M01,d2764df3-8292-4c43-ad2d-1afd74c11fe1,Intrusion Detect & Hacker Exp
+ITEC290-M01,1df3a902-7a38-40f9-9a77-677ed176909b,Database Systems
+ITEC305-M01,54a0e89e-f2dc-4fdf-b6bf-0e1ccbbcd25e,Internet Programming I
+ITEC315-M01,22dd08a2-5a63-4d39-8755-8ebf9396e4e6,Mob App Design
+ITEC320-M01,c4f72058-6af4-41ac-a4bf-b63706f08fb4,Web Multimed Dev I
+ITEC357-M01,2a464794-a399-45e8-b461-e34cdbf66cb7,Cisco Academy Level 1
+ITEC440-M01,b207a9a0-6836-49ec-af07-4b16b788ab29,Adv Netwk & Internet Security
+ITEC445-M01,f39e5dc0-5d26-4822-b9bb-5822057408b3,Operating System Security
+ITEC445-M02,45700343-1c58-40e5-88f0-8b11f65ae65a,Operating System Security
+LLAW110-M01,739733d5-dad0-4ab9-92a9-35e496dab0f6,Legal Environment of Business
+MATH115-M01,58266a6c-f9e3-4fc4-94d2-d5b4bd5c11bf,Intro to Mathematics Concepts
+MATH125-M01,3ab722e2-24f4-4730-9c5f-62f27388b01e,Finite Mathematics
+MATH135-M01,17a8fd58-4a83-4836-afb7-8732cb8bfaca,Fundamentals of Precalculus I
+MATH136-M01,b58a8087-439e-4cd6-a036-689ba178fe21,Fundamentals of Precalculus II
+MATH136-M02,e47fa51e-3b90-4ff7-9959-be3ea7e0831e,Fundamentals of Precalculus II
+MATH136-M03,46af29b3-830d-4616-a414-5ff35f93547e,Fundamentals of Precalculus II
+MATH136-M04,9abcc80d-d17a-47f1-abf4-5dd16e005115,Fundamentals of Precalculus II
+MATH136-M05,8c3ca6d0-b14a-4db7-b96b-1dc545478969,Fundamentals of Precalculus II
+MATH136-M06,181acfd5-23e3-45e9-85f6-b63a3d3b02cb,Fundamentals of Precalculus II
+MATH141-M01,ef4c0626-a46a-4367-a58d-6f9628720019,Precalculus
+MATH151-M01,52be5e43-6342-4574-8511-bbb46efd777a,Fundamentals of Calculus
+MATH161-M01,daea4984-c9d9-420c-911f-ad1d1ba598f0,Basic Applied Calculus
+MATH170-M01,966df14e-4deb-430f-b977-381b317dd7a5,Calculus I
+MATH170-M02,e182b455-7217-411b-9118-62ae5681cd07,Calculus I
+MATH170-M03,01ec18e7-3036-48ad-9dbc-63bf94bedb84,Calculus I
+MATH170-M04,eb65c0e7-0a52-45cf-9519-e2706cc82ddc,Calculus I
+MATH180-M01,40f9bad6-c294-4aef-8b89-62cb39143a0b,Calculus II
+MATH180-M02,04eaed98-f2aa-4066-9310-1209d587a3e1,Calculus II
+MATH180-M03,a0bcb0f4-c215-4ab9-9ae0-7188acfb2448,Calculus II
+MATH180-M04,719d9e66-4ff2-4247-892c-7196b2c70f4c,Calculus II
+MATH260-M01,42aec433-47d8-49ae-ba40-f01e71a1ab30,Calculus III
+MATH310-M01,c75496b4-7ba9-4d3b-90e7-6fbf3eadc413,Linear Algebra
+MATH310-M02,9c2864b9-e8f5-42c2-b3d4-1a00e70b67b1,Linear Algebra
+MATH320-M01,d2f0d48f-6acb-4217-b001-1570c49899de,Differential Equations
+MATH330-M01,0e877d1d-8961-44d9-a989-9c0e9130df2c,Computational Analysis
+MATH350-M01,52c4f96a-8d9d-4e7a-b00e-b3d6b493cd91,Advanced Calculus
+MATH370-M01,c0731067-0a31-400e-bd16-77efc6f5718b,Real Analysis
+MATH450-M01,959c2e60-ee1d-4f5f-817c-f998443b220f,Partial Differential Equations
+MATH450-M01,7f8023c2-2463-4c67-ba74-c13768803ec3,Partial Differential Equations
+MENG211-M01,4ea8f1c7-d4df-4237-842a-57c939697c32,Eng Mechanics I (Statics)
+MGMT102-M01,3b4a5958-5ea4-4bc3-9433-04c118e82a31,Principles of Management
+MGMT102-M02,0e999376-8f70-482d-bff6-bb36118ada77,Principles of Management
+MGMT235-M01,e3c7384d-2d2e-4a0b-bd9c-87266a0847de,International Business
+MGMT605-M01,db5eab93-bda3-4ca8-b422-83f8d0116dfe,Org Devpt & Behvrl
+MGMT605-M02,e9e672f5-0e7e-42fa-997e-89a8e78798c4,Org Devpt & Behvrl
+MGMT605-M03,4f571632-833c-4883-9c5e-125a02d43529,Org Devpt & Behvrl
+MGMT650-M02,8a87afd6-55ec-45bc-a39b-76e4a2cbe38e,Strategic Leadership Capstone
+MHCO705-M01,cb4291a7-874e-4161-937a-ccacfa6a0a02,Career Couns&Dev
+MIST216-M01,31fcfef5-39a9-4039-8b3c-5436ea52a501,Information Systems
+MIST610-M02,73e48be0-3ab9-427e-8f9f-a19b515f5f04,ERP Systems
+MIST660-E25,6553ebf5-ce32-43b8-ae7b-52154f72969b,Info Systems & Resource Mgmt
+MIST725-M02,9f08d810-4f3d-4057-a8bb-c2a347364591,Database Systems
+MRKT102-M01,cbccc000-a4b4-4165-9a0c-0443c9c98600,Introduction to Marketing
+MRKT620-E25,7d6cf466-1ea5-4d6a-9e38-e0f28ab9bd3c,Strategic Marketing & Branding
+MRKT620-M01,42070a9a-8c96-4d43-b5b9-5b9dabcb9898,Strategic Marketing & Branding
+MRKT620-M02,740c0043-dbbc-4ba2-ae99-5c9316b43c5b,Strategic Marketing & Branding
+MRKT620-M03,65a0b49e-0c3b-4715-a694-107cfeb1c5d3,Strategic Marketing & Branding
+MRKT620-M04,23ef11f1-1c26-4734-b1a1-55ef66c39559,Strategic Marketing & Branding
+MRKT710-M01,14ae58c5-5479-4a16-b2d5-27a084650a7b,International Marketing
+MRKT745-M01,2f269a16-06f6-43ff-bff5-255047e38b5e,Digital Marketing Strategy
+MRKT745-M02,b7e3f5af-69ba-4176-89bd-178c20c2306c,Digital Marketing Strategy
+MRKT750-M01,e6d0857a-e5cd-42b6-acba-226ec3173cc7,Marketing Research Insights
+PHYS115-M01,e8c4c99d-faea-4071-8ed1-a17de1b452d3,Humanity/Phys Un
+PHYS150-M01,b7b8339c-a897-4807-8d34-a36f54a992e4,Introductory Physics II
+PHYS150-M01L,a79cd6f7-c2fe-43ed-9551-5dbe605cef74,Introductory Physics II
+PHYS170-M01,27c53419-61b9-42cd-bddc-af574eb2d555,General Physics I
+PHYS170-M01L,e3f145a6-7165-4f06-bed3-939daf76492e,General Physics I
+PHYS170-M02,5eb81a94-741d-4edc-9318-38bc81b3fc0a,General Physics I
+PHYS170-M02L,46989350-9379-4cda-b454-1f110addb48d,General Physics I
+PHYS170-M03L,2664db7d-1386-42a9-8aff-466192e08f06,General Physics I
+PHYS180-M01,8c773c5a-2e04-464e-a401-331d84c3974b,General Physics II
+PHYS180-M01L,800d201b-edf9-4a94-9036-2943c74eb568,General Physics II
+PHYS180-M02,02968e5b-8b63-4ebc-8f36-263eed304147,General Physics II
+PHYS180-M02L,2f37affc-433d-4da3-9ed9-2be520ed36f6,General Physics II
+PHYS180-M03L,97b16e7f-98c1-4611-9e8c-b3952b371226,General Physics II
+PHYS185-M01,9b7c13c1-347b-4694-bd0e-51f7f733348c,General Physics for Pre-Med II
+PHYS185-M01L,87d3b3a2-b55e-4a5a-a45e-552703802f85,General Physics for Pre-Med II
+PHYS191-M01,14bddb5a-8f3a-406d-83ec-1e8c6d2ee089,Physics of Sports
+PHYS225-M01,450439b3-8b01-45ce-9f13-47a9d2b5bc23,Introduction to Modern Physics
+PHYS226-M01,9cac8826-99c1-42b7-86c4-8a79c91b755b,Intro to Modern Physics Lab
+PHYS310-M01,34bb9035-ff8c-45a4-8133-6a41205a0c71,Optics
+PHYS320-M01,6d470045-e606-43f6-b1ea-43a836239924,Quantum Mechanics I
+PSYC101-M01,d8a8578b-3a2c-471a-9cbf-072e146a8aa0,Introduction to Psychology
+PSYC120-M01,454d1a9e-cf0a-4aa7-9d5f-1a6b5a3b3205,Career Development in Psych
+PSYC220-M01,8d414035-dd80-4388-8505-b943dafe1680,Child Psychology
+PSYC330-M01,59389312-7692-4417-a8d7-d5812227b622,Comm & Interv Tech
+PSYC330-M01,abf440c2-2b3c-483d-ae9e-33fe5f6bac6a,Comm & Interv Tech
+PSYC338-M01,915f7263-7570-4514-ae4f-d17bc65ee457,Health Psychology
+PSYC370-M01,54c780bc-62eb-463c-a714-6b7c589f350f,Intro Res Methds
+QANT300-M01,7b5dfde1-b7b9-4bc1-a110-c8abfd13cf14,Production & Operations Mgmt
+QANT405-M01,1ace6856-f062-44eb-ab06-ff74e356aef1,Management Science
+QANT501-M01,ec2aedc6-8d90-46c8-94c9-d84fd8adaa10,Business Statistics
+QANT510-M01,d541c67f-ffe1-4473-bb44-c67fdef644f1,Prod Op Mgmt
+QANT620-M01,2f0f10d9-f7d4-44f9-820b-ae03e93356a4,Decision Models
+QANT630-E25,d0f04710-13ac-4728-a6fe-8b0dcf33214d,Operations & Supply Chain Mgmt
+QANT630-M01,043750da-6357-4fb5-b300-e187597e57f8,Operations & Supply Chain Mgmt
+WRIT110-M01,b81d3d70-6176-4dfd-ac3f-481b50330588,Bas Wrt/Rdg Intl
+WRIT110-M01,074b6c0b-7478-43eb-8965-4a0a1e2422bb,Bas Wrt/Rdg Intl
+WRIT210-M01,1cd3ff40-acf5-4c6f-aa95-95e5a64b35b0,Workshop in Publication
+WRIT220-M01,fd4ea55a-2f64-4021-bc69-0afdacfffd7f,Workshop in Publication
+WRIT230-M01,6abc6ea3-662a-4565-890d-f20e7e62d4c7,Workshop in Publication

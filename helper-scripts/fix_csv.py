@@ -7,9 +7,9 @@ import uuid
 old_file = '../spreadsheets/old-sheets/'
 new_file = '../spreadsheets/new-sheets/'
 
-def update_college_room_info():
+def clean_college_room_info():
     """
-    Updating college-room-info.csv and saving file as academic-rooms.csv
+    Cleaning college-room-info.csv and saving file as academic-rooms.csv
     Fill NaN values with O and 'skipped' with 0 for num_computers column.
     Fill NaN values with 0 for num_whiteboards column; fixing double value to integer.
     """
@@ -24,31 +24,49 @@ def update_college_room_info():
 
     df.to_csv(f'{new_file}academic-rooms.csv', index=False)
 
-def updating_room_event():
+def clean_courses_info():
     """
-    Creating a csv file with room_id and event_id specifically for room_event table.
-    Can be reused with other tables that need room_id and event_id.
-    Applying lambda function to create a unique event_id for each row (using uuid4).
+    Cleaning class-sections-sp25.csv and saving file as courses.csv.
+    Generating random UUIDs for event_id.
+    Adding course events to room_event table given specific room_id. 
     """
 
-    df = pd.read_csv(f'{old_file}academic-rooms.csv')
-    df.insert(0, 'event_id', np.nan)
+    df = pd.read_csv(f'{old_file}class-sections-sp25.csv')
+    df = df[['course_id', 'course_name']]
+
+    df['course_id'] = df['course_id'].str.replace(' ', '')
+    df['course_id'] = df['course_id'].str.replace('/', '-')
+    df.insert(1, 'event_id', np.nan)
     df['event_id'] = df['event_id'].apply(lambda x: uuid.uuid4())
 
-    df = df[['event_id', 'room_id']]
+    df.to_csv(f'{new_file}courses.csv', index=False)
 
-    df.to_csv(f'{new_file}room-event.csv', index=False)
+clean_courses_info()
 
-def updating_room_rate():
-    """
-    Creating a csv file with room_id and event_id specifically for room_rate table.
-    Can be reused with other tables that need room_id and event_id.
-    Applying lambda function to create a unique event_id for each row (using uuid4).
-    """
+# def updating_room_event():
+#     """
+#     Creating a csv file with room_id and event_id specifically for room_event table.
+#     Can be reused with other tables that need room_id and event_id.
+#     Applying lambda function to create a unique event_id for each row (using uuid4).
+#     """
 
-    df = pd.read_csv(f'{new_file}room-event.csv')
-    df = df[['room_id', 'event_id']]
+#     df = pd.read_csv(f'{old_file}academic-rooms.csv')
+#     df.insert(0, 'event_id', np.nan)
+#     df['event_id'] = df['event_id'].apply(lambda x: uuid.uuid4())
 
-    df.to_csv(f'{new_file}room-rate.csv', index=False)
+#     df = df[['event_id', 'room_id']]
 
-updating_room_rate()
+#     df.to_csv(f'{new_file}room-event.csv', index=False)
+
+# def updating_room_rate():
+#     """
+#     Creating a csv file with room_id and event_id specifically for room_rate table.
+#     Can be reused with other tables that need room_id and event_id.
+#     Applying lambda function to create a unique event_id for each row (using uuid4).
+#     """
+
+#     df = pd.read_csv(f'{new_file}room-event.csv')
+#     df = df[['room_id', 'event_id']]
+
+#     df.to_csv(f'{new_file}room-rate.csv', index=False)
+
