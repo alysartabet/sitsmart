@@ -56,7 +56,7 @@ class RoomEvent(db.Model):
 
     event_id = db.Column(UUID(as_uuid=True), primary_key=True, nullable=False)
     room_id = db.Column(db.String(10), db.ForeignKey('room.room_id'), nullable=False)
-    event_name = db.Column(db.String(50), nullable=True)
+    event_name = db.Column(db.String(75), nullable=True)
     event_organizer = db.Column(db.String(75), nullable=True)
     organizer_id = db.Column(db.String(10), nullable=True)
     is_faculty = db.Column(db.Boolean, default=False)

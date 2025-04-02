@@ -32,16 +32,34 @@ def clean_courses_info():
     """
 
     df = pd.read_csv(f'{old_file}class-sections-sp25.csv')
-    df = df[['course_id', 'course_name']]
+    df = df[['course_id', 'course_name', 'building_code', 'room_num']]
+    df.sort_values(by=['building_code', 'room_num'], inplace=True)
 
     df['course_id'] = df['course_id'].str.replace(' ', '')
     df['course_id'] = df['course_id'].str.replace('/', '-')
+    df['room_id'] = df['building_code'] + df['room_num'].astype(str)
+
     df.insert(1, 'event_id', np.nan)
     df['event_id'] = df['event_id'].apply(lambda x: uuid.uuid4())
 
-    df.to_csv(f'{new_file}courses.csv', index=False)
+    # df.to_csv(f'{new_file}courses.csv', index=False)
 
-clean_courses_info()
+
+def clean_room_event_info():
+    """
+    Grabbing event_id and room_id from courses.csv.
+    event_name will be used to add current course names to room_event table.
+    """
+
+    df = pd.read_csv(f'{new_file}courses.csv')[['event_id', 'room_id', 'course_name']]
+    df.rename(columns={'course_name': 'event_name'}, inplace=True)
+    df['event_organizer'] = 'N/A'
+    df['organizer_id'] = 'N/A'
+    df['is_faculty'] = True
+    
+    print(df.head())
+
+clean_room_event_info()
 
 # def updating_room_event():
 #     """
