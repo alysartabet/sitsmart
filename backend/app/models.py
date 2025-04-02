@@ -52,11 +52,11 @@ class RoomEvent(db.Model):
     """Room Event Table - event_id (primary key), room_id (foreign key), event_name, event_organizer, organizer_id, is_faculty"""
     __tablename__ = 'room_event'
 
-    event_id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid4, nullable=False)
+    event_id = db.Column(UUID(as_uuid=True), primary_key=True, nullable=False)
     room_id = db.Column(db.String(10), db.ForeignKey('room.room_id'), nullable=False)
-    event_name = db.Column(db.String(50), nullable=False)
-    event_organizer = db.Column(db.String(75), nullable=False)
-    organizer_id = db.Column(db.String(10), nullable=False)
+    event_name = db.Column(db.String(50), nullable=True)
+    event_organizer = db.Column(db.String(75), nullable=True)
+    organizer_id = db.Column(db.String(10), nullable=True)
     is_faculty = db.Column(db.Boolean, default=False)
 
     def __repr__(self):
@@ -65,11 +65,11 @@ class RoomEvent(db.Model):
 
 class RoomAvailability(db.Model):
     """Room Availability Table - room_id (foreign key), event_id (foreign key), event_date, start_time, end_time, available"""
-    __table__name = 'room_availability'
+    __tablename__ = 'room_availability'
 
     room_id = db.Column(db.String(10), db.ForeignKey('room.room_id'), primary_key=True, nullable=False)
     event_id = db.Column(UUID(as_uuid=True), db.ForeignKey('room_event.event_id'), primary_key=True, nullable=False)
-    event_date = db.Column(db.Date, nullable=False)
+    event_day = db.Column(db.Date, nullable=False)
     start_time = db.Column(db.Time, nullable=False)
     end_time = db.Column(db.Time, nullable=False)
     available = db.Column(db.Boolean, default=True)
