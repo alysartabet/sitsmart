@@ -62,6 +62,22 @@ def clean_room_event_info():
 
 clean_room_event_info()
 
+
+def clean_course_info():
+    """
+    Cleaning courses.csv and saving file as course-input.csv.
+    Removing building_code, room_num, room_id columns.
+    """
+    
+    df = pd.read_csv(f'{new_file}courses.csv')
+    df = df[['course_id', 'event_id', 'course_name']].drop_duplicates(subset=['course_id'])
+    
+    # print(df[df['course_id'].duplicated() == True])
+
+    df.to_csv(f'{new_file}course-input.csv', index=False)
+    
+clean_course_info()
+
 # def updating_room_rate():
 #     """
 #     Creating a csv file with room_id and event_id specifically for room_rate table.

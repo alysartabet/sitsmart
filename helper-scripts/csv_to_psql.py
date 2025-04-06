@@ -30,5 +30,5 @@ def filling_table(csv_file, table_to_fill):
         print(f"Error importing data: {e}")
 
 # filling_table('rooms.csv', 'room')
-# filling_table('courses.csv', 'course')
-filling_table('room-event.csv', 'room_event')
+# filling_table('room-event.csv', 'room_event')
+# filling_table('course-input.csv', 'course')
