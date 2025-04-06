@@ -53,28 +53,14 @@ def clean_room_event_info():
 
     df = pd.read_csv(f'{new_file}courses.csv')[['event_id', 'room_id', 'course_name']]
     df.rename(columns={'course_name': 'event_name'}, inplace=True)
+    df.replace('MC2611', 'MC26011', inplace=True)
     df['event_organizer'] = 'N/A'
     df['organizer_id'] = 'N/A'
     df['is_faculty'] = True
-    
-    print(df.head())
+
+    df.to_csv(f'{new_file}room-event.csv', index=False)
 
 clean_room_event_info()
-
-# def updating_room_event():
-#     """
-#     Creating a csv file with room_id and event_id specifically for room_event table.
-#     Can be reused with other tables that need room_id and event_id.
-#     Applying lambda function to create a unique event_id for each row (using uuid4).
-#     """
-
-#     df = pd.read_csv(f'{old_file}academic-rooms.csv')
-#     df.insert(0, 'event_id', np.nan)
-#     df['event_id'] = df['event_id'].apply(lambda x: uuid.uuid4())
-
-#     df = df[['event_id', 'room_id']]
-
-#     df.to_csv(f'{new_file}room-event.csv', index=False)
 
 # def updating_room_rate():
 #     """

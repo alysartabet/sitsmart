@@ -12,6 +12,8 @@ def filling_table(csv_file, table_to_fill):
     """
     Creating a DF given a specific csv file, connecting to specific PSQL table and filling table.
     Simplified to one function to import data into DB given any file.
+    :param csv_file: CSV file to import
+    :param table_to_fill: Table in PSQL to fill with data from CSV file
     """
     try:
         with engine.connect() as connection:
