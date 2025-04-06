@@ -63,7 +63,7 @@ def clean_room_event_info():
 clean_room_event_info()
 
 
-def clean_course_info():
+def clean_course_input_info():
     """
     Cleaning courses.csv and saving file as course-input.csv.
     Removing building_code, room_num, room_id columns.
@@ -76,7 +76,7 @@ def clean_course_info():
 
     df.to_csv(f'{new_file}course-input.csv', index=False)
     
-clean_course_info()
+clean_course_input_info()
 
 # def updating_room_rate():
 #     """
