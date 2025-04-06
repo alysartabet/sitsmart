@@ -113,6 +113,7 @@ class Faculty(db.Model):
     faculty_email = db.Column(db.String(100), nullable=False)
     faculty_type = db.Column(db.String(15), nullable=False)
     override_access = db.Column(db.Boolean, default=True)
+    is_verified = db.Column(db.Boolean, default=False)
 
     def __repr__(self):
         return f'<Faculty {self.faculty_id}>'
@@ -126,6 +127,7 @@ class Student(db.Model):
     student_name = db.Column(db.String(75), nullable=False)
     student_email = db.Column(db.String(100), nullable=False)
     on_e_board = db.Column(db.Boolean, default=False)
+    is_verified = db.Column(db.Boolean, default=False)
 
     def __repr__(self):
         return f'<Student {self.student_id}>'
