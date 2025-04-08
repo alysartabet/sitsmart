@@ -78,15 +78,21 @@ def clean_course_input_info():
     
 clean_course_input_info()
 
-# def updating_room_rate():
-#     """
-#     Creating a csv file with room_id and event_id specifically for room_rate table.
-#     Can be reused with other tables that need room_id and event_id.
-#     Applying lambda function to create a unique event_id for each row (using uuid4).
-#     """
+def clean_room_availability_info():
+    """
+    Using room-event.csv and class-sections-sp25.csv to create room-availability.csv.
+    Getting room_id, event_id, event_day, start_time, end_time columns.
+    Available column changes depending on if the room is available or not.
+    """
 
-#     df = pd.read_csv(f'{new_file}room-event.csv')
-#     df = df[['room_id', 'event_id']]
+    room_events = pd.read_csv(f'{new_file}room-event.csv')[['room_id', 'event_id']]
+    class_sections = pd.read_csv(f'{old_file}class-sections-sp25.csv')[['event_day', 'start_time', 'end_time']]
 
-#     df.to_csv(f'{new_file}room-rate.csv', index=False)
+    room_availability = pd.merge(room_events, class_sections, left_index=True, right_index=True)
+    # Fixing time values to be in the correct format
+    
+
+    print(room_availability.head())
+
+clean_room_availability_info()
 

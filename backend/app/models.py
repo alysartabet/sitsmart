@@ -75,7 +75,7 @@ class RoomAvailability(db.Model):
     event_date = db.Column(db.Date, nullable=True)
     start_time = db.Column(db.Time, nullable=False)
     end_time = db.Column(db.Time, nullable=False)
-    available = db.Column(db.Boolean, default=True)
+    available = db.Column(db.Boolean)
 
     def __repr__(self):
         return f'<RoomAvailability {self.room_id}>'
