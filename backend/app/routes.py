@@ -1,5 +1,5 @@
 # Displays the API routes where you can view all the tables in the DB
-from flask import Blueprint
+from flask import Blueprint, jsonify
 from . import db
 from .models import *
 from dotenv import load_dotenv
@@ -30,6 +30,16 @@ def db_conn():
 @main.route('/')
 def index():
     """Main route/home screen for the Sit Smart App"""
-    return "Welcome to the Smart Room API!"
+    return jsonify({"message": "Welcome to the Sit Smart App API!"}), 200
 
+@main.route('/room-availability', methods=['GET'])
+def get_room_availability():
+    """Get the availability of rooms."""
+    conn = db_conn()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM room_availability")
+    rows = cursor.fetchall()
+    cursor.close()
+    conn.close()
 
+    return jsonify({"room_availability": [dict(zip([desc[0] for desc in cursor.description], row)) for row in rows]}), 200
