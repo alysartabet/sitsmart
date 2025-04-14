@@ -72,10 +72,10 @@ class RoomAvailability(db.Model):
     room_id = db.Column(db.String(10), db.ForeignKey('room.room_id'), primary_key=True, nullable=False)
     event_id = db.Column(UUID(as_uuid=True), db.ForeignKey('room_event.event_id'), primary_key=True, nullable=False)
     event_day = db.Column(db.String(10), nullable=False)
-    event_date = db.Column(db.Date, nullable=True)
     start_time = db.Column(db.Time, nullable=False)
     end_time = db.Column(db.Time, nullable=False)
     available = db.Column(db.Boolean)
+    event_date = db.Column(db.Date, nullable=True)
 
     def __repr__(self):
         return f'<RoomAvailability {self.room_id}>'
