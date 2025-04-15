@@ -3,3 +3,6 @@ backend/venv/
 
 # Python Cache Files
 backend/app/__pycache__/
+
+# FrontEnd
+frontend/node_modules/

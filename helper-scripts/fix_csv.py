@@ -90,12 +90,7 @@ def clean_room_availability_info():
     class_sections = pd.read_csv(f'{old_file}class-sections-sp25.csv')[['event_day', 'start_time', 'end_time']]
     room_availability = pd.merge(room_events, class_sections, left_index=True, right_index=True)
     
-    # Fixing time values to be in the correct format (24 hour format)
-    room_availability['start_time'] = pd.to_datetime(room_availability['start_time'], format='%I:%M %p').dt.time
-    room_availability['end_time'] = pd.to_datetime(room_availability['end_time'], format='%I:%M %p').dt.time
-    
     room_availability['available'] = False
-
     room_availability.to_csv(f'{new_file}room-availability.csv', index=False)
 
 clean_room_availability_info()

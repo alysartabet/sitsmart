@@ -1,5 +1,5 @@
 # Displays the API routes where you can view all the tables in the DB
-from flask import Blueprint, jsonify
+from flask import Blueprint, request, jsonify
 from . import db
 from .models import *
 from dotenv import load_dotenv
@@ -25,7 +25,6 @@ def db_conn():
     conn = psycopg2.connect(**pg_connection_dict)
     return conn
 
-
 # Using API calls for CRUD operations
 @main.route('/')
 def index():
@@ -38,8 +37,11 @@ def get_room_availability():
     conn = db_conn()
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM room_availability")
-    rows = cursor.fetchall()
+    columns = cursor.description
+    result = []
+    for val in cursor.fetchall():
+        result.append(dict(zip([col[0] for col in columns], val)))
     cursor.close()
     conn.close()
 
-    return jsonify({"room_availability": [dict(zip([desc[0] for desc in cursor.description], row)) for row in rows]}), 200
+    return result, 200
