@@ -1,0 +1,532 @@
+event_id,room_id,event_name,event_organizer,organizer_id,is_faculty
+7cb98462-85d9-437a-a6d9-d593e736ff30,EGGC319,Visualization II,N/A,N/A,True
+0b37b3c4-ac18-43c4-b2c8-ee1731965b09,EGGC319,Visualization II,N/A,N/A,True
+8088fd04-d3ea-44e2-8ea3-2f1a20ee628f,EGGC319,Writing I:Found Coll Comp,N/A,N/A,True
+ce5d88e5-4126-46d5-b38c-03072edd19e9,EGGC319,Writing I:Comp Intl Stds,N/A,N/A,True
+92c2b61f-9856-4c9a-aaac-e673af052369,EGGC319,Writing I:Comp Intl Stds,N/A,N/A,True
+651d4687-6e0d-4b1c-8fff-712dc392259b,EGGC319,Art Design Comm,N/A,N/A,True
+6734e509-e7dd-4580-968a-4e07aa1a2703,EGGC319,Computational Analysis,N/A,N/A,True
+858cf22a-df2b-461a-9eb5-b83255ab80a7,EGGC319,Database Systems,N/A,N/A,True
+3798b2ac-8fe6-4442-9fa0-f6b59e77c8b6,EGGC401,Accounting II,N/A,N/A,True
+bd321f1e-64ee-4ca1-9138-d90cc81d5bce,EGGC401,General Chemistry I,N/A,N/A,True
+f1de7e34-aa4a-4aab-992d-1ffaf36e81a9,EGGC401,General Chemistry II,N/A,N/A,True
+42a82af4-fef2-4288-a6c8-304001e2f650,EGGC401,Theor Conc in Computers & Comp,N/A,N/A,True
+e0fbd499-36d6-404a-af12-51d98dd214df,EGGC401,Mob App Design,N/A,N/A,True
+304be62d-c525-48ef-8304-77dc3a49adcb,EGGC401,Fundamentals of Precalculus I,N/A,N/A,True
+ccdecc04-2f05-45cd-9205-be4d54c0d1ed,EGGC401,Fundamentals of Precalculus II,N/A,N/A,True
+3f7db323-d4d2-46f6-aed4-aaa4c773c067,EGGC401,Fundamentals of Calculus,N/A,N/A,True
+79e811c8-adbf-4be0-ade4-66dc17c7b963,EGGC401,Calculus I,N/A,N/A,True
+3a195630-6c51-4e27-9e21-6dda3334d34c,EGGC401,General Physics I,N/A,N/A,True
+c429ab1c-7f48-4404-9936-6a67149663d2,EGGC405,General Biology II,N/A,N/A,True
+0e2884d9-1f64-492f-b127-0bb910d339ce,EGGC405,Genetic Engineering,N/A,N/A,True
+6d30ca42-e171-42de-a352-5db466cff07b,EGGC405,Intro to Research Literature,N/A,N/A,True
+055b0b49-ffa6-4833-a7df-0dc375e3511b,EGGC405,General Chemistry II,N/A,N/A,True
+b9c56606-6d47-4ed5-b4fe-204adb06592d,EGGC405,Intro to Research Design,N/A,N/A,True
+df762795-5051-4fb7-b72f-4ebeaec3af36,EGGC405,Introduction to Vlsi Design,N/A,N/A,True
+f340c06c-d449-4872-90a7-21028c275aec,EGGC405,Introduction to Vlsi Design,N/A,N/A,True
+81e5093f-6acb-4200-8565-41829752e1d8,EGGC405,Microwave Circts,N/A,N/A,True
+c02db37a-a096-4eea-8f6c-86e8de9f68de,EGGC405,Calculus I,N/A,N/A,True
+5d32baf0-19e1-4e17-af1f-31d35db7e5b9,EGGC405,Child Psychology,N/A,N/A,True
+f7ced089-a524-49e2-97ae-485a2856eeb4,EGGC406,Arch Hist Sem,N/A,N/A,True
+d1d4932b-77da-49c3-a09b-b50ecb2aeaaf,EGGC406,Environmental Sciences,N/A,N/A,True
+9d42329e-0829-4bb2-8b98-b73d9b0675b0,EGGC406,Microbiology,N/A,N/A,True
+4088f1e0-86ca-4caf-b303-89a9044d7249,EGGC406,Biochemistry,N/A,N/A,True
+3d836d16-4174-4156-a6ae-fe840d90200c,EGGC406,Making Sense of a Data-Society,N/A,N/A,True
+767035cc-90c9-47ca-8f49-0d9f3ecedb5f,EGGC406,Managerial Econ for Dec Making,N/A,N/A,True
+8534dacf-ad4b-4308-a183-f57e10c45919,EGGC406,Electrical Circuits II,N/A,N/A,True
+dc3bf134-fc67-4e38-9388-028bf8461eb6,EGGC406,Electrical Circuits II,N/A,N/A,True
+ca55e584-97e3-43ca-834f-678aadd0907a,EGGC406,Power Plant Systems,N/A,N/A,True
+39d670ef-b99a-45c3-ae25-82f7bb8bcfbe,EGGC406,Writing II:Fnd Rsrch Writ,N/A,N/A,True
+c5b0b82d-8306-4138-b1db-7d6809b74f84,EGGC406,Partial Differential Equations,N/A,N/A,True
+b32ba0fd-6015-4adb-82d6-5ab0b3462990,EGGC408,Computer Programming I,N/A,N/A,True
+e8f4b35d-22bf-4747-8ca0-105b81a773c9,EGGC408,Computer Programming I,N/A,N/A,True
+04d503ac-5a0e-48c9-8c76-6ed0b1873f06,EGGC408,Computer Programming I,N/A,N/A,True
+77542a41-7f5f-4f51-b118-1e08cdc8ded5,EGGC408,Computer Programming I,N/A,N/A,True
+07d07252-dbd4-4786-92d7-548166eec93b,EGGC408,Computer Programming I,N/A,N/A,True
+4fe26cf9-96f9-430c-816e-dbf2caab5b8b,EGGC408,Computer Programming I,N/A,N/A,True
+4f72b76f-19fe-480a-b6bf-d660c347f0e4,EGGC408,Computer Programming I,N/A,N/A,True
+b84a4a5b-4412-4227-aff2-5109a6c44f84,EGGC408,Computer Programming I,N/A,N/A,True
+d9d722af-1ec4-47f4-8409-fcb47080f0ad,EGGC408,Computer Programming I,N/A,N/A,True
+687e85cd-50c5-461e-98d6-63e72bc31571,EGGC408,Circuit Design and Fabrication,N/A,N/A,True
+7d4f19be-2526-4801-9329-adc6aecef6e5,EGGC408,Microcontroller Based Systems,N/A,N/A,True
+cfc85961-4179-4365-83b3-2f224c11fbfc,EGGC408,Optim Methods for Data Science,N/A,N/A,True
+4a909b4f-f123-4990-997c-e7c15e81dcfb,EGGC408,Electronics I,N/A,N/A,True
+cf8efa1a-5171-4061-953f-db4cf2eace91,EGGC408,Signals and Systems,N/A,N/A,True
+b01e2864-c355-4b79-a457-1acbf6347315,EGGC408,Signals and Systems,N/A,N/A,True
+559d7691-7d08-490c-ba61-ecbdbf754779,EGGC408,Random Signals and Statistics,N/A,N/A,True
+9672aef7-3d16-4906-b326-fed1d60583ef,EGGC408,Intro Electr Cir,N/A,N/A,True
+be011ec0-a178-4918-9b2c-8ced99062f66,EGGC408,Signals and Systems,N/A,N/A,True
+31fa0a32-7503-4395-8c15-4be08087fa66,EGGC408,Signals and Systems,N/A,N/A,True
+586665b9-7419-4586-81f2-ad810736ae70,EGGC408,Random Signals and Statistics,N/A,N/A,True
+2f07bed8-8839-4283-ae7f-2a1149bda7d9,EGGC408,Career Discovery,N/A,N/A,True
+b96da14c-80f6-4960-9b8d-4e7c82510001,EGGC408,Electronics Technology II,N/A,N/A,True
+527e6f39-db8a-46b4-9641-9491ed202e6c,EGGC409,Global Hist of Architecture I,N/A,N/A,True
+2801e87c-7a99-4508-b9b6-d8baf5d2b9e4,EGGC409,Medical Devices,N/A,N/A,True
+cf31d9a1-9ddc-43c1-9ef9-eb71806c1b7e,EGGC409,Digital Electronics,N/A,N/A,True
+c459571a-284d-47e5-a277-d9bacd1807a0,EGGC409,Embedded Sys & Inter of Things,N/A,N/A,True
+4b9ef8bc-8e94-441c-af60-c28334e18d73,EGGC409,Med Devices: Embedded Sys App,N/A,N/A,True
+05736f03-448c-4c2b-a213-5449c35e0a80,EGGC409,Medical Devices: Embed Systems,N/A,N/A,True
+02237b40-2272-4ce1-a0de-5927726c54e5,EGGC409,Electrical Technology I,N/A,N/A,True
+42704435-f196-4098-a680-5be52e5e2c28,EGGC409,Statistical Design II,N/A,N/A,True
+0284e027-e0de-42a0-978b-9beafb2baa1d,EGGC409,Partial Differential Equations,N/A,N/A,True
+df8ebd2d-86b5-4f65-8630-448f7ebd1c63,EGGC409,Quantum Mechanics I,N/A,N/A,True
+4004d42d-1052-497e-a461-b1efbdc0b8f8,EGGC501,Visualization I,N/A,N/A,True
+70bce386-78b6-4269-a6bf-6deaae8de587,EGGC501,Comp Aided Con Drwgs,N/A,N/A,True
+af743a50-a38a-42d9-b870-b59114d743b7,EGGC502,Design Fundamentals I,N/A,N/A,True
+36ee3c0d-7181-4de5-95d9-48bef8ae29de,EGGC502,Design Fundamentals II,N/A,N/A,True
+2a8c1371-15ee-4b83-9905-8309331d62a7,EGGC502,Design Fundamentals II,N/A,N/A,True
+2bee54d4-3042-4458-b743-b75a78498379,EGGC502,Design Fundamentals II,N/A,N/A,True
+fde485dd-ff3b-4b61-b1f6-20bcf9969e4a,EGGC502,Design Fundamentals II,N/A,N/A,True
+1bb09dcd-0c7d-4564-854a-11169ebb7cce,EGGC502,Design Fundamentals II,N/A,N/A,True
+fc7b27b5-4751-410f-8a47-f599889670de,EGGC502,Design Fundamentals II,N/A,N/A,True
+b215d259-5215-4c0c-8645-5ad314585b54,EGGC502,Design Fundamentals II,N/A,N/A,True
+f2f81a40-6783-4c11-a8ba-5a6c0b0bacfd,EGGC502,Architectural Design II,N/A,N/A,True
+e1fba461-c2f7-4a38-ae74-ce176398dd58,EGGC502,Architectural Design II,N/A,N/A,True
+fb2098a2-23bc-490a-a0c0-50157c76f335,EGGC502,Architectural Design II,N/A,N/A,True
+5074f809-4d8f-49af-9cbb-d20957a0947c,EGGC502,Architectural Design II,N/A,N/A,True
+79fe420e-313b-4fc9-aa8d-0dc215466948,EGGC502,Architectural Design II,N/A,N/A,True
+b83d1106-1f7d-40c0-ae8d-187bfb4eed7b,EGGC502,Architectural Design II,N/A,N/A,True
+ce70bb87-bebf-4c6d-bcaa-daebf8022492,EGGC502,Architectural Design II,N/A,N/A,True
+4d59ebcb-c0cd-4c05-ac6d-7f48c3e53425,EGGC502,Architectural Design IV,N/A,N/A,True
+83a425b8-bb0f-419c-a840-31a7bc3d56e8,EGGC502,Architectural Design IV,N/A,N/A,True
+3d6ab395-364a-462f-9ec3-0a2bb3fccbaf,EGGC502,Architectural Design IV,N/A,N/A,True
+9b4799de-24ee-4267-beb8-b71c53c8d77a,EGGC502,Architectural Design IV,N/A,N/A,True
+760700bd-d1a9-47b5-a803-564982f3fcd1,EGGC502,Architectural Design IV,N/A,N/A,True
+0e2ba7e8-32fa-4c94-bc21-b272a8e28a19,EGGC502,Interior Environments I,N/A,N/A,True
+98bd0235-1965-408c-84b0-c1cbfa4fb00c,EGGC502,Interior Environments III,N/A,N/A,True
+ed1cc70b-4661-4185-b5a5-350470e85aa4,EGGC502,Furniture Design/Detailing/Mat,N/A,N/A,True
+02c6e447-1bee-4b94-81a2-8475bbd3407d,EGGC602,Computational Design Studio 2,N/A,N/A,True
+77637fb2-ca60-4311-b515-b9cf8f37d84e,EGGC602,Multidisciplinary Design,N/A,N/A,True
+20bf9993-4d0a-4aa9-9b29-16965f8f8ba6,EGGC602,Envt Behav & Dsgn Intelligence,N/A,N/A,True
+6a8b56f3-f3a2-440b-88a8-e5c8f7b6af84,EGGC602,Medical & Mobility Prototypes,N/A,N/A,True
+c9acc32d-ca9f-4338-8e9e-4829c8dd4424,EGGC602,Fabrication Optimization,N/A,N/A,True
+81806ac8-e78a-486c-82cb-4901e8c3aec1,EGGC602,Computational Design II,N/A,N/A,True
+50442d4b-987f-4e33-a25c-2a8e804fbc83,EGGC602,Fabrication and Robotics II,N/A,N/A,True
+934e3ce9-457d-4e1d-b5c5-19c389e4b0fd,EGGC606,Advanced Structural Concepts I,N/A,N/A,True
+7bb95aea-43dd-49e3-9069-08d54220e868,EGGC606,Special Studies in Arch,N/A,N/A,True
+39316518-46c0-44a3-a73e-863f49b26791,EGGC606,Electromagnetic Theory I,N/A,N/A,True
+6578c307-fc10-403e-94ab-d8be6c5742cb,EGGC606,Communication Theory,N/A,N/A,True
+7c68a4b6-fcd2-42f5-80c5-a87e9fa41bc1,EGGC606,Communication Theory,N/A,N/A,True
+22411785-b13e-4242-adf7-b522dd222318,EGGC606,Career Discovery,N/A,N/A,True
+f9a1e63a-90d1-4f83-bb3b-e76df5f43f2f,EGGC606,Applied Statistics,N/A,N/A,True
+544f0fa6-5d52-486d-99a6-a56b78452a4a,EGGC606,Control Systems Technology,N/A,N/A,True
+ab83a6fc-7877-42e2-8092-ae071fe4da67,EGGC606,Project Engineering,N/A,N/A,True
+087deda6-5964-4af9-889d-7180614fb11b,EGGC606,Information Systems,N/A,N/A,True
+0bf57f7f-2437-4a6e-af00-1aad6ff9d705,EGGC607,Senior Design Project I,N/A,N/A,True
+3913223c-4c5a-434d-9f7f-eb67c3971bb1,EGGC607,Senior Design Project II,N/A,N/A,True
+86ca8fd7-6b55-4486-8ed6-9e8b7c4da583,EGGC701,History and Theory of the City,N/A,N/A,True
+caae30b1-5285-4930-a2b6-50de4276dd42,EGGC701,Drug Discovery & Development,N/A,N/A,True
+46ce9f1c-7bee-4b7d-9a56-cd1240d52b21,EGGC701,Making Sense of a Data-Society,N/A,N/A,True
+60b07a71-6589-463a-9166-babe3e18dab4,EGGC701,Making Sense of a Data-Society,N/A,N/A,True
+31e8e46f-c3f8-4ced-8600-0b113f0f6ff9,EGGC701,Making Sense of a Data-Society,N/A,N/A,True
+e685d834-a237-44f4-a385-24ed6c001eda,EGGC701,Design Theory: History/Context,N/A,N/A,True
+f33dae0e-97e5-4030-b489-6eb91c013481,EGGC701,History of Interiors II,N/A,N/A,True
+c0077da4-dcf1-4455-8b6d-b937110a33e9,EGGC701,Building Codes and Regulations,N/A,N/A,True
+1cb8656a-3616-4557-be55-e5d2adceed1f,EGGC701,Internship Program,N/A,N/A,True
+74ac6559-7099-456f-9497-f0752b832c50,EGGC702,Comp Aided Con Drwgs,N/A,N/A,True
+91742693-81b1-4336-a455-8dbdda6edc99,EGGC702,Cell Biology,N/A,N/A,True
+76a3dd50-0dc8-4f6f-aaf4-87736b2dff31,EGGC702,Organic Chemistry I,N/A,N/A,True
+9703d01d-fd46-40e3-b012-382d5cf8ca9e,EGGC702,Programming Techniques II,N/A,N/A,True
+284b88b6-ea7f-46dd-8be9-a2feee5491c6,EGGC702,Appld Computational Analysis I,N/A,N/A,True
+4c94a405-d682-4b12-8ef3-999b1d0f7c57,EGGC702,"Modeling, Rendering & Comm II",N/A,N/A,True
+e3a044ad-afee-41d2-afc7-686956fbd28e,EGGC702,Honors Seminar I,N/A,N/A,True
+460d92e7-f030-496d-a37f-1205b1f662d5,EGGC702,Engineering Economics,N/A,N/A,True
+ffc5f0df-0a55-4006-89e4-999380f8a5f6,EGGC702,Eng Mechanics I (Statics),N/A,N/A,True
+10c26620-4aa5-4ed1-90b4-6673f6bb7dfc,EGGC702,Introduction to Marketing,N/A,N/A,True
+0035bde4-688e-49ca-8051-a0e69516f87e,EGGC704,Statistics for Bioengineers,N/A,N/A,True
+3a05d284-5623-43f5-ab43-c2a87e415623,EGGC704,Introduction to Biotechnology,N/A,N/A,True
+08ddfcf6-07b3-467c-aad2-f4ac725d4b97,EGGC704,Neuroscience,N/A,N/A,True
+1ce37c5d-dcf3-464d-9065-e386b317eab5,EGGC704,Organic Chemistry II,N/A,N/A,True
+1a46b5c3-3675-4b1a-8c98-d7e42d0d3ef6,EGGC704,Organic Chemistry II,N/A,N/A,True
+849b972b-d6c8-409f-b7c7-b897525e8338,EGGC704,Distributed Database Systems,N/A,N/A,True
+15aea7dd-0149-4498-9a7d-e033c6812367,EGGC704,Making Sense of a Data-Society,N/A,N/A,True
+f2b5cf7d-7944-4646-97b0-ce95109d8684,EGGC704,Linear Systems,N/A,N/A,True
+e3e08bd4-ba5d-46f8-9da7-b24cf9614a37,EGGC704,Cross Cult Date,N/A,N/A,True
+7982b347-646c-4671-a400-ca014697bd7f,EGGC704,Intergroup Rel,N/A,N/A,True
+df6fe05b-a810-44de-a7c5-32bb2c8042c4,EGGC704,Web Multimed Dev I,N/A,N/A,True
+ed4f14da-4c3a-497f-b78a-54ecb629dddc,EGGC704,Basic Applied Calculus,N/A,N/A,True
+82088a3c-bded-487c-84a3-99485cedfde9,EGGC706,Environmental Systems II,N/A,N/A,True
+6d38aaf1-ea50-4bef-8eeb-ce1822af985b,EGGC706,Global History of Architecture,N/A,N/A,True
+05e4c099-f801-4055-88bc-079528c0d29e,EGGC706,Genetics,N/A,N/A,True
+2d9dd3ec-b248-45a3-9a48-229d7bace479,EGGC706,Interior Environments I,N/A,N/A,True
+ae54fe3e-8f1d-4c58-a13b-61435dcb78b4,EGGC706,Design Marketing and Branding,N/A,N/A,True
+907685ab-4e1d-4c9a-bf8a-9f9f0a207eb3,EGGC706,Senior Proj in Interior Design,N/A,N/A,True
+1832d64c-37af-459a-b057-2d8a103d5a49,EGGC706,Deep Learning,N/A,N/A,True
+14ea6bc8-718c-49ec-b48c-ed6dd9ce184c,EGGC706,Signal Processing I,N/A,N/A,True
+e57cf335-d947-4684-a0aa-15b0c7c0219b,EGGC706,Fundamentals of Precalculus II,N/A,N/A,True
+c50973c6-90f3-488b-b4f3-e3cfb3c171dd,EGGC706,Fundamentals of Precalculus II,N/A,N/A,True
+c9407c4b-6748-4cf5-8547-3a78dab02d0a,EGGC706,Strategic Marketing & Branding,N/A,N/A,True
+71e16b8c-a505-4e3b-a7f6-a28984d00ea9,EGGC901,General Biology I,N/A,N/A,True
+665d5a6e-a64f-4420-935a-5280d2cf0dfa,EGGC901,General Biology I,N/A,N/A,True
+fec157be-136f-4f5a-9492-ee63c27781e1,EGGC901,General Biology II,N/A,N/A,True
+d5379ac1-4c34-4f62-b915-7a1aec453e07,EGGC901,General Biology II,N/A,N/A,True
+c4ca14ec-897b-4db2-8ad6-3cfc260f1bc4,EGGC901,General Biology II,N/A,N/A,True
+10abdb48-bea8-424f-b06a-681173059938,EGGC901,General Biology II,N/A,N/A,True
+9ec2df2e-c759-49c2-aa79-b461f681b79c,EGGC901,Genetics,N/A,N/A,True
+ee48f158-4b06-40c6-88bc-5c0e7588fc4a,EGGC901,Microbiology,N/A,N/A,True
+6c85fd9f-0462-41ff-b129-405853179807,EGGC901,Human Physiology,N/A,N/A,True
+2f1903e5-421e-4ebe-b74e-c87e5f9e815d,EGGC901,Human Physiology,N/A,N/A,True
+e372d19c-f248-4207-9ce2-be6da32e9942,EGGC901,Independent Research III,N/A,N/A,True
+1b8f2c63-b561-4453-8d88-b216fb143425,EGGC902,Biochemistry,N/A,N/A,True
+e8d13191-d186-4c9f-80e4-6acecc1d170f,EGGC902,Biochemistry,N/A,N/A,True
+01a4f50e-2201-42c8-aa8c-33c76c702f4c,EGGC902,General Chemistry I,N/A,N/A,True
+82e74097-5b7a-4246-85ab-e914a07487f1,EGGC902,General Chemistry I,N/A,N/A,True
+794b6308-d31e-4bfc-9e50-b4f33108f3ef,EGGC902,General Chemistry II,N/A,N/A,True
+a859017a-f644-477f-b9b0-45f29d20d834,EGGC902,General Chemistry II,N/A,N/A,True
+f7bceda9-77de-470e-a185-c1d7e8d9ad9e,EGGC902,General Chemistry II,N/A,N/A,True
+51f51f3c-d5f4-4642-8f98-002abeea5862,EGGC902,General Chemistry II,N/A,N/A,True
+cbbeabe6-99af-4123-a97f-d297cc64f35e,EGGC902,Organic Chemistry I,N/A,N/A,True
+a0205303-c707-4b8c-9762-fb115f344f46,EGGC902,Organic Chemistry II,N/A,N/A,True
+594e2aac-66ca-4bcd-9e71-82edd8c5147c,EGGC902,Organic Chemistry II,N/A,N/A,True
+a5930ed0-4765-41a6-8019-22b0b488a3d9,EGGC903,Digital Electronics,N/A,N/A,True
+76624f67-4fcf-484e-bd5e-4252548db5bc,EGGC903,Circuit Design and Fabrication,N/A,N/A,True
+39827a08-0160-4613-b94b-f95951072f3a,EGGC903,Electrical Circuits I,N/A,N/A,True
+76ae90f4-d9e1-457f-8528-6d50a00b0031,EGGC903,Elect Cir I Tls,N/A,N/A,True
+080f7f36-b005-452f-b4b0-b845ba1c6bfe,EGGC903,Elect Cir I Tls,N/A,N/A,True
+8823cd6d-3257-402d-8fb9-891c576bb9bc,EGGC903,Comput/Engr Tools,N/A,N/A,True
+316fa7e3-6191-4f80-a506-95f44c97311d,EGGC903,Microprocessors & Embedded Sys,N/A,N/A,True
+c27ff485-89b0-44d2-9a24-7b0e3cdcaccb,EGGC903,Elect Cir I Tls,N/A,N/A,True
+aeb6987d-b767-493b-9bfe-aada3aa071b9,EGGC903,Elect Cir I Tls,N/A,N/A,True
+98769899-6d5b-4f3b-9a01-43e1161b958d,EGGC903,Electrical Technology I,N/A,N/A,True
+667bb4dc-f4aa-4efd-ba37-c9dba6a5538e,EGGC903,Electronics Technology II,N/A,N/A,True
+a179f309-1879-436b-b05f-75e74c884158,EGGC903,Control Systems Technology,N/A,N/A,True
+7025e9dc-98fb-4f76-ace9-83921a8f0a84,EGGC904,Embedded Sys & Inter of Things,N/A,N/A,True
+56e7c7df-000c-4a04-bcdd-81268564e64d,EGGC904,Electronics Laboratory I,N/A,N/A,True
+037f1f92-9389-4ba3-aac7-de6d388a7433,EGGC904,Electronics Laboratory II,N/A,N/A,True
+0f2c9c24-9cdf-49b5-bed1-44df2381866e,EGGC904,Electronics Laboratory III,N/A,N/A,True
+e48c8550-c3e3-4f1d-be09-2c0fe34d8ec4,EGGC904,Electronics Laboratory IV,N/A,N/A,True
+2bb17fce-239c-44a0-95b6-1933557e2b4a,EGGC904,Electrical Technology II,N/A,N/A,True
+e2f45e5a-0f41-46d2-adf2-8357c6d384ef,EGGC904,Electronic Tech I,N/A,N/A,True
+7462da4d-5fcf-422e-9f7c-c620c5ff1575,EGGC1011,Arch Visual Communication 2,N/A,N/A,True
+9cbbda5b-e92d-4cfa-be3c-db8ca05055dc,EGGC1013,Visualization II,N/A,N/A,True
+6d96af54-7c86-4f79-86f4-4f45c3017693,EGGC1013,Building Construction II,N/A,N/A,True
+eea5ba6c-d45d-4271-99f0-1bb928c24d28,EGGC1013,Design VI- Community Design,N/A,N/A,True
+7a2b3221-f582-4f09-934d-b5c87aa1430e,EGGC1013,Design VI- Community Design,N/A,N/A,True
+3817b7bb-3f84-40f0-a318-a2834cd88516,EGGC1013,Design VI- Community Design,N/A,N/A,True
+3502eb62-03f2-4c36-a634-cae203c72575,EGGC1013,Design VI- Community Design,N/A,N/A,True
+51a3e62a-b56a-46aa-8b2f-e4189f4e2c46,EGGC1013,Architectural Design VIII,N/A,N/A,True
+2997c7f3-eb8f-4b88-8187-8dcbdf7ca956,EGGC1013,Architectural Design VIII,N/A,N/A,True
+63b83df5-c5f9-4fa6-b630-aa876999e877,EGGC1013,Architectural Design VIII,N/A,N/A,True
+e7f3ddcc-b4d7-4e9d-8853-3f1fed04fffd,EGGC1013,Architectural Design VIII,N/A,N/A,True
+6e1024e9-8f85-4371-9923-29506bb7f607,EGGC1013,Architectural Design VIII,N/A,N/A,True
+d1b196d2-5c12-4377-aa4d-bd58b73bfe7b,EGGC1013,Building Systems I,N/A,N/A,True
+cb295f96-74ab-4d86-927e-b29974fca8ba,EGGC1013,M. ARCH Studio 7,N/A,N/A,True
+757deabd-1c8f-44cc-bbf2-49b17821d01e,EGGC1013,M. ARCH Studio 7,N/A,N/A,True
+e72d8fea-76d6-481f-89ae-6d66a58c460f,EGGC1013,Practice Models & Strategies,N/A,N/A,True
+73f87f1d-3ecc-4b61-be1c-84705672eefc,EGGC1119,M. ARCH Studio 2,N/A,N/A,True
+046926cb-b871-41a0-b50c-ac8048081103,EGGC1119,M. ARCH Studio 5,N/A,N/A,True
+fbb544d4-1324-45bb-80de-afba514252b9,EGGC1119,M. ARCH Studio 5,N/A,N/A,True
+38fc6d10-63c5-4b21-9a63-f33c7a4d48c6,EGGC1119,Building Systems 2,N/A,N/A,True
+6dc464d0-4537-4172-89f6-097e3b05459d,EGGC1119,Material Tectonics II,N/A,N/A,True
+e5523de2-5e4d-41e2-88dc-36aef4585496,EGGC1119,Special Studies in Arch,N/A,N/A,True
+79e073f9-a344-48ac-81f4-511261b0297f,EGGC1120,Building Construction II,N/A,N/A,True
+a87cb6f5-5d0a-4b8d-896b-0ced80dc960f,EGGC1120,Arch Hist Sem,N/A,N/A,True
+38da1418-a659-403d-8c35-142964507fdd,EGGC1120,Urban Design Studio II,N/A,N/A,True
+5b93a808-4903-4946-ab2a-855443488607,EGGC1120,Theories & Studies of Urbanism,N/A,N/A,True
+615c2928-b7ed-432b-afa2-bc671077455c,EGGC1120,Construction Documents,N/A,N/A,True
+d851baca-e226-40fa-9dc9-bfa7b9596cf6,EGGC1120,Digi Technique & Media Dsgn II,N/A,N/A,True
+939a5718-1314-4e6b-b5cd-993273a3ac9d,MC26011,Accounting I,N/A,N/A,True
+0ced1f14-aa04-4591-b03e-46d52209aa94,MC26011,General Biology II,N/A,N/A,True
+2a360fed-d27e-423a-ac84-eec0c471d84c,MC20611,Precalculus,N/A,N/A,True
+e81aa4d4-7b46-45ed-a544-e574b4549a5a,MC26207,Evolutionary Biology,N/A,N/A,True
+f8771557-d7c8-4510-931c-4523b4cb4069,MC26207,Evolutionary Biology,N/A,N/A,True
+968cd44a-cd3f-4bd5-995e-43175d6d1ba3,MC26207,Data Interact & Visualization,N/A,N/A,True
+b054b4a7-5523-4bf4-b9c8-e6293d0ef694,MC26207,Making Sense of a Data-Society,N/A,N/A,True
+b3bc067f-0e68-4cdf-9c5d-6f29dda6abb0,MC26207,Writing II:Fnd Rsrch Writ,N/A,N/A,True
+5bc22a55-c2ca-46f2-a074-59dad0a01870,MC26207,Writing II:Fnd Rsrch Writ,N/A,N/A,True
+6a5396fe-f49e-4e61-ad84-eccddc153a93,MC26207,Writing II:Fnd Rsrch Writ,N/A,N/A,True
+8f9a7878-7837-43dd-8301-f743e24ebe60,MC26207,Writing II:Comp Intl Stds,N/A,N/A,True
+9994f183-c9e1-44db-b470-2d5494e25d67,MC26207,Skills for College Success II,N/A,N/A,True
+900d748b-7a3e-4473-9977-341d7d8b5a28,MC26207,Digital Marketing Strategy,N/A,N/A,True
+38f7b7da-198f-4de1-9bd1-17cad96cab8a,MC26207,Digital Marketing Strategy,N/A,N/A,True
+b7b57bb6-fbb1-4e84-a9a4-e8ae988b9512,MC26207,Optics,N/A,N/A,True
+8cc37313-428c-425a-8af0-3082f7ed50ff,MC26207,Workshop in Publication,N/A,N/A,True
+0ef1e03d-c630-47ab-baea-6c18f4e70b73,MC26207,Workshop in Publication,N/A,N/A,True
+6f9778c2-7dbf-4bac-bc14-4a714e44d637,MC26207,Workshop in Publication,N/A,N/A,True
+c10eca31-f8b0-4bb3-9969-7a0456d570fe,MC26312,Humanity & the Biological UnIv,N/A,N/A,True
+3da5f8fb-7344-46dd-9ee7-f49e109c7d20,MC26312,Statistics Com Sci,N/A,N/A,True
+a68d9622-a059-444e-9cc8-e267d0356d88,MC26312,Operating System Security,N/A,N/A,True
+7d454238-b772-4ee7-90c2-e628024383bf,MC26312,Operating System Security,N/A,N/A,True
+8f11e523-ef37-4fc8-8473-c9ef6dc1053f,MC26312,Big Data Analytics,N/A,N/A,True
+092488f8-2012-4697-af68-9f830cbbfd37,MC26312,Artificial Intelligence I,N/A,N/A,True
+afb9f00a-be81-4517-814b-9e88b15c867c,MC26312,Introduction to Big Data,N/A,N/A,True
+b4ecd9a6-5cb5-492c-9924-240ec50d7820,MC26312,Operating System Security,N/A,N/A,True
+85918cc9-ed9c-4289-aeec-d492d15f775a,MC26312,Finite Mathematics,N/A,N/A,True
+fe007a3d-ea2d-4c40-8364-3a32b57a6a18,MC26312,Calculus II,N/A,N/A,True
+348f8128-0922-4c56-a153-7bd3ead1e00e,MC26312,Humanity/Phys Un,N/A,N/A,True
+106fa282-178c-418e-8927-9242a566f33e,MC26313,Managerial Accounting,N/A,N/A,True
+bcc09732-1e47-4b96-ba4a-8c163e11524e,MC26313,Human Physiology,N/A,N/A,True
+ae74f655-e34d-4e69-a6ef-4987e7634e96,MC26313,Electronic Tech I,N/A,N/A,True
+d49e3ef1-e377-477e-be19-1233a8997d83,MC26313,Legal Environment of Business,N/A,N/A,True
+49747a0a-1769-4a7c-8eff-2841ae85ff75,MC26313,Calculus I,N/A,N/A,True
+f49fb4ce-e6a6-4337-9203-ab77de3af400,MC26313,Org Devpt & Behvrl,N/A,N/A,True
+1dc5da9d-ee5b-4851-88de-e297e883e492,MC26313,Strategic Marketing & Branding,N/A,N/A,True
+1234d2c3-e89e-43d2-a6d6-ef30b2403d79,MC26313,Marketing Research Insights,N/A,N/A,True
+c49a2cf4-be80-46b3-a4dc-88b18c78596c,MC26314,Arch Hist Sem,N/A,N/A,True
+f24304b4-3641-436b-be1d-5f571e60adb8,MC26314,Professional Practice I,N/A,N/A,True
+42c68955-8de1-40bd-a497-f67bf1763adc,MC26314,Professional Practice I,N/A,N/A,True
+915dfee6-8b61-448b-9d91-5a948250ea05,MC26314,Professional Practice I,N/A,N/A,True
+f32ecc31-1e27-4e02-9983-0a7ddb789971,MC26314,Making Sense of a Data-Society,N/A,N/A,True
+542d7b6c-398b-434c-bf5b-db8d1478f406,MC26314,Senior Proj in Interior Design,N/A,N/A,True
+8e1131e6-828f-4353-a7d0-7eed3cc409b2,MC26314,Principles of Economics I,N/A,N/A,True
+3308c59c-7ef0-4f80-8a5e-308d3c6a1a25,MC26314,Org Devpt & Behvrl,N/A,N/A,True
+ebd3247e-fe7b-4a8e-ad9b-9a61a7e8ab24,MC26314,Strategic Marketing & Branding,N/A,N/A,True
+fa1dcd3f-6722-4570-bbbc-76f25594c798,MC26314,Strategic Marketing & Branding,N/A,N/A,True
+59595255-b308-4366-aced-aa3b53a05900,MC26401,Design Theory: History/Context,N/A,N/A,True
+2e936e90-80fb-45f7-b0e1-f45650e25fae,MC26401,Working Drawings,N/A,N/A,True
+3d728772-80cb-4b3e-820a-afe2aba556bb,MC26401,Career Couns/Lifestyle Develop,N/A,N/A,True
+d194e96e-9fc2-411b-82a8-75298d0c2788,MC26401,Writing II:Comp Intl Stds,N/A,N/A,True
+68d20f3c-52d1-4c7f-a1e3-a70ffa2dd4ba,MC26401,Principles of Management,N/A,N/A,True
+87ffd036-9f18-477e-b144-e65b2b19500e,MC26401,Career Couns&Dev,N/A,N/A,True
+c6425852-cb51-43e9-9dff-f141da4e47b3,MC26401,Comm & Interv Tech,N/A,N/A,True
+a8ce8456-eb50-4db0-8e19-170a7c2cd170,MC26408,Global Hist of Architecture I,N/A,N/A,True
+1d99dd71-dd18-4db5-8a4b-570312a2abfa,MC26408,Making Sense of a Data-Society,N/A,N/A,True
+450d9613-6971-43b7-828c-401a47a2dd5d,MC26408,International Business,N/A,N/A,True
+6c73d0d1-811e-488a-9781-5449abc42d2c,MC26408,Strategic Leadership Capstone,N/A,N/A,True
+085b7ec5-a9e0-4c09-888a-f097893c734b,MC26408,Introductory Physics II,N/A,N/A,True
+650245e1-e6c8-455a-b0f1-d05b3dbf52b2,MC26408,Comm & Interv Tech,N/A,N/A,True
+5e1a162e-f50a-475b-8956-7a039cb41d30,MC26409,Environmental Systems II,N/A,N/A,True
+933c9016-aa90-42dd-8b30-c0a3a1a3b48f,MC26409,Biostatistics,N/A,N/A,True
+3fa0525d-5bbc-4fff-8717-58bd42a4f34d,MC26409,Computer Programming I,N/A,N/A,True
+33cef571-db4f-48ec-bfa6-3b2de96651da,MC26409,Computer Programming I,N/A,N/A,True
+b7baef23-ee8e-4471-9842-23ddcc8b7c09,MC26409,Computer Networks,N/A,N/A,True
+6adf5f7e-6506-4b9a-ab7d-4994db0c599d,MC26409,Data Visualization,N/A,N/A,True
+cb95fb7f-783d-4b92-bcbe-acc2aed3127f,MC26409,Computer Networks,N/A,N/A,True
+75e669ca-a38f-4468-80e2-02912c3b5a5a,MC26409,Strategic Marketing & Branding,N/A,N/A,True
+dbb5b48f-6364-4510-bb33-ecb83e80cdbf,MC26409,International Marketing,N/A,N/A,True
+af6748a5-479d-42ac-a2fc-0ea9ad606903,MC26410,Visualization II,N/A,N/A,True
+684c9eb2-824b-44fd-8a37-b0de7e92c019,MC26410,Managerial Accounting,N/A,N/A,True
+dc1ffcab-47a5-4e8b-ae09-671dcefbf052,MC26410,Statics & Strength of Material,N/A,N/A,True
+c0f99e1c-53a9-497a-9e10-077631e78e28,MC26410,Advanced Structural Concepts I,N/A,N/A,True
+d5b4e09c-50b3-4354-80a5-bf51d187e921,MC26502,Accounting I,N/A,N/A,True
+e931379c-e21a-4f5c-bc3f-6017f61af6cc,MC26502,Managerial Accounting,N/A,N/A,True
+a2a1e247-043c-4840-9a93-1142f71d2555,MC26502,Managerial Accounting,N/A,N/A,True
+57048099-84c2-4d70-89c7-021172c41485,MC26502,Global Hist of Architecture I,N/A,N/A,True
+e71c27bc-4bd1-4e9c-86e6-06c323649d5e,MC26502,Managerial Econ for Dec Making,N/A,N/A,True
+51aa6104-c49e-42c4-a6fa-b3b7ba462c3c,MC26502,Managerial Econ for Dec Making,N/A,N/A,True
+c639e239-39e4-4b19-b22a-e107d88683ed,MC26502,Corporation Finance,N/A,N/A,True
+58030e64-80a2-4137-94b5-2d2614f4d6f7,MC26502,Financial Management,N/A,N/A,True
+2f55aaa0-f9c0-4f83-b7e7-28ab15e3df70,MC26502,Fundamentals of Precalculus II,N/A,N/A,True
+ab57b2cf-397a-4535-ba19-bba589a9e72c,MC26502,Org Devpt & Behvrl,N/A,N/A,True
+629c34dc-e0fa-4396-b7cc-aeafa41e7826,MC26504,Managerial Accounting,N/A,N/A,True
+d5b1dd78-4048-472d-9818-8f60e3aea6aa,MC26504,Business Analytics & Decision,N/A,N/A,True
+e67cffb4-cc74-405c-b767-d4064f36b872,MC26504,Financial Management,N/A,N/A,True
+3e43f80f-3f20-4966-99ee-fbfaef82b48b,MC26504,ERP Systems,N/A,N/A,True
+81ea8f8a-e979-452d-99e6-48249e5ea3c6,MC26504,Info Systems & Resource Mgmt,N/A,N/A,True
+c344daa4-2fc6-44c9-95a7-88d6167a52ac,MC26504,Production & Operations Mgmt,N/A,N/A,True
+392df161-d2f4-4c14-a3b9-697275d1da78,MC26504,Management Science,N/A,N/A,True
+5b8d0a0e-ab58-4099-a369-e21e6ac48fb0,MC26504,Business Statistics,N/A,N/A,True
+f7aa3926-9066-4ebf-b26a-08116f04a819,MC26504,Prod Op Mgmt,N/A,N/A,True
+c7f8318d-b4f9-4619-9761-c5b5f557bacd,MC26504,Decision Models,N/A,N/A,True
+cbdf7742-91a2-4ebf-8159-c49b79cbd623,MC26504,Operations & Supply Chain Mgmt,N/A,N/A,True
+a1ed1bf1-561c-4eb2-bb6f-e84ee0fa9ab2,MC26504,Operations & Supply Chain Mgmt,N/A,N/A,True
+fa5a61de-4821-4220-8184-c5893123aa34,MC61603,Bioinformatics & Funct Genomic,N/A,N/A,True
+369d6bad-a9f1-415d-bda4-6f72814b5c4f,MC61623,General Chemistry II,N/A,N/A,True
+996016c3-1d41-4d9a-b1f2-ec6906916b89,MC61623,Writing I:Found Coll Comp,N/A,N/A,True
+51ac68e9-0065-47b1-a69b-8a3decedd7af,MC61623,Writing II:Fnd Rsrch Writ,N/A,N/A,True
+b3037148-1a87-472c-a29d-ae5f5cec21d0,MC61623,Writing II:Fnd Rsrch Writ,N/A,N/A,True
+20efde6c-f58b-4b4d-b35f-42fd2a0f12b7,MC61623,Core Seminar in Literature,N/A,N/A,True
+dfaf71b3-25c0-4746-a315-f9fe9c26f4f6,MC61623,The Literature of Initiation,N/A,N/A,True
+a1c37b4c-c80d-4318-b711-9a776d85381b,MC61623,Fundamentals of Precalculus II,N/A,N/A,True
+5bce549e-6279-44b5-8278-10ac2840df10,MC61623,Fundamentals of Precalculus II,N/A,N/A,True
+4086a783-fd61-4e63-b9e9-0d434193623a,MC61624,General Biology II,N/A,N/A,True
+80bbaa6a-fd60-49fc-a41e-1ab6d46fbec1,MC61624,Computer Org and Architecture,N/A,N/A,True
+348f2357-5858-40e7-8386-fd241efaa925,MC61624,Computer Org and Architecture,N/A,N/A,True
+2f3670d3-8a8a-4b9f-a817-d8ffd946c4b4,MC61624,Computer Programming II,N/A,N/A,True
+f6705d36-552c-4b8c-b851-b4dae73ff21d,MC61624,Computer Programming II,N/A,N/A,True
+fb829e92-8aa7-48ea-9fd1-b9df198e2648,MC61624,Elements of Discrete Structure,N/A,N/A,True
+51ac721f-0485-4271-9692-485cc702e0dd,MC61624,Elements of Discrete Structure,N/A,N/A,True
+9f738a7d-fa60-49b3-9547-ce24236859f1,MC61624,Data Structures,N/A,N/A,True
+fb5f49ba-b559-4c90-a893-e7e03a2dafe1,MC61624,Data Structures,N/A,N/A,True
+eaa2ed40-c9e9-4dbc-8ccb-f24398ccecdb,MC61624,Operating Systems,N/A,N/A,True
+8f7eed6f-14ed-4655-b428-8752c603e3d7,MC61624,Operating Systems,N/A,N/A,True
+303d5fc4-adb9-491b-bab5-61d96caea638,MC61624,Computer Networks,N/A,N/A,True
+16457808-67b0-4a85-8a28-cc0a687c5646,MC61624,Big Data Mgmt,N/A,N/A,True
+d1075464-2229-4018-a037-66d99789bf39,MC61624,Organ and Arch,N/A,N/A,True
+7b4d7bea-e0b8-407b-8015-5e789a2d8a6b,MC61624,Computer Programming II,N/A,N/A,True
+796984c8-6681-42a4-8a9b-33364acf193d,MC61624,Data Structures,N/A,N/A,True
+03f84230-6b34-48f7-bf66-7c9cbe240c91,MC61624,Operating Systems,N/A,N/A,True
+de328bd8-a958-4076-8751-081d47a2fd7a,MC61624,Big Data Analytics,N/A,N/A,True
+a4a364a3-9e3a-4b04-8efe-c51524717333,MC61624,Software Engineering,N/A,N/A,True
+66d07638-5755-4c58-9cd5-360f305394bf,MC61624,Database Systems,N/A,N/A,True
+899b4ed8-fde0-4fa6-b6b2-579223e95de6,MC61624,Introduction to Big Data,N/A,N/A,True
+26fde03b-b43c-4ce6-a0a2-c92b88acf013,MC61624,Electrical Technology II,N/A,N/A,True
+2a39812a-0ac2-4fd8-8018-ff5a7e326a64,MC61624,Calculus II,N/A,N/A,True
+7d098839-2fba-4439-8770-243652a8ce89,MC61624,Linear Algebra,N/A,N/A,True
+ef9ec95d-8257-4a76-b33d-dc0f5fe7b570,MC61624,General Physics for Pre-Med II,N/A,N/A,True
+c36333a1-29a9-4dcb-802c-0ccb321a5e8b,MC61624,Introduction to Psychology,N/A,N/A,True
+f35d1c1a-4e64-4af3-a2c1-624eb41e5954,MC61721,Digital Logic Design Fund,N/A,N/A,True
+38623a7e-9996-4044-afce-41818ace9110,MC61721,Operating System Security,N/A,N/A,True
+7cf0c69e-4279-4ea2-9720-e0e9b2affc65,MC61721,Operating System Security,N/A,N/A,True
+9a95be62-8115-48d9-b0e0-d4b88b6edb22,MC61721,Algorithm Concepts,N/A,N/A,True
+5d259104-5a4f-4f33-9b2b-dca498d0abc8,MC61721,Programming for Data Science,N/A,N/A,True
+a1e56311-e7d7-4d61-bdd0-e7253f8983e7,MC61721,Principles of Economics II,N/A,N/A,True
+cb1e7c45-0239-43d3-a160-647f70480081,MC61721,Fundamentals of Digital Logic,N/A,N/A,True
+33368563-0001-4cba-8397-88dbca5cf232,MC61721,Fundamentals of Digital Logic,N/A,N/A,True
+f545fc80-34de-4914-aeb9-85a38411d717,MC61721,Gender Identity,N/A,N/A,True
+55098409-7ec3-4bfc-b916-7ea89509de7b,MC61721,Intrusion Detect & Hacker Exp,N/A,N/A,True
+b4369904-2935-4e9e-b3e7-bff902e5844b,MC61721,Internet Programming I,N/A,N/A,True
+624f0fff-faf8-49f0-ad47-4565a0d071c2,MC61721,Operating System Security,N/A,N/A,True
+5bc84c82-4826-41e3-b2a4-37bcb5b8731a,MC61721,Calculus II,N/A,N/A,True
+20e05428-8b9a-4d8f-81f3-bd171e25cfaa,MC61721,Calculus II,N/A,N/A,True
+670c77b8-1ca5-4bbc-9955-4ad3bed08e36,MC61721,Health Psychology,N/A,N/A,True
+7849724c-4892-4209-9cc3-e32e36f450ae,MC61722,History and Theory of the City,N/A,N/A,True
+43e575d4-c0eb-4e98-8181-061ff764640b,MC61722,Process Control Biotechnology,N/A,N/A,True
+33029084-f812-4966-ad60-39a8764cd653,MC61722,Electronics II,N/A,N/A,True
+1f3340d1-750f-4d94-85af-7cf2807f49fc,MC61722,Control Systems,N/A,N/A,True
+3a1b3169-6442-4efc-b312-40a9c557c71a,MC61722,Control Systems,N/A,N/A,True
+33b045cb-d47a-4b77-847d-fdd97245628f,MC61722,Radar System Analysis,N/A,N/A,True
+04b1e4f7-a23b-4815-9666-90c75525595f,MC61722,Digital Communications,N/A,N/A,True
+5db6b5b1-77e9-48f8-a556-989430786990,MC61722,Writing I:Found Coll Comp,N/A,N/A,True
+3028b737-a9a8-44c4-a29b-46e0a714b485,MC61722,Contemporary Poetry,N/A,N/A,True
+abec9d7c-97bc-4fec-bb7d-bd8e36c86e66,MC61722,Advanced Calculus,N/A,N/A,True
+4078af6a-e1b8-457c-8e2d-9d86457cfa89,MC61722,Intro Res Methds,N/A,N/A,True
+1567ab93-030d-403a-bbcf-35a38b0447ae,MC61722,Bas Wrt/Rdg Intl,N/A,N/A,True
+920fb7db-9611-49d8-b673-cbf45ed595ea,MC61722,Bas Wrt/Rdg Intl,N/A,N/A,True
+a88c2955-0417-47f1-b4ae-4dab2735aebf,MC61723,Computer Organization,N/A,N/A,True
+7b29b928-0105-4999-a52e-12a99d2c7b59,MC61723,Digital Logic Design Fund,N/A,N/A,True
+76bf1628-a00b-4029-bb6c-5bf5e193fd79,MC61723,Computer Programming II,N/A,N/A,True
+cf6e10a5-2ddd-4d76-8d31-72ce26119b14,MC61723,Computer Programming II,N/A,N/A,True
+408b7176-af19-4973-a547-9a1b5113fe2e,MC61723,Computer Programming II,N/A,N/A,True
+d9c996fa-564d-4d8d-abcb-3d1223346c59,MC61723,Database Management,N/A,N/A,True
+dd205305-faa6-4066-894d-5ddb16e97654,MC61723,Theory of Computation,N/A,N/A,True
+54814775-7764-4104-b66e-af22427ab447,MC61723,Programming Language Concepts,N/A,N/A,True
+b17dbc1d-c1aa-4185-9067-c3c6dcb64ef3,MC61723,Intro to Software Engineering,N/A,N/A,True
+fb601036-0314-4f2f-ba6b-66564262342f,MC61723,Introduction to Data Mining,N/A,N/A,True
+b5b278d1-40ff-4be3-ab69-afdb4a69d44e,MC61723,Information Retrieval,N/A,N/A,True
+23fc1692-b443-4953-9da7-2daa2d24c172,MC61723,Computer Programming II,N/A,N/A,True
+61441aeb-3da8-4d10-bdb9-d89896be5098,MC61723,Programming Languages,N/A,N/A,True
+b9bc53f1-9480-4fad-8f83-2e79b1a0132b,MC61723,Information Retrieval,N/A,N/A,True
+55a6fe04-8d7f-4ef3-9eae-244a48774e7c,MC61723,Introduction to Data Mining,N/A,N/A,True
+24e0658b-374d-4866-b2c4-7d516bfe8ec7,MC61723,Special Topics,N/A,N/A,True
+954d68eb-2489-415a-805c-411c0e5bc957,MC61723,Machine Learning,N/A,N/A,True
+b9cb1f19-c5f2-4ebd-b5cf-6f8ea7fd2339,MC61723,Fundamentals of Digital Logic,N/A,N/A,True
+f291963f-c008-4c00-b73a-11325aa5da4f,MC61723,Fundamentals of Digital Logic,N/A,N/A,True
+0ce52422-c36f-4587-b3e7-d4ef3be6623e,MC61723,Special Topics,N/A,N/A,True
+7b244290-814c-4bff-a714-919be46be16d,MC61723,"Computer, Internet and Society",N/A,N/A,True
+49cd4067-7950-4f82-a286-0290aa88d369,MC61723,Technology and Global Issues,N/A,N/A,True
+687754d0-3db7-4018-9376-1f8c92aa4c0d,MC61723,Secure Software Engineering,N/A,N/A,True
+dd96e3c2-27d2-4d7f-b7a3-5ddefcc21f87,MC61723,Database Systems,N/A,N/A,True
+29d26e00-c97a-4c98-afd3-e0e577197ee2,MC61723,Calculus I,N/A,N/A,True
+ee5c9e27-92a4-4cb2-a154-3d3c4df2e278,MC61812,Introductory Physics II,N/A,N/A,True
+54e34001-2ee6-4baa-9278-0d225ddbb504,MC61812,General Physics I,N/A,N/A,True
+1825cc73-45e7-477e-9a97-a7cea7997097,MC61812,General Physics I,N/A,N/A,True
+59e3649a-02d9-401b-8e3c-bc2e9d19adaf,MC61812,General Physics I,N/A,N/A,True
+8b42af59-83ec-42f1-beda-1d003b93ffc9,MC61812,General Physics II,N/A,N/A,True
+15de766a-74d1-4ba8-a557-f58e0687a46d,MC61812,General Physics II,N/A,N/A,True
+ade0b7ed-1016-4341-abbc-4521117308b0,MC61812,General Physics II,N/A,N/A,True
+fa94ce0c-c2de-495c-b08f-5497f1d0b1d6,MC61812,General Physics for Pre-Med II,N/A,N/A,True
+42373e39-25b7-449f-8352-9de87890e180,MC61812,Intro to Modern Physics Lab,N/A,N/A,True
+d8d88dff-f9e3-4c4d-9ab1-4e5486f5a733,MC61820,General Biology I,N/A,N/A,True
+7e67bda9-34c8-418b-a26b-25257bd08cbc,MC61820,Computer Programming I,N/A,N/A,True
+52814bcf-ab88-472c-a1a8-d0d92da3d301,MC61820,Computer Programming I,N/A,N/A,True
+68ef5b9b-9dc3-4a5d-8c23-2971ba8d5fcb,MC61820,Computer Programming I,N/A,N/A,True
+137cd1aa-9b8d-40e2-8ed2-1bd2d17987ee,MC61820,Computer Programming I,N/A,N/A,True
+a222ec8b-c42b-4ca0-b814-91cbfe308f7b,MC61820,Computer Programming II,N/A,N/A,True
+241b69bf-5fcb-4f85-85f8-f046e5bf3677,MC61820,Artificial Intelligence I,N/A,N/A,True
+9b779927-1e14-4552-84ed-0c507b92913f,MC61820,Principles of Economics I,N/A,N/A,True
+8c7b27b8-545b-4577-b1ab-342e8ae631ff,MC61820,Intro to Mathematics Concepts,N/A,N/A,True
+6f016a86-c24c-474b-b056-5cb637783d50,MC61820,Differential Equations,N/A,N/A,True
+da22dedc-90b0-42e0-9a87-be9dd7c74def,MC61820,Principles of Management,N/A,N/A,True
+8769ec53-771c-47a7-aef2-e5349be5a1b3,MC61820,General Physics I,N/A,N/A,True
+78217e8d-0371-4464-bf67-6ec61143abcb,MC61820,General Physics II,N/A,N/A,True
+ead17a63-dbb4-4200-9977-1d7288fd45ff,MC61821,Global Hist of Architecture I,N/A,N/A,True
+d5d59510-39c9-413a-a171-36bc674fb6f9,MC61821,Statics & Strength of Material,N/A,N/A,True
+c3b692b6-76f0-4409-b750-0e1d8d8540fd,MC61821,History and Theory of the City,N/A,N/A,True
+29e66d94-7f01-492e-b238-e473617e60aa,MC61821,Cisco Academy Level I,N/A,N/A,True
+7cd80732-149e-4638-83b3-e3077ad0cfd7,MC61821,Info System Sec Engin & Admin,N/A,N/A,True
+7aefa35f-1c39-4508-8485-40daffb1ad97,MC61821,Adv Network & Intern Security,N/A,N/A,True
+9b5f2250-0dbc-44c6-af42-3b87a4e10759,MC61821,Inf. Sys. Sec. Eng. Admin.,N/A,N/A,True
+af523625-973c-41e5-993f-a29c0b5d4c51,MC61821,Writing I:Comp Intl Stds,N/A,N/A,True
+4d72e4a1-9137-4e39-9d1b-a3d722744b28,MC61821,Writing II:Fnd Rsrch Writ,N/A,N/A,True
+4a87dd21-89d1-4f0f-9ca8-30d7677dc829,MC61821,Writing II:Fnd Rsrch Writ,N/A,N/A,True
+debe658b-3182-424c-af51-6101d807f38e,MC61821,Writing II:Comp Intl Stds,N/A,N/A,True
+a5d6167a-92fd-4c5f-9406-bfad6b413569,MC61821,Seminar in Eco Sustain,N/A,N/A,True
+8f478534-6ae2-4801-8a51-82d5477572f2,MC61821,Adv Netwk & Internet Security,N/A,N/A,True
+ca253435-b154-4bb7-93d9-aa2eeb60597b,MC61821,Cisco Academy Level 1,N/A,N/A,True
+b8b2a0c8-f8e5-4c67-9ca5-88e08712114f,MC61821,Adv Netwk & Internet Security,N/A,N/A,True
+a527d679-8403-405c-a2d6-35028348d81c,MC61821,Linear Algebra,N/A,N/A,True
+bca5a054-8988-464b-9716-b26d6c0a40f0,MC61821,Physics of Sports,N/A,N/A,True
+59f04708-a55f-4369-b708-36a6a57a3e7c,MC61821,Introduction to Modern Physics,N/A,N/A,True
+71856a30-c3b5-4d5b-8598-e0deaa5ca40f,MC61822,Engineering Chemistry I,N/A,N/A,True
+2b938508-3a49-4c94-9f21-a87edfccc48b,MC61822,Digital Logic Design Fund,N/A,N/A,True
+b9819daf-a569-4a13-8c3a-ce1eda027369,MC61822,Computer Org and Architecture,N/A,N/A,True
+39da2c55-ea64-46fe-b036-22154ff75ee1,MC61822,Computer Org and Architecture,N/A,N/A,True
+fae8d037-93a6-4e5b-bdd1-f4552f3b29d0,MC61822,Elements of Discrete Structure,N/A,N/A,True
+1747d8a0-94cf-4cf4-83a8-758cc6dc59fe,MC61822,Elements of Discrete Structure,N/A,N/A,True
+a4e00b57-4c79-4cc6-aac8-bb1ef2e6f7aa,MC61822,Data Structures,N/A,N/A,True
+d127b234-b495-4776-a3d1-7a1396e0e641,MC61822,Data Structures,N/A,N/A,True
+eed8865d-287b-4441-9ca7-bd562c87c7a0,MC61822,Operating Systems,N/A,N/A,True
+befb3d21-b6b9-4c03-a9ba-0701c26145cf,MC61822,Operating Systems,N/A,N/A,True
+74c6cac2-bdaa-4486-b04a-94e219123afe,MC61822,Des Anal Algor,N/A,N/A,True
+9e0dda09-908c-4bec-9fad-9746aaa702a7,MC61822,Organ and Arch,N/A,N/A,True
+6c607ce6-6317-4955-b995-3fe0036358ee,MC61822,Data Structures,N/A,N/A,True
+27c535fb-e33b-4ca2-bd46-51cf61b10e8d,MC61822,Operating Systems,N/A,N/A,True
+2f63ef88-e61e-4c04-b181-2aa83610993d,MC61822,Statistics for Data Science,N/A,N/A,True
+007114b3-aa99-4767-a7ff-6847333efbb2,MC61822,Fundamentals of Digital Logic,N/A,N/A,True
+11fdcc3e-e4c4-451d-a28e-9860dfba869f,MC61822,Calculus III,N/A,N/A,True
+d58f4527-9ed2-431b-a8cb-15889076dfd7,MC61822,General Physics II,N/A,N/A,True
+e4723d47-4ef5-4b79-a533-35d2922b539b,MC61822,Career Development in Psych,N/A,N/A,True
+7ed47d87-13dc-4b54-b2eb-3b9391a71122,MC61919,Visualization II,N/A,N/A,True
+45c3c406-eb52-4878-97b8-d34c845ef7e7,MC61919,Visual Comm & Emerging Tech,N/A,N/A,True
+5dd9d46b-7568-42da-8df1-4ba70588796b,MC61919,Computer Graphics II,N/A,N/A,True
+8fe6fb00-e211-4175-9948-f48ad505816e,MC61919,Digital Compositing,N/A,N/A,True
+553c5dfc-57c9-4d3c-b9d7-661630962534,MC61919,Thesis Proposal,N/A,N/A,True
+5aa37855-4eda-4794-99dc-ece7713764d7,MC61919,Thesis Production II,N/A,N/A,True
+0161fc3d-f5aa-48c3-9f53-e780f385021b,MC61919,Form and Space,N/A,N/A,True
+0c0a2f13-6e83-47a9-a58a-0817caf41099,MC61919,Dig Comp & Visl Effect,N/A,N/A,True
+26f788f0-1a19-4d00-8ec2-44bc47ebffee,MC61919,Human Computer Interaction Dsg,N/A,N/A,True
+5924893e-876d-4f2e-9ce8-3d22ffec4ec1,MC61919,UX/UI Design for VR/AR/MR,N/A,N/A,True
+c8d2a4c4-bd0c-4ece-a706-2c631ac26f00,MC61919,Unity Design,N/A,N/A,True
+8777a2da-f88b-4567-b1f6-5508bcbff5c1,MC61919,UX Research & Data Analytics,N/A,N/A,True
+3931dfd6-3a5c-436b-8cb8-22537f2e4a31,MC61919,Technical Artist Studio,N/A,N/A,True
+c6f69286-8e78-4b3c-aba8-98855bf73de0,MC61919,Emerging Tech for Games,N/A,N/A,True
+206a2846-2d88-4032-84f9-ed5256590169,MC61919,Drawing II,N/A,N/A,True
+dac834d7-5952-4b8f-8570-954ffc2587cb,MC61919,Concept & Visual Storytelling,N/A,N/A,True
+5189d5a5-68aa-4d81-b578-0290aa7704de,MC61922,Computer Graphics II,N/A,N/A,True
+222cffe1-a768-4ffc-a01f-5f18e6dbbe2a,MC61922,Form and Space,N/A,N/A,True
+e0097293-523e-409a-93da-eed34a7ad2d0,MC61922,Visual Identity,N/A,N/A,True
+0c16afce-b4c3-4e3a-9f4c-fd425aa6a48e,MC61922,Web Design,N/A,N/A,True
+4e335473-301b-4b56-b61f-ce1f25ada9f9,MC61922,Illustration,N/A,N/A,True
+f38403e7-b914-48a3-8249-ba7e08c80ad9,MC61922,Editorial Design,N/A,N/A,True
+2b4851da-183e-492d-8e8f-c4cfa13a1c02,MC61922,Portfolio,N/A,N/A,True
+dbe03f7d-21af-41aa-a4cd-e2747744e473,MC61922,Branding Design and Strategy,N/A,N/A,True
+40a07a2c-7e04-413b-97f4-81caf9ffef97,MC61922,User Interface & Prototyping,N/A,N/A,True
+4959a624-7c3c-4c6e-99df-51be89f4559b,MC61922,UX/UI Design for VR/AR/MR,N/A,N/A,True
+2cbeaf51-18d2-4b65-a090-9d542f534697,MC61922,Web & Mobile Development,N/A,N/A,True
+3b613b6e-ef72-4a8b-b4d4-316e9d2367fe,MC61922,Web & Mobile Development,N/A,N/A,True
+fa5141d4-2b63-4ad0-9c44-7c2645dda5ce,MC61922,Drawing II,N/A,N/A,True
+6198bc07-2f24-43d8-a279-fbec22fd239d,MC61923,Web Design,N/A,N/A,True
+67310a17-1ee3-40f8-8396-ffee7b6b3d28,MC61923,Info Dsgn & Data Visualization,N/A,N/A,True
+8a2a2222-e9d8-4829-a435-70e3b545315d,MC61923,Adv Research: Usability & Test,N/A,N/A,True
+3eb307de-60a0-4756-9d63-752fc6e4ca51,MC61923,Sculpture I,N/A,N/A,True
+d0f60895-1f11-45e7-920e-163d742193a1,MC61923,Sculpture II,N/A,N/A,True
+5fff41c0-c343-45b2-ae13-f10fdfc978f8,MC61923,Thesis II: Production,N/A,N/A,True
+c201c42c-2d22-4405-a040-1933a86da923,MC61924,Structural Design,N/A,N/A,True
+37014862-4a94-40e2-b185-753e37e2aba6,MC61924,Introduction to CS and AI,N/A,N/A,True
+d6ccc871-26f5-4884-9d43-a6f280c435a1,MC61925,Thesis Production II,N/A,N/A,True
+9e23133c-a47c-4068-ad0b-64ef0c6822df,MC61925,Portfolio,N/A,N/A,True
+1638fd21-4aad-4e9b-8a29-dedd86c3ae7f,MC61925,Portfolio,N/A,N/A,True
+e396101b-8251-4e47-8dd9-7f5081dc43ee,MC61925,Environmental Graphic Design,N/A,N/A,True
+e200e7fe-27e8-46db-bace-d04a649f5e4d,MC61925,Advertising Design,N/A,N/A,True
+e394e0a0-e951-473b-b2c3-23fe7a82c982,MC61925,UX Design Foundations,N/A,N/A,True
+f1d5d309-2f24-4b1a-93b4-2521a858828a,MC61925,Human Computer Interaction Dsg,N/A,N/A,True
+474801c8-3c63-4e60-96a8-ff2ff9b1be1c,MC61925,Info Arch & Content Strategy,N/A,N/A,True
+4e124075-07e3-472d-a167-2ba0cea3dd56,MC61925,Web & Mobile Development,N/A,N/A,True
+c92932f6-178e-40e8-bf1f-9d73e3cf57dd,MC61925,Master Project,N/A,N/A,True
+55ad79ef-3a6e-4965-8be1-658e5855b2c4,MC61925,Master Project,N/A,N/A,True
+94dad44a-4d44-4ec4-a730-f396b51c7123,MC611026,Game Theory & History,N/A,N/A,True
+f7daf855-35a3-4a07-8813-1e2ac45c56c4,MC611026,Game Design II,N/A,N/A,True
+1c450ede-944d-4f15-948b-f03634428511,MC611026,Portfolio,N/A,N/A,True
+022f3150-70e5-4ec6-ab94-cee550f45a24,MC611026,Info Dsgn & Data Visualization,N/A,N/A,True
+730fbc69-eff5-4bf5-b377-6dad6856206d,MC611026,Advertising Design,N/A,N/A,True
+7945f9da-f34c-4dfc-a80a-98fc11065e9d,MC611026,UX Design Foundations,N/A,N/A,True
+a662b015-e5a6-41d6-a472-38c14c8eedc3,MC611026,Unity Design,N/A,N/A,True
+a06bd6d1-4c5d-4d97-be0f-71dd898960a5,MC611026,Master Project,N/A,N/A,True
+4d5ee488-fb52-4ad5-81ec-702050807f94,MC611026,Technical Artist Studio,N/A,N/A,True
+6a4cc47e-ec05-43bd-976e-356f7511a714,MC611029,Arch Hist Sem,N/A,N/A,True
+315a3523-d592-4803-9233-598366d5ae19,MC611029,Health and Design Studio 2,N/A,N/A,True
+cd605cfd-c9aa-4b06-a102-2ddebe1a1f34,MC611118,Risk Management Integrated Sem,N/A,N/A,True
+cc2a043e-8533-4bda-b078-cf6585dc8440,MC611118,Insurance and Risk Management,N/A,N/A,True
+c11a08a9-f657-4aa0-ae13-74f3729fbea1,MC611119,Osteo Prin/Prac,N/A,N/A,True
+b6a7936c-551c-4280-bd0c-f557f90fcb39,MC611119,Real Analysis,N/A,N/A,True

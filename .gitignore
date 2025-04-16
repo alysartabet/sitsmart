@@ -1,4 +1,9 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+# Virtual Environments
+backend/venv/
+
+# Python Cache Files
+backend/app/__pycache__/
+backend/__pycache__/# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
 # dependencies
 node_modules/
