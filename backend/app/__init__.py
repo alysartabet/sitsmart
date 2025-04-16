@@ -1,4 +1,6 @@
 # Initializes the Flask application (imports the Config class from config.py)
+# Run this before starting pip install -r /path/to/requirements.txt
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
