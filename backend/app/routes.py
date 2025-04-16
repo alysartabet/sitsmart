@@ -1,6 +1,5 @@
 # Displays the API routes where you can view all the tables in the DB
 from flask import Blueprint, request, jsonify
-from . import db
 from .models import *
 from dotenv import load_dotenv
 from urllib.parse import urlparse
