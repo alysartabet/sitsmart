@@ -26,6 +26,7 @@ export default function Authentication({ navigation }) {
     setPasswordVisible((prev) => !prev);
   const [isSignIn, setIsSignIn] = useState(false);
   const slideAnim = useRef(new Animated.Value(0)).current;
+  const scrollRef = useRef(null);
 
   useEffect(() => {
     Animated.timing(slideAnim, {
@@ -35,6 +36,16 @@ export default function Authentication({ navigation }) {
     }).start();
   }, [isSignUp]);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (scrollRef.current) {
+        scrollRef.current.scrollTo({ y: -10, x: 100, animated: true }); 
+      }
+    }, 100); 
+  
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <KeyboardAvoidingView
     style={styles.container}
@@ -42,6 +53,7 @@ export default function Authentication({ navigation }) {
     keyboardVerticalOffset={60}
     >
         <ScrollView
+        ref = {scrollRef}
         contentContainerStyle={styles.scrollContent}
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
@@ -88,7 +100,9 @@ export default function Authentication({ navigation }) {
                     <Switch value={rememberMe} onValueChange={toggleRemember} trackColor={{ false: "#ccc", true: "#4f6df5" }} thumbColor={rememberMe ? "#fff" : "#f4f3f4"} />
                     <Text style={styles.rememberText}>Remember Me</Text>
                     </View>
-                    <TouchableOpacity><Text style={styles.forgot}>Forgot Password?</Text></TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate("ResetPassword")}>
+                        <Text style={styles.forgot}>Forgot Password?</Text>
+                    </TouchableOpacity>
                 </View>
 
                 {/* Sign In Button */}

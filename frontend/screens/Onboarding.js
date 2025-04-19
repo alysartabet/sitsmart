@@ -46,14 +46,6 @@ export default function Onboarding({ navigation }) {
     setCurrentIndex(index);
   };
 
-  const handleNext = () => {
-    if (currentIndex < slides.length - 1) {
-      flatListRef.current.scrollToIndex({ index: currentIndex + 1 });
-    } else {
-      navigation.navigate("Splash"); //replace with Home
-    }
-  };
-
   const renderItem = ({ item }) => (
     <View style={styles.slide}>
       <Image source={item.image} style={styles.illustration} />
