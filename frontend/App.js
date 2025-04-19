@@ -11,6 +11,8 @@ import Home from "./screens/Home";
 import Search from "./screens/Search";
 import Calendar from "./screens/Calendar";
 import Notifications from "./screens/Notifications";
+import Profile from "./screens/Profile";
+import Preferences from "./screens/Preferences";
 
 const Stack = createNativeStackNavigator();
 
@@ -42,6 +44,8 @@ export default function App() {
         <Stack.Screen name="Search" component={Search} />
         <Stack.Screen name="Calendar" component={Calendar} />
         <Stack.Screen name="Notifications" component={Notifications} />
+        <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="Preferences" component={Preferences} />
       </Stack.Navigator>
     </NavigationContainer>
   );
