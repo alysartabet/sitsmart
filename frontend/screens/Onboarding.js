@@ -7,7 +7,7 @@ const slides = [
     image: require("../assets/images/onboarding1.png"),
     caption: (
       <>
-        <Text style={{ fontFamily: "Gilroy-Regular" }}>Book the </Text>
+        <Text style={{ fontFamily: "Gilroy-Regular" }}>Find the </Text>
         <Text style={{ fontFamily: "Gilroy-ExtraBold" }}>right </Text>
         <Text style={{ fontFamily: "Gilroy-Regular" }}>
           classroom or study space —{"\n"}anytime, anywhere!
@@ -20,7 +20,7 @@ const slides = [
     image: require("../assets/images/onboarding2.png"),
     caption: (
       <Text style={{ fontFamily: "Gilroy-Regular" }}>
-        Built <Text style={{ fontFamily: "Gilroy-ExtraBold" }}>for your</Text> campus flow
+        Built for <Text style={{ fontFamily: "Gilroy-ExtraBold" }}>your</Text> campus flow
       </Text>
     ),
   },
@@ -89,10 +89,8 @@ export default function Onboarding({ navigation }) {
           ))}
         </View>
 
-        <TouchableOpacity style={styles.button} onPress={handleNext}>
-          <Text style={styles.buttonText}>
-            {currentIndex === slides.length - 1 ? "Get Started" : "Next"}
-          </Text>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Authentication")}>
+          <Text style={styles.buttonText}>Get Started</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -124,7 +122,7 @@ const styles = StyleSheet.create({
       flex: 2.5,
       justifyContent: 'flex-start',
       alignItems: "center",
-      paddingTop: 1,
+      paddingTop: 20,
     },
     bottomcontainer: {
       flex: 1,
@@ -134,8 +132,8 @@ const styles = StyleSheet.create({
       marginBottom: 100,
     },
     logo: {
-      width: 160,
-      height: 100,
+      width: 200,
+      height: 180,
       resizeMode: "contain",
       marginTop: 10,
     },
@@ -150,6 +148,7 @@ const styles = StyleSheet.create({
       height: height * 0.35,
       resizeMode: "contain",
       marginBottom: 0,
+      marginTop: 80,
     },
     caption: {
       fontSize: 16,

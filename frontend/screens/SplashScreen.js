@@ -24,14 +24,8 @@ export default function SplashScreen({navigation}) {
             useNativeDriver: true,
           }),
           Animated.timing(logoScale, {
-            toValue: 0.5,
+            toValue: 0.8,
             duration: 800,
-            useNativeDriver: true,
-          }),
-          Animated.timing(fadeOut, {
-            toValue: 0,
-            duration: 400,
-            delay: 800,
             useNativeDriver: true,
           }),
         ]).start(() => {
