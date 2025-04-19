@@ -9,7 +9,9 @@ export default function Home({navigation}) {
       {/* Greeting */}
       <View style={styles.header}>
         <Text style={styles.greeting}>Hello, John</Text>
-        <Image source={require("../assets/images/profileplaceholder.png")} style={styles.profileIcon} />
+        <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+            <Image source={require("../assets/images/profileplaceholder.png")} style={styles.profileIcon} />
+        </TouchableOpacity>
       </View>
 
       {/* Recent Booking */}

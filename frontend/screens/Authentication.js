@@ -51,6 +51,11 @@ export default function Authentication({ navigation }) {
     navigation.navigate("Home");
   };
 
+  const handleSignUp = () => {
+    // Add validation or API call here
+    navigation.navigate("Preferences");
+  };
+
   return (
     <KeyboardAvoidingView
     style={styles.container}
@@ -167,7 +172,7 @@ export default function Authentication({ navigation }) {
                 </View>
 
                 {/* Sign Up Button */}
-                <TouchableOpacity style={styles.signinBtn}>
+                <TouchableOpacity style={styles.signinBtn} onPress={handleSignUp}>
                     <Text style={styles.signinText}>SIGN UP</Text>
                     <Text style={styles.arrow}>➝</Text>
                 </TouchableOpacity>
