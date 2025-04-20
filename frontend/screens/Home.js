@@ -59,41 +59,11 @@ export default function Home({navigation}) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    padding: 24,
-    paddingTop: 60,
-  },
-  header: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  greeting: {
-    fontSize: 28,
-    fontFamily: "Gilroy-ExtraBold",
-  },
-  profileIcon: {
-    width: 32,
-    height: 32,
-    resizeMode: "contain",
-  },
-  sectionTitle: {
-    marginTop: 24,
-    fontSize: 18,
-    fontFamily: "Gilroy-ExtraBold",
-  },
   bookingCard: {
     backgroundColor: "#f9f9f9",
     borderRadius: 16,
     marginTop: 8,
     overflow: "hidden",
-  },
-  roomImage: {
-    width: "100%",
-    height: 120,
-    resizeMode: "cover",
   },
   bookingDetails: {
     padding: 12,
@@ -102,6 +72,61 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontFamily: "Gilroy-Regular",
     color: "#333",
+  },
+  bulbIcon: {
+    width: 24,
+    height: 24,
+    resizeMode: "contain",
+    marginRight: 12,
+  },
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    padding: 24,
+    paddingTop: 60,
+  },
+  greeting: {
+    fontSize: 28,
+    fontFamily: "Gilroy-ExtraBold",
+  },
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  navbar: {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 70,
+    backgroundColor: "#fff",
+    borderTopColor: "#eee",
+    borderTopWidth: 1,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    paddingBottom: 10,
+  },
+  navIcon: {
+    width: 24,
+    height: 24,
+    resizeMode: "contain",
+  },
+  profileIcon: {
+    width: 32,
+    height: 32,
+    resizeMode: "contain",
+  },
+  roomImage: {
+    width: "100%",
+    height: 120,
+    resizeMode: "cover",
+  },
+  sectionTitle: {
+    marginTop: 24,
+    fontSize: 18,
+    fontFamily: "Gilroy-ExtraBold",
   },
   sessionContainer: {
     backgroundColor: "#e9f1fb",
@@ -141,35 +166,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 8,
   },
-  bulbIcon: {
-    width: 24,
-    height: 24,
-    resizeMode: "contain",
-    marginRight: 12,
-  },
   tipText: {
     fontSize: 14,
     fontFamily: "Gilroy-Regular",
     flex: 1,
     color: "#333",
-  },
-  navbar: {
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    right: 0,
-    height: 70,
-    backgroundColor: "#fff",
-    borderTopColor: "#eee",
-    borderTopWidth: 1,
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
-    paddingBottom: 10,
-  },
-  navIcon: {
-    width: 24,
-    height: 24,
-    resizeMode: "contain",
   },
 });

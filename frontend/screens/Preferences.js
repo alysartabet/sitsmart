@@ -16,19 +16,19 @@ const questions = [
     options: ["Front", "Middle", "Back"],
   },
   {
-    question: "How important is natural lighting to you",
+    question: "How important is natural lighting to you?",
     options: ["Very Important", "Somewhat important", "Not Important"],
   },
   {
-    question: "Do you prefer to work in a group or solo",
+    question: "Do you prefer to work in a group or solo?",
     options: ["Group", "Solo"],
   },
   {
-    question: "What size of the classroom do you prefer",
+    question: "What size of classroom do you prefer?",
     options: ["Massive", "Medium", "Small"],
   },
   {
-    question: "How important is noise control in the classroom",
+    question: "How important is noise control in the classroom?",
     options: ["I need quiet", "Low is ok", "Loud is fine"],
   },
 ];
@@ -61,23 +61,26 @@ export default function Preferences({ navigation }) {
             <Text style={styles.backArrow}>←</Text>
           </TouchableOpacity>
         )}
-        <Image
-          source={require("../assets/images/filter.png")}
-          style={styles.filterIcon}
-        />
       </View>
+
+      <View style={styles.containerHeader}>
+        {/* Text */}
+        <Text style={styles.heading}>Let's get to know your preferences! </Text>
+        <Image
+            source={require("../assets/images/filter.png")}
+            style={styles.filterIcon}
+          />
+      </View>
+
+      <Text style={styles.subheading}>
+          Answer a few quick questions so we can customize your experience.
+        </Text>
 
       {/* Koala */}
       <Image
         source={require("../assets/images/happykoala.png")}
         style={styles.koala}
       />
-
-      {/* Text */}
-      <Text style={styles.heading}>Let’s get to know your preferences! 🧠</Text>
-      <Text style={styles.subheading}>
-        Answer a few quick questions so we can customize your experience.
-      </Text>
 
       {/* Question */}
       <Text style={styles.question}>{currentQuestion.question}</Text>
@@ -92,7 +95,7 @@ export default function Preferences({ navigation }) {
           <Text
             style={[
               styles.optionText,
-              index === 0 && { color: "white", fontWeight: "600" },
+              index === 0 && { color: "black", fontWeight: "600" },
             ]}
           >
             {option}
@@ -107,7 +110,7 @@ export default function Preferences({ navigation }) {
             key={index}
             style={[
               styles.dot,
-              currentIndex === index && styles.activeDot,
+              currentIndex === index && styles.dotActive,
             ]}
           />
         ))}
@@ -117,6 +120,12 @@ export default function Preferences({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+  backArrow: {
+    fontSize: 28,
+    fontWeight: "600",
+    marginLeft: 10,
+    marginTop: -10,
+  },
   container: {
     paddingTop: 60,
     paddingHorizontal: 24,
@@ -124,50 +133,37 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
   },
-  topBar: {
-    width: "100%",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+  containerHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 20,
   },
-  backArrow: {
-    fontSize: 28,
-    fontWeight: "600",
-    marginLeft: 10,
-    marginTop: -10,
+  dot: {
+    width: 12,
+    height: 4,
+    borderRadius: 4,
+    backgroundColor: "#ddd",
+  },
+  dotActive: {
+    backgroundColor: "#4f6df5",
   },
   filterIcon: {
     width: 24,
     height: 24,
     resizeMode: "contain",
-    tintColor: "#333",
-  },
-  koala: {
-    width: 120,
-    height: 120,
-    resizeMode: "contain",
-    marginVertical: 20,
   },
   heading: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: "600",
     textAlign: "center",
     marginBottom: 6,
     fontFamily: "Gilroy-ExtraBold",
   },
-  subheading: {
-    fontSize: 14,
-    textAlign: "center",
-    color: "#777",
-    marginBottom: 20,
-    fontFamily: "Gilroy-Regular",
-  },
-  question: {
-    fontSize: 16,
-    textAlign: "center",
-    fontWeight: "500",
-    marginBottom: 20,
-    fontFamily: "Gilroy-Regular",
+  koala: {
+    width: 200,
+    height: 180,
+    resizeMode: "contain",
+    marginVertical: 10,
   },
   option: {
     width: "100%",
@@ -188,13 +184,25 @@ const styles = StyleSheet.create({
     marginTop: 20,
     gap: 8,
   },
-  dot: {
-    width: 12,
-    height: 4,
-    borderRadius: 4,
-    backgroundColor: "#ddd",
+  question: {
+    fontSize: 17,
+    textAlign: "center",
+    fontWeight: "500",
+    marginBottom: 20,
+    fontFamily: "Gilroy-Regular",
   },
-  activeDot: {
-    backgroundColor: "#4f6df5",
+  subheading: {
+    fontSize: 16,
+    textAlign: "center",
+    color: "#777",
+    marginTop: 10,
+    marginBottom: 20,
+    fontFamily: "Gilroy-Regular",
+  },
+  topBar: {
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
 });

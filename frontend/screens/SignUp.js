@@ -8,7 +8,11 @@ export default function SignUp({ navigation }) {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const togglePasswordVisibility = () => setPasswordVisible(prev => !prev);
 
-    const handleSignUp = async () => {
+    const handleSignUp = () => {
+      navigation.navigate("Preferences");
+    };
+
+    /*const handleSignUp = async () => {
       try {
         const response = await fetch("http://192.168.1.206:5000/signup", {
           method: "POST",
@@ -25,7 +29,6 @@ export default function SignUp({ navigation }) {
         const data = await response.json();
 
         if (response.ok) {
-          // You can optionally store a token or ID here
           navigation.navigate("Preferences");
         } else {
           alert(data.message || "Sign up failed");
@@ -34,7 +37,7 @@ export default function SignUp({ navigation }) {
       console.error("Sign-up error:", error);
       alert("Something went wrong. Please try again.");
     }
-  };
+  };*/
 
   return (
     <KeyboardAvoidingView

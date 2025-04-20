@@ -39,23 +39,6 @@ export default function Notifications({navigation}) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    paddingTop: 100,
-  },
-  heading: {
-    fontSize: 24,
-    fontFamily: "Gilroy-ExtraBold",
-    marginBottom: 40,
-  },
-  bell: {
-    width: width * 0.6,
-    height: width * 0.6,
-    resizeMode: "contain",
-    marginBottom: 20,
-  },
   badge: {
     backgroundColor: "#4f6df5",
     width: 36,
@@ -72,6 +55,23 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 16,
     fontWeight: "600",
+  },
+  bell: {
+    width: width * 0.6,
+    height: width * 0.6,
+    resizeMode: "contain",
+    marginBottom: 20,
+  },
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    paddingTop: 100,
+  },
+  heading: {
+    fontSize: 24,
+    fontFamily: "Gilroy-ExtraBold",
+    marginBottom: 40,
   },
   message: {
     fontSize: 16,

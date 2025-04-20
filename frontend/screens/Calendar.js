@@ -91,49 +91,36 @@ export default function Calendar({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    paddingTop: 70,
-    paddingHorizontal: 24,
-    backgroundColor: "#fff",
-    flex: 1,
+  activeDate: {
+    backgroundColor: "#4f6df5",
+    paddingHorizontal: 10,
+    paddingVertical: 6,
   },
-  heading: {
-    fontSize: 22,
-    fontWeight: "bold",
-    marginBottom: 20,
-    fontFamily: "Gilroy-ExtraBold",
+  activeDateText: {
+    color: "#fff",
+  },
+  activeDayText: {
+    color: "#fff",
+  },
+  building: {
+    color: "#555",
+    marginBottom: 10,
+    fontFamily: "Gilroy-Regular",
   },
   calendarStrip: {
     flexDirection: "row",
     justifyContent: "space-between",
     marginBottom: 24,
   },
-  dateItem: {
-    alignItems: "center",
-    padding: 10,
-    borderRadius: 12,
+  cancelBtn: {
+    backgroundColor: "#f0f0f0",
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 8,
   },
-  dayText: {
-    fontSize: 14,
-    color: "#555",
+  cancelText: {
     fontFamily: "Gilroy-Regular",
-  },
-  dateText: {
-    fontSize: 16,
-    fontWeight: "bold",
-    color: "#000",
-    fontFamily: "Gilroy-Bold",
-  },
-  activeDate: {
-    backgroundColor: "#4f6df5",
-    paddingHorizontal: 10,
-    paddingVertical: 6,
-  },
-  activeDayText: {
-    color: "#fff",
-  },
-  activeDateText: {
-    color: "#fff",
+    color: "#333",
   },
   card: {
     backgroundColor: "#f8f8f8",
@@ -144,47 +131,37 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
     elevation: 2,
   },
-  room: {
-    fontSize: 18,
-    fontWeight: "bold",
-    fontFamily: "Gilroy-ExtraBold",
-  },
-  building: {
-    color: "#555",
-    marginBottom: 10,
-    fontFamily: "Gilroy-Regular",
-  },
-  time: {
-    fontSize: 16,
-    fontFamily: "Gilroy-Medium",
-    borderBottomWidth: 1,
-    borderBottomColor: "#ddd",
-    paddingBottom: 10,
-    marginBottom: 10,
-  },
   cardButtons: {
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  overrideBtn: {
-    backgroundColor: "#e0e0e0",
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 8,
+  container: {
+    paddingTop: 70,
+    paddingHorizontal: 24,
+    backgroundColor: "#fff",
+    flex: 1,
   },
-  cancelBtn: {
-    backgroundColor: "#f0f0f0",
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 8,
+  dateItem: {
+    alignItems: "center",
+    padding: 10,
+    borderRadius: 12,
   },
-  overrideText: {
+  dateText: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#000",
+    fontFamily: "Gilroy-Bold",
+  },
+  dayText: {
+    fontSize: 14,
+    color: "#555",
     fontFamily: "Gilroy-Regular",
-    color: "#333",
   },
-  cancelText: {
-    fontFamily: "Gilroy-Regular",
-    color: "#333",
+  heading: {
+    fontSize: 22,
+    fontWeight: "bold",
+    marginBottom: 20,
+    fontFamily: "Gilroy-ExtraBold",
   },
   navbar: {
     position: "absolute",
@@ -204,5 +181,28 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
     resizeMode: "contain",
+  },
+  overrideBtn: {
+    backgroundColor: "#e0e0e0",
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+  },
+  overrideText: {
+    fontFamily: "Gilroy-Regular",
+    color: "#333",
+  },
+  room: {
+    fontSize: 18,
+    fontWeight: "bold",
+    fontFamily: "Gilroy-ExtraBold",
+  },
+  time: {
+    fontSize: 16,
+    fontFamily: "Gilroy-Medium",
+    borderBottomWidth: 1,
+    borderBottomColor: "#ddd",
+    paddingBottom: 10,
+    marginBottom: 10,
   },
 });
