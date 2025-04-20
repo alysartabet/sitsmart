@@ -1,6 +1,6 @@
 # Displays the API routes where you can view all the tables in the DB
 from flask import Blueprint, request, jsonify
-from app import db
+from . import db
 from .models import *
 from dotenv import load_dotenv
 from urllib.parse import urlparse
@@ -46,6 +46,9 @@ def signup():
 # Function to connect to database -> returns the PSQL connection object
 def db_conn():
     """Grabs the connection string from the environment variable and returns a connection object."""
+
+    # TODO: Change localhost of DB to a different host (IP address) when testing application
+
     connection_string = os.getenv("DATABASE_URL")
     p = urlparse(connection_string)
     pg_connection_dict = {

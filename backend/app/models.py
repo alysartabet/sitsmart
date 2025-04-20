@@ -1,11 +1,6 @@
 # Represents the tables being added to the database
 from . import db
-from uuid import uuid4
 from sqlalchemy.dialects.postgresql import UUID
-
-# TODO: Fix columns as needed (in future)
-# TODO: Update tables to contain values collected from spreadsheets (availability, buildings, etc.)
-
 
 class Buildings(db.Model):
     """Buildings Table - building_id (primary key), building_name"""
