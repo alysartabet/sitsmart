@@ -81,7 +81,7 @@ export default function Onboarding({ navigation }) {
           ))}
         </View>
 
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Authentication")}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("SignIn")}>
           <Text style={styles.buttonText}>Get Started</Text>
         </TouchableOpacity>
       </View>
