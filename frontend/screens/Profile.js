@@ -25,23 +25,33 @@ export default function Profile({ navigation }) {
       </View>
 
       {/* Options List */}
+      
       <View style={styles.optionRow}>
+      <TouchableOpacity onPress={() => navigation.navigate("AcctSettings")}>
         <Image source={require("../assets/images/profile.png")} style={styles.optionIcon} />
+        </TouchableOpacity>
         <Text style={styles.optionText}>Account Details</Text>
       </View>
+      
 
       <View style={styles.optionRow}>
-        <Image source={require("../assets/images/bulb.png")} style={styles.optionIcon} />
+       <TouchableOpacity onPress={() => navigation.navigate("FAQ")}>
+            <Image source={require("../assets/images/bulb.png")} style={styles.optionIcon} />
+        </TouchableOpacity>
         <Text style={styles.optionText}>Help</Text>
       </View>
 
       <View style={styles.optionRow}>
+        <TouchableOpacity onPress={() => navigation.navigate("SSSettings")}>
         <Image source={require("../assets/images/logo.png")} style={styles.optionIcon} />
+        </TouchableOpacity>
         <Text style={styles.optionText}>SitSmart Settings</Text>
       </View>
 
       <View style={styles.optionRow}>
-        <Image source={require("../assets/images/logout.png")} style={styles.optionIcon} />
+       <TouchableOpacity onPress={() => navigation.navigate("Splash")}>
+          <Image source={require("../assets/images/logout.png")} style={styles.optionIcon} />
+        </TouchableOpacity>
         <Text style={styles.optionText}>Log Out</Text>
       </View>
     </View>
