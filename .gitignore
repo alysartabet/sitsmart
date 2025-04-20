@@ -1,5 +1,6 @@
-# Virtual Environments
-backend/venv/
+# Root-level Python virtual environment
+venv/
+.venv/
 
 # Python Cache Files
 backend/app/__pycache__/
