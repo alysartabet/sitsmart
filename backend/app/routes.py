@@ -1,13 +1,47 @@
 # Displays the API routes where you can view all the tables in the DB
 from flask import Blueprint, request, jsonify
+from . import db
 from .models import *
 from dotenv import load_dotenv
 from urllib.parse import urlparse
+from werkzeug.security import generate_password_hash
 import psycopg2
 import os
 
 load_dotenv()
 main = Blueprint('main', __name__)
+
+@main.route('/signup', methods=['POST'])
+def signup():
+    data = request.get_json()
+    full_name = data.get('full_name')
+    email = data.get('email')
+    password = data.get('password')
+
+    if not (full_name and email and password):
+        return jsonify({"message": "Missing required fields"}), 400
+
+    conn = db_conn()
+    cursor = conn.cursor()
+
+    # Check if user already exists
+    cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
+    if cursor.fetchone():
+        cursor.close()
+        conn.close()
+        return jsonify({"message": "User already exists"}), 409
+
+    # Hash password and insert new user
+    hashed_pw = generate_password_hash(password)
+    cursor.execute(
+        "INSERT INTO users (full_name, email, password) VALUES (%s, %s, %s)",
+        (full_name, email, hashed_pw)
+    )
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+    return jsonify({"message": "User created successfully"}), 201
 
 # Function to connect to database -> returns the PSQL connection object
 def db_conn():
