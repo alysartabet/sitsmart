@@ -90,32 +90,6 @@ export default function Onboarding({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    slide: {
-      width: width,
-      alignItems: "center",
-      justifyContent: "flex-start",
-      paddingHorizontal: 20,
-      paddingTop: 20,
-    },
-    container: {
-      flex: 1,
-      backgroundColor: "#ffffff",
-      paddingTop: 80,
-      alignItems: "center",
-      justifyContent: "space-between",
-    },
-    topcontainer: {
-      flex: 1,
-      justifyContent: 'flex-start',
-      alignItems: "center",
-      paddingTop: 1,
-    },
-    midcontainer: {
-      flex: 2.5,
-      justifyContent: 'flex-start',
-      alignItems: "center",
-      paddingTop: 20,
-    },
     bottomcontainer: {
       flex: 1,
       justifyContent: 'flex-end',
@@ -123,24 +97,16 @@ const styles = StyleSheet.create({
       paddingTop: 1,
       marginBottom: 100,
     },
-    logo: {
-      width: 200,
-      height: 180,
-      resizeMode: "contain",
-      marginTop: 10,
+    button: {
+      backgroundColor: "#007bff",
+      paddingVertical: 12,
+      paddingHorizontal: 100,
+      borderRadius: 12,
     },
-    body: {
-      flex: 4,
-      alignItems: "center",
-      justifyContent: "flex-start",
-      overflow: "hidden",
-    },
-    illustration: {
-      width: width * 0.8,
-      height: height * 0.35,
-      resizeMode: "contain",
-      marginBottom: 0,
-      marginTop: 80,
+    buttonText: {
+      fontFamily: "Gilroy-Light",
+      color: "#ffffff",
+      fontSize: 16,
     },
     caption: {
       fontSize: 16,
@@ -150,10 +116,12 @@ const styles = StyleSheet.create({
       lineHeight: 24,
       marginTop: 0,
     },
-    dots: {
-      flexDirection: "row",
-      gap: 8,
-      marginBottom: 20,
+    container: {
+      flex: 1,
+      backgroundColor: "#ffffff",
+      paddingTop: 80,
+      alignItems: "center",
+      justifyContent: "space-between",
     },
     dot: {
       width: 8,
@@ -167,15 +135,35 @@ const styles = StyleSheet.create({
       borderRadius: 4,
       backgroundColor: "#333",
     },
-    button: {
-      backgroundColor: "#007bff",
-      paddingVertical: 12,
-      paddingHorizontal: 100,
-      borderRadius: 12,
+    dots: {
+      flexDirection: "row",
+      gap: 8,
+      marginBottom: 20,
     },
-    buttonText: {
-      fontFamily: "Gilroy-Light",
-      color: "#ffffff",
-      fontSize: 16,
+    illustration: {
+      width: width * 0.8,
+      height: height * 0.35,
+      resizeMode: "contain",
+      marginBottom: 0,
+      marginTop: 80,
+    },
+    logo: {
+      width: 200,
+      height: 180,
+      resizeMode: "contain",
+      marginTop: 10,
+    },
+    slide: {
+      width: width,
+      alignItems: "center",
+      justifyContent: "flex-start",
+      paddingHorizontal: 20,
+      paddingTop: 20,
+    },
+    topcontainer: {
+      flex: 1,
+      justifyContent: 'flex-start',
+      alignItems: "center",
+      paddingTop: 1,
     },
   });

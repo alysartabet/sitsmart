@@ -48,7 +48,7 @@ export default function Verification({ navigation }) {
       {/* Title */}
       <Text style={styles.title}>Verification</Text>
       <Text style={styles.subtitle}>
-        We’ve sent you the verification code on {"\n"}+1 2620 0323 7631
+        We've sent you the verification code on {"\n"}+1 2620 0323 7631
       </Text>
 
       {/* Code Inputs */}
@@ -81,11 +81,9 @@ export default function Verification({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 24,
-    backgroundColor: "#fff",
-    alignItems: "center",
+  arrow: {
+    color: "#fff",
+    fontSize: 18,
   },
   backArrow: {
     alignSelf: "flex-start",
@@ -96,21 +94,6 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: "bold",
     color: "#333",
-  },
-  title: {
-    fontSize: 22,
-    fontFamily: "Gilroy-ExtraBold",
-    alignSelf: "flex-start",
-    marginTop: 40,
-    marginBottom: 8,
-  },
-  subtitle: {
-    fontSize: 14,
-    color: "#444",
-    alignSelf: "flex-start",
-    marginBottom: 30,
-    lineHeight: 20,
-    fontFamily: "Gilroy-Regular",
   },
   codeContainer: {
     flexDirection: "row",
@@ -128,6 +111,18 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: "Gilroy-Regular",
   },
+  container: {
+    flex: 1,
+    padding: 24,
+    backgroundColor: "#fff",
+    alignItems: "center",
+  },
+  resendText: {
+    marginTop: 20,
+    color: "#555",
+    fontSize: 14,
+    fontFamily: "Gilroy-Regular",
+  },
   sendBtn: {
     backgroundColor: "#4f6df5",
     flexDirection: "row",
@@ -143,18 +138,23 @@ const styles = StyleSheet.create({
     fontFamily: "Gilroy-Regular",
     marginRight: 8,
   },
-  arrow: {
-    color: "#fff",
-    fontSize: 18,
-  },
-  resendText: {
-    marginTop: 20,
-    color: "#555",
+  subtitle: {
     fontSize: 14,
+    color: "#444",
+    alignSelf: "flex-start",
+    marginBottom: 30,
+    lineHeight: 20,
     fontFamily: "Gilroy-Regular",
   },
   timer: {
     color: "#4f6df5",
     fontWeight: "600",
+  },
+  title: {
+    fontSize: 22,
+    fontFamily: "Gilroy-ExtraBold",
+    alignSelf: "flex-start",
+    marginTop: 40,
+    marginBottom: 8,
   },
 });

@@ -62,12 +62,9 @@ export default function ResetPassword({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    paddingTop: 100,
-    padding: 24,
-    justifyContent: "flex-start",
+  arrow: {
+    color: "#fff",
+    fontSize: 18,
   },
   backArrow: {
     position: "absolute",
@@ -78,28 +75,12 @@ const styles = StyleSheet.create({
     fontSize: 26,
     color: "#333",
   },
-  title: {
-    fontSize: 20,
-    fontFamily: "Gilroy-ExtraBold",
-    marginBottom: 20,
-    color: "#000",
-  },
-  subtitle: {
-    fontSize: 14,
-    fontFamily: "Gilroy-Regular",
-    color: "#666",
-    marginBottom: 30,
-  },
-  inputWrapper: {
-    flexDirection: "row",
-    alignItems: "center",
-    borderColor: "#ddd",
-    borderWidth: 1,
-    borderRadius: 12,
-    paddingHorizontal: 12,
-    width: "100%",
-    height: 50,
-    marginBottom: 50,
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    paddingTop: 100,
+    padding: 24,
+    justifyContent: "flex-start",
   },
   icon: {
     width: 20,
@@ -112,6 +93,17 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 16,
     fontFamily: "Gilroy-Regular",
+  },
+  inputWrapper: {
+    flexDirection: "row",
+    alignItems: "center",
+    borderColor: "#ddd",
+    borderWidth: 1,
+    borderRadius: 12,
+    paddingHorizontal: 12,
+    width: "100%",
+    height: 50,
+    marginBottom: 50,
   },
   sendBtn: {
     flexDirection: "row",
@@ -129,8 +121,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginRight: 8,
   },
-  arrow: {
-    color: "#fff",
-    fontSize: 18,
+  subtitle: {
+    fontSize: 14,
+    fontFamily: "Gilroy-Regular",
+    color: "#666",
+    marginBottom: 30,
+  },
+  title: {
+    fontSize: 20,
+    fontFamily: "Gilroy-ExtraBold",
+    marginBottom: 20,
+    color: "#000",
   },
 });

@@ -70,33 +70,128 @@ export default function SignIn({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#fff", alignItems: "center" },
-  scrollContent: { paddingHorizontal: 24, alignItems: "center", justifyContent: "flex-start" },
-  logo: { width: 160, height: 100, resizeMode: "contain", marginTop: 60, marginBottom: 30 },
-  heading: { fontSize: 24, fontWeight: "600", marginBottom: 20, alignSelf: "flex-start", fontFamily: "Gilroy-ExtraBold" },
+  arrow: { 
+    color: "#fff", 
+    fontSize: 18 
+  },
+  container: { 
+    flex: 1, 
+    backgroundColor: "#fff", 
+    alignItems: "center" 
+  },
+  footer: { 
+    marginTop: 20, 
+    fontSize: 14, 
+    color: "#555" 
+  },
+  forgot: { 
+    color: "#333", 
+    fontFamily: "Gilroy-Regular", 
+    textDecorationLine: "underline" 
+  },
+  heading: { 
+    fontSize: 24, 
+    fontWeight: "600", 
+    marginBottom: 20, 
+    alignSelf: "flex-start", 
+    fontFamily: "Gilroy-ExtraBold" 
+  },
+  icon: { 
+    width: 20, 
+    height: 20, 
+    marginRight: 10, 
+    tintColor: "#888", 
+    resizeMode: "contain" 
+  },
+  input: { 
+    flex: 1, 
+    height: 48, 
+    fontSize: 16, 
+    fontFamily: "Gilroy-Regular" 
+  },
   inputWrapper: {
-    flexDirection: "row", alignItems: "center", borderColor: "#ddd", borderWidth: 1,
-    borderRadius: 12, paddingHorizontal: 12, marginBottom: 12, width: "100%"
+    flexDirection: "row", 
+    alignItems: "center", 
+    borderColor: "#ddd", 
+    borderWidth: 1,
+    borderRadius: 12, 
+    paddingHorizontal: 12, 
+    marginBottom: 12, 
+    width: "100%"
   },
-  icon: { width: 20, height: 20, marginRight: 10, tintColor: "#888", resizeMode: "contain" },
-  input: { flex: 1, height: 48, fontSize: 16, fontFamily: "Gilroy-Regular" },
-  row: { flexDirection: "row", justifyContent: "space-between", width: "100%", alignItems: "center", marginVertical: 12 },
-  switchRow: { flexDirection: "row", alignItems: "center" },
-  rememberText: { marginLeft: 8, fontSize: 14, fontFamily: "Gilroy-Regular" },
-  forgot: { color: "#333", fontFamily: "Gilroy-Regular", textDecorationLine: "underline" },
-  signinBtn: {
-    backgroundColor: "#4f6df5", borderRadius: 16, paddingVertical: 14, paddingHorizontal: 30,
-    width: "100%", flexDirection: "row", justifyContent: "center", alignItems: "center", marginTop: 20, marginBottom: 40
+  logo: { 
+    width: 160, 
+    height: 100, 
+    resizeMode: "contain", 
+    marginTop: 60, 
+    marginBottom: 30 
   },
-  signinText: { color: "#fff", fontFamily: "Gilroy-Regular", fontSize: 16, marginRight: 8 },
-  arrow: { color: "#fff", fontSize: 18 },
-  or: { fontSize: 14, color: "#aaa", marginVertical: 20 },
   oauthBtn: {
-    flexDirection: "row", alignItems: "center", backgroundColor: "#f4f4f4", padding: 14,
-    borderRadius: 12, width: "100%", marginBottom: 12
+    flexDirection: "row", 
+    alignItems: "center", 
+    backgroundColor: "#f4f4f4", 
+    padding: 14,
+    borderRadius: 12, 
+    width: "100%", 
+    marginBottom: 12
   },
-  oauthIcon: { width: 24, height: 24, marginRight: 12, resizeMode: "contain" },
-  oauthText: { fontSize: 16, fontFamily: "Gilroy-Regular" },
-  footer: { marginTop: 20, fontSize: 14, color: "#555" },
-  signup: { color: "#4f6df5", fontWeight: "500", textDecorationLine: "underline" },
+  oauthIcon: { 
+    width: 24, 
+    height: 24, 
+    marginRight: 12, 
+    resizeMode: "contain" 
+  },
+  oauthText: { 
+    fontSize: 16, 
+    fontFamily: "Gilroy-Regular" 
+  },
+  or: { 
+    fontSize: 14, 
+    color: "#aaa", 
+    marginVertical: 20 
+  },
+  rememberText: { 
+    marginLeft: 8, 
+    fontSize: 14, 
+    fontFamily: "Gilroy-Regular" 
+  },
+  row: { 
+    flexDirection: "row", 
+    justifyContent: "space-between", 
+    width: "100%", 
+    alignItems: "center", 
+    marginVertical: 12 
+  },
+  scrollContent: { 
+    paddingHorizontal: 24, 
+    alignItems: "center", 
+    justifyContent: "flex-start" 
+  },
+  signinBtn: {
+    backgroundColor: "#4f6df5", 
+    borderRadius: 16, 
+    paddingVertical: 14, 
+    paddingHorizontal: 30,
+    width: "100%", 
+    flexDirection: "row", 
+    justifyContent: "center", 
+    alignItems: "center", 
+    marginTop: 20, 
+    marginBottom: 40
+  },
+  signinText: { 
+    color: "#fff", 
+    fontFamily: "Gilroy-Regular", 
+    fontSize: 16, 
+    marginRight: 8 
+  },
+  signup: { 
+    color: "#4f6df5", 
+    fontWeight: "500", 
+    textDecorationLine: "underline" 
+  },
+  switchRow: { 
+    flexDirection: "row", 
+    alignItems: "center" 
+  },
 });

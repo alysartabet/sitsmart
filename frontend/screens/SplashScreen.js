@@ -83,6 +83,6 @@ const styles = StyleSheet.create({
     fontSize: 40,
     color: "#000000",
     position: "absolute",
-    top: height/8, // initial position below the logo
+    top: height / 8, // initial position below the logo
   },
 });
