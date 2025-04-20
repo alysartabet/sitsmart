@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { supabase } from "../SupabaseClient";
 import {
   View, Text, StyleSheet, TextInput, Image,
   TouchableOpacity, Switch, KeyboardAvoidingView,
@@ -8,12 +9,34 @@ import {
 export default function SignIn({ navigation }) {
   const [rememberMe, setRememberMe] = useState(false);
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const toggleRemember = () => setRememberMe(prev => !prev);
   const togglePasswordVisibility = () => setPasswordVisible(prev => !prev);
 
-  const handleSignIn = () => {
+  /*const handleSignIn = () => {
     navigation.navigate("Home");
+  };*/
+
+  const handleSignIn = async () => {
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+  
+      if (error) {
+        alert(error.message);
+        return;
+      }
+  
+      navigation.navigate("Home"); // successful login
+    } catch (err) {
+      console.error("Sign in error:", err);
+      alert("Either your password or email is wrong. Please try again.");
+    }
   };
+
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === "ios" ? "padding" : "height"} keyboardVerticalOffset={60}>
@@ -23,12 +46,12 @@ export default function SignIn({ navigation }) {
 
         <View style={styles.inputWrapper}>
           <Image source={require("../assets/images/mail.png")} style={styles.icon} />
-          <TextInput placeholder="abc@schoolemail.edu" placeholderTextColor="#888" style={styles.input} />
+          <TextInput placeholder="abc@schoolemail.edu" placeholderTextColor="#888" style={styles.input} value={email} onChangeText={setEmail}/>
         </View>
 
         <View style={styles.inputWrapper}>
           <Image source={require("../assets/images/lock.png")} style={styles.icon} />
-          <TextInput placeholder="Your password" placeholderTextColor="#888" secureTextEntry={!passwordVisible} style={styles.input} />
+          <TextInput placeholder="Your password" placeholderTextColor="#888" secureTextEntry={!passwordVisible} style={styles.input} value={password} onChangeText={setPassword} />
           <TouchableOpacity onPress={togglePasswordVisibility}>
             <Image source={passwordVisible ? require("../assets/images/visible.png") : require("../assets/images/hidden.png")} style={styles.icon} />
           </TouchableOpacity>

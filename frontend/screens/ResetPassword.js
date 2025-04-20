@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { supabase } from "../SupabaseClient";
+import { SUPABASE_ANON_KEY } from "../SupabaseClient";
 import {
   View,
   Text,
@@ -13,9 +15,63 @@ import {
 export default function ResetPassword({ navigation }) {
   const [email, setEmail] = useState("");
 
-  const handleSend = () => {
-    // TODO: integrate with backend to trigger password reset
-    navigation.navigate("Verification");
+  const generateCode = () => {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < 4; i++) {
+      result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result;
+  };
+
+  const handleSend = async () => {
+    const cleanedEmail = email.trim().toLowerCase();
+    const { data, error } = await supabase
+    .from("users")
+    .select("email")
+    .eq("email", cleanedEmail)
+    .single();
+
+    if (error || !data) {
+      alert("Email not found.");
+      return;
+    }
+
+    const code = generateCode();
+
+    // Store in DB
+    const { error: insertError } = await supabase
+      .from("reset_codes")
+      .insert([{ email, code }]);
+
+    if (insertError) {
+      alert("Failed to create reset code.");
+      return;
+    }
+
+    console.log("anon key:", SUPABASE_ANON_KEY);
+
+    // Call Edge Function
+    const response = await fetch("https://osldfluzgpxzeuvwfwvu.functions.supabase.co/send-reset-code", {
+      method: "POST",
+      headers: { "Content-Type": "application/json",
+        "Authorization": `Bearer ${SUPABASE_ANON_KEY}`
+       },
+      body: JSON.stringify({ to: cleanedEmail, code })
+    });
+    console.log("Using anon key:", SUPABASE_ANON_KEY.slice(0, 10) + "...");
+
+    const result = await response.json(); 
+    console.log("Email function result:", result);
+
+    if (!response.ok) {
+      alert("Failed to send reset code email.");
+      return;
+    }
+
+    alert("Verification code sent to your email.");
+    navigation.navigate("Verification", { email: cleanedEmail });
+
   };
 
   return (
@@ -42,7 +98,7 @@ export default function ResetPassword({ navigation }) {
           style={styles.icon}
         />
         <TextInput
-          placeholder="abc@email.com"
+          placeholder="abc@schoolemail.edu"
           placeholderTextColor="#888"
           style={styles.input}
           keyboardType="email-address"

@@ -17,6 +17,7 @@ import SSSettings from "./screens/SSSettings";
 import FAQ from "./screens/FAQ";
 import SignIn from "./screens/SignIn";
 import SignUp from "./screens/SignUp";
+import ChangePassword from "./screens/ChangePassword";
 
 const Stack = createNativeStackNavigator();
 
@@ -54,6 +55,7 @@ export default function App() {
         <Stack.Screen name="AcctSettings" component={AcctSettings} />
         <Stack.Screen name="SSSettings" component={SSSettings} />
         <Stack.Screen name="FAQ" component={FAQ} />
+        <Stack.Screen name="ChangePassword" component={ChangePassword} />
       </Stack.Navigator>
     </NavigationContainer>
   );

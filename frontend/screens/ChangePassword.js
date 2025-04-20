@@ -1,49 +1,15 @@
 import React, { useState } from "react";
-import { supabase } from "../SupabaseClient";
 
 import {
   View, Text, StyleSheet, TextInput, Image,
   TouchableOpacity, ScrollView, KeyboardAvoidingView, Platform
 } from "react-native";
 
-export default function SignUp({ navigation }) {
-    const [fullName, setFullName] = useState("");
-    const [email, setEmail] = useState("");
+export default function ChangePassword({ navigation }) {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
-    const [fullNameError, setFullNameError] = useState("");
-    const [emailError, setEmailError] = useState("");
-    const [passwordError, setPasswordError] = useState("");
-    const [confirmPasswordError, setConfirmPasswordError] = useState("");
     const [passwordVisible, setPasswordVisible] = useState(false);
     const togglePasswordVisibility = () => setPasswordVisible(prev => !prev);
-
-    const handleFullNameChange = (name) => {
-      setFullName(name);
-    
-      const parts = name.trim().split(" ");
-      if (
-        parts.length !== 2 ||
-        parts[0].length < 3 ||
-        parts[1].length < 3 ||
-        !/^[a-zA-Z]+$/.test(parts[0]) ||
-        !/^[a-zA-Z]+$/.test(parts[1])
-      ) {
-        setFullNameError("Enter first and last name (min 3 letters each)");
-      } else {
-        setFullNameError("");
-      }
-    };
-
-    const handleEmailChange = (text) => {
-      setEmail(text);
-    
-      if (!/^[a-zA-Z0-9._%+-]+@nyit\.edu$/.test(text)) {
-        setEmailError("Email must end in @nyit.edu");
-      } else {
-        setEmailError("");
-      }
-    };
 
     const handlePasswordChange = (pass) => {
       setPassword(pass);
@@ -70,22 +36,7 @@ export default function SignUp({ navigation }) {
         setConfirmPasswordError("");
       }
     };
-    
-    const isValidFullName = (name) => {
-      const parts = name.trim().split(" ");
-      return (
-        parts.length === 2 &&
-        parts[0].length >= 3 &&
-        parts[1].length >= 3 &&
-        /^[a-zA-Z]+$/.test(parts[0]) &&
-        /^[a-zA-Z]+$/.test(parts[1])
-      );
-    };
-    
-    const isValidEmail = (email) => {
-      return /^[a-zA-Z0-9._%+-]+@nyit\.edu$/.test(email);
-    };
-    
+   
     const isStrongPassword = (password) => {
       return (
         password.length >= 8 &&
@@ -96,11 +47,11 @@ export default function SignUp({ navigation }) {
       );
     };
 
-    /*const handleSignUp = () => {
-      navigation.navigate("Preferences");
-    };*/
+    const handleChangePassword = () => {
+      navigation.navigate("SignIn");
+    };
 
-    const handleSignUp = async () => {
+    /*const handleChangePassword = async () => {
       if (!isValidFullName(fullName)) {
         alert("Please enter a valid full name with first and last name (min. 3 letters each).");
         return;
@@ -143,7 +94,7 @@ export default function SignUp({ navigation }) {
           console.error(err);
           alert("Sign up failed");
         }
-      };
+      };*/
 
   return (
     <KeyboardAvoidingView
@@ -152,30 +103,11 @@ export default function SignUp({ navigation }) {
       keyboardVerticalOffset={60}
     >
       <ScrollView contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps="handled">
-        {/* Back Arrow */}
-        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backArrow}>
-            <Text style={styles.backArrowText}>←</Text>
-        </TouchableOpacity>
-
-        <Image source={require("../assets/images/logo-wrapper.png")} style={styles.logo} />
-        <Text style={styles.heading}>Sign up</Text>
-
-        <View style={styles.inputWrapper}>
-          <Image source={require("../assets/images/profile.png")} style={styles.icon} />
-          <TextInput placeholder="Full name" placeholderTextColor="#888" style={[styles.input, fullNameError ? styles.inputError : null]} onChangeText={handleFullNameChange} />
-        </View>
-        {fullNameError ? <Text style={styles.errorText}>{fullNameError}</Text> : null}
-        
-
-        <View style={styles.inputWrapper}>
-          <Image source={require("../assets/images/mail.png")} style={styles.icon} />
-          <TextInput placeholder="abc@email.com" placeholderTextColor="#888" style={[styles.input, emailError ? styles.inputError : null]} onChangeText={handleEmailChange} />
-        </View>
-        {emailError ? <Text style={styles.errorText}>{emailError}</Text> : null}
+        <Text style={styles.heading}>Change Password</Text>
 
         <View style={styles.inputWrapper}>
           <Image source={require("../assets/images/lock.png")} style={styles.icon} />
-          <TextInput placeholder="Your password" placeholderTextColor="#888" secureTextEntry={!passwordVisible} style={[styles.input, passwordError ? styles.inputError : null]} onChangeText={handlePasswordChange} />
+          <TextInput placeholder="New password" placeholderTextColor="#888" secureTextEntry={!passwordVisible} style={[styles.input, passwordError ? styles.inputError : null]} onChangeText={handlePasswordChange} />
           <TouchableOpacity onPress={togglePasswordVisibility}>
             <Image source={passwordVisible ? require("../assets/images/visible.png") : require("../assets/images/hidden.png")} style={styles.icon} />
           </TouchableOpacity>
@@ -191,28 +123,10 @@ export default function SignUp({ navigation }) {
         </View>
         {confirmPasswordError ? <Text style={styles.errorText}>{confirmPasswordError}</Text> : null}
 
-        <TouchableOpacity style={styles.signupBtn} onPress={handleSignUp}>
-          <Text style={styles.signupText}>SIGN UP</Text>
+        <TouchableOpacity style={styles.signupBtn} onPress={handleChangePassword}>
+          <Text style={styles.signupText}>Change Password</Text>
           <Text style={styles.arrow}>➝</Text>
         </TouchableOpacity>
-
-        <Text style={styles.or}>OR</Text>
-
-        <TouchableOpacity style={styles.oauthBtn}>
-          <Image source={require("../assets/images/microsoft.png")} style={styles.oauthIcon} />
-          <Text style={styles.oauthText}>Sign up with Microsoft</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.oauthBtn}>
-          <Image source={require("../assets/images/sso.png")} style={styles.oauthIcon} />
-          <Text style={styles.oauthText}>Sign up with SSO</Text>
-        </TouchableOpacity>
-
-        <Text style={styles.footer}>
-          Already have an account?{" "}
-          <Text style={styles.signin} onPress={() => navigation.navigate("SignIn")}>
-            Sign in
-          </Text>
-        </Text>
       </ScrollView>
     </KeyboardAvoidingView>
   );

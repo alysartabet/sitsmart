@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { supabase } from "../SupabaseClient";
 import {
   View,
   Text,
@@ -48,7 +49,7 @@ export default function Verification({ navigation }) {
       {/* Title */}
       <Text style={styles.title}>Verification</Text>
       <Text style={styles.subtitle}>
-        We've sent you the verification code on {"\n"}+1 2620 0323 7631
+        We've sent the verification code to your email.
       </Text>
 
       {/* Code Inputs */}

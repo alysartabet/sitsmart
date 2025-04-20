@@ -40,3 +40,15 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+# Supabase Edge Function build outputs
+supabase/
+supabase/.output/
+supabase/.netlify/
+supabase/functions/**/dist/
+supabase/functions/**/node_modules/
+
+# Node
+node_modules/
+npm-debug.log*
+.env*
