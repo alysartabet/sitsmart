@@ -5,12 +5,35 @@ import {
 } from "react-native";
 
 export default function SignUp({ navigation }) {
-  const [passwordVisible, setPasswordVisible] = useState(false);
-  const togglePasswordVisibility = () => setPasswordVisible(prev => !prev);
+    const [passwordVisible, setPasswordVisible] = useState(false);
+    const togglePasswordVisibility = () => setPasswordVisible(prev => !prev);
 
-  const handleSignUp = () => {
-    // Connect to backend logic later
-    navigation.navigate("Preferences");
+    const handleSignUp = async () => {
+      try {
+        const response = await fetch("http://192.168.1.206:5000/signup", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            full_name: fullName, // from input state
+            email,
+            password,
+          }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          // You can optionally store a token or ID here
+          navigation.navigate("Preferences");
+        } else {
+          alert(data.message || "Sign up failed");
+        }
+    } catch (error) {
+      console.error("Sign-up error:", error);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -54,8 +77,8 @@ export default function SignUp({ navigation }) {
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity style={styles.signinBtn} onPress={handleSignUp}>
-          <Text style={styles.signinText}>SIGN UP</Text>
+        <TouchableOpacity style={styles.signupBtn} onPress={handleSignUp}>
+          <Text style={styles.signupText}>SIGN UP</Text>
           <Text style={styles.arrow}>➝</Text>
         </TouchableOpacity>
 
@@ -72,7 +95,7 @@ export default function SignUp({ navigation }) {
 
         <Text style={styles.footer}>
           Already have an account?{" "}
-          <Text style={styles.signup} onPress={() => navigation.navigate("SignIn")}>
+          <Text style={styles.signin} onPress={() => navigation.navigate("SignIn")}>
             Sign in
           </Text>
         </Text>
@@ -187,7 +210,12 @@ const styles = StyleSheet.create({
     alignItems: "center", 
     justifyContent: "flex-start" 
   },
-  signinBtn: {
+  signin: { 
+    color: "#4f6df5", 
+    fontWeight: "500", 
+    textDecorationLine: "underline" 
+  },
+  signupBtn: {
     backgroundColor: "#4f6df5", 
     borderRadius: 16, 
     paddingVertical: 14, 
@@ -199,16 +227,11 @@ const styles = StyleSheet.create({
     marginTop: 20, 
     marginBottom: 40
   },
-  signinText: { 
+  signupText: { 
     color: "#fff", 
     fontFamily: "Gilroy-Regular", 
     fontSize: 16, 
     marginRight: 8 
-  },
-  signup: { 
-    color: "#4f6df5", 
-    fontWeight: "500", 
-    textDecorationLine: "underline" 
   },
   switchRow: { 
     flexDirection: "row", 
