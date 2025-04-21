@@ -73,8 +73,8 @@ const styles = StyleSheet.create({
   },
   backArrow: {
     position: "absolute",
-    top: 20,
-    left: 20,
+    top: 40,
+    left: 25,
     zIndex: 10,
   },
   backArrowText: {
@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 24,
     fontWeight: "600",
+    marginTop: 60,
     marginBottom: 20,
     alignSelf: "center",
     fontFamily: "Gilroy-ExtraBold",
@@ -93,6 +94,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   faqItem: {
+    marginTop: 10,
     marginBottom: 16,
     borderBottomWidth: 1,
     borderColor: "#ddd",

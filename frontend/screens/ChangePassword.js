@@ -1,15 +1,22 @@
 import React, { useState } from "react";
+import { supabase } from "../SupabaseClient";
+import { SUPABASE_ANON_KEY } from "../SupabaseClient"
+
 
 import {
   View, Text, StyleSheet, TextInput, Image,
   TouchableOpacity, ScrollView, KeyboardAvoidingView, Platform
 } from "react-native";
 
-export default function ChangePassword({ navigation }) {
+export default function ChangePassword({ navigation, route}) {
+    const { email } = route.params || {};
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [passwordVisible, setPasswordVisible] = useState(false);
+    const [passwordError, setPasswordError] = useState("");
+    const [confirmPasswordError, setConfirmPasswordError] = useState("");
     const togglePasswordVisibility = () => setPasswordVisible(prev => !prev);
+
 
     const handlePasswordChange = (pass) => {
       setPassword(pass);
@@ -47,54 +54,60 @@ export default function ChangePassword({ navigation }) {
       );
     };
 
-    const handleChangePassword = () => {
+    /*const handleChangePassword = () => {
       navigation.navigate("SignIn");
-    };
+    };*/
 
-    /*const handleChangePassword = async () => {
-      if (!isValidFullName(fullName)) {
-        alert("Please enter a valid full name with first and last name (min. 3 letters each).");
-        return;
-      }
+    const handleChangePassword = async () => {
+      const { email } = route.params || {};
     
-      if (!isValidEmail(email)) {
-        alert("Email must end with @nyit.edu.");
+      if (!email) {
+        alert("Email not provided.");
         return;
       }
     
       if (!isStrongPassword(password)) {
-        alert("Password must be at least 8 characters and include upper, lower, number, and special character.");
+        setPasswordError("Password is too weak.");
         return;
       }
     
       if (password !== confirmPassword) {
-        alert("Passwords do not match.");
+        setConfirmPasswordError("Passwords don't match.");
         return;
       }
+    
       try {
-        const { data, error } = await supabase.auth.signUp({
-          email,
-          password,
-          options: {
-            data: { full_name: fullName },
+        const response = await fetch("https://osldfluzgpxzeuvwfwvu.functions.supabase.co/change-password", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${SUPABASE_ANON_KEY}`, 
           },
+          body: JSON.stringify({ email, newPassword: password }),
         });
     
-        if (error) {
-          alert(error.message);
+        let result;
+        try {
+          result = await response.json();
+        } catch (parseErr) {
+          console.error("Failed to parse JSON:", parseErr);
+          alert("Something went wrong with the server.");
+          return;
+        }
+        console.log("Password change result:", result);
+    
+        if (!response.ok) {
+          alert(result.message || "Failed to change password.");
           return;
         }
     
-        await supabase
-          .from('users')
-          .insert([{ email, full_name: fullName }]);
-    
-        navigation.navigate("Preferences");
-        } catch (err) {
-          console.error(err);
-          alert("Sign up failed");
-        }
-      };*/
+        alert("Password changed successfully!");
+        navigation.navigate("SignIn");
+      } catch (err) {
+        console.error("Change password error:", err);
+        alert("Something went wrong.");
+      }
+    };
 
   return (
     <KeyboardAvoidingView
@@ -149,7 +162,8 @@ const styles = StyleSheet.create({
   container: { 
     flex: 1, 
     backgroundColor: "#fff", 
-    alignItems: "center" 
+    alignItems: "center",
+    paddingTop: 100, 
   },
   errorText: {
     color: "red",
@@ -171,7 +185,7 @@ const styles = StyleSheet.create({
   heading: { 
     fontSize: 24, 
     fontWeight: "600", 
-    marginBottom: 20, 
+    marginBottom: 40, 
     alignSelf: "flex-start", 
     fontFamily: "Gilroy-ExtraBold" 
   },
@@ -198,7 +212,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 12, 
     paddingHorizontal: 12, 
-    marginBottom: 12, 
+    marginBottom: 20, 
     width: "100%"
   },
   logo: { 

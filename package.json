@@ -7,10 +7,23 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.4",
-    "expo": "^52.0.46"
+    "expo": "^52.0.46",
+    "expo-updates": "~0.27.4",
+    "metro": "^0.81.0",
+    "metro-config": "^0.81.0",
+    "metro-resolver": "^0.81.0",
+    "react": "^18.3.1",
+    "react-native": "^0.76.9"
   },
   "devDependencies": {
-    "@types/react": "^19.1.2",
+    "@types/react": "~18.3.12",
     "typescript": "^5.8.3"
+  },
+  "expo": {
+    "doctor": {
+      "reactNativeDirectoryCheck": {
+        "listUnknownPackages": false
+      }
   }
+}
 }

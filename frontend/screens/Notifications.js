@@ -19,19 +19,19 @@ export default function Notifications({navigation}) {
 
       <Text style={styles.message}>NO Notifications</Text>
 
-      {/* Bottom Navigation Bar (static mockup for now) */}
+      {/* Bottom Navigation Bar */}
         <View style={styles.navbar}>
             <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-                <Image source={require("../assets/images/homeblack.png")} style={styles.navIcon} />
+                <Image source={require("../assets/images/home.png")} style={styles.navIcon} />
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate("Search")}>
-                <Image source={require("../assets/images/searchblack.png")} style={styles.navIcon} />
+                <Image source={require("../assets/images/search.png")} style={styles.navIcon} />
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate("Calendar")}>
-                <Image source={require("../assets/images/calendarblack.png")} style={styles.navIcon} />
+                <Image source={require("../assets/images/calendar.png")} style={styles.navIcon} />
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate("Notifications")}>
-                <Image source={require("../assets/images/bellblue.png")} style={styles.navIcon} />
+                <Image source={require("../assets/images/bell.png")} style={styles.navTouch} />
             </TouchableOpacity>
         </View>
     </View>
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    height: 70,
+    height: 100,
     backgroundColor: "#fff",
     borderTopColor: "#eee",
     borderTopWidth: 1,
@@ -94,8 +94,16 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   navIcon: {
-    width: 24,
-    height: 24,
+    width: 28,
+    height: 28,
     resizeMode: "contain",
+    marginBottom: 18,
+  },
+  navTouch: {
+    width: 28,
+    height: 28,
+    resizeMode: "contain",
+    marginBottom: 18,
+    tintColor: "#1e90ff",
   },
 });

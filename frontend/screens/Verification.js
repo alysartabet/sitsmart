@@ -11,16 +11,26 @@ import {
   Platform
 } from "react-native";
 
-export default function Verification({ navigation }) {
+export default function Verification({ navigation, route }) {
   const [code, setCode] = useState(["", "", "", ""]);
   const [timer, setTimer] = useState(20);
+  const [canResend, setCanResend] = useState(false);
+
 
   const inputRefs = useRef([]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimer((prev) => (prev > 0 ? prev - 1 : 0));
+      setTimer((prev) => {
+        if (prev <= 1) {
+          clearInterval(interval);
+          setCanResend(true);
+          return 0;
+        }
+        return prev - 1;
+      });
     }, 1000);
+  
     return () => clearInterval(interval);
   }, []);
 
@@ -34,6 +44,85 @@ export default function Verification({ navigation }) {
     if (text && index < 3) {
       inputRefs.current[index + 1].focus();
     }
+  };
+
+  const handleSend = async () => {
+    const fullCode = code.join("");
+  const { email } = route.params || {};
+
+  if (!email || fullCode.length < 4) {
+    alert("Please enter all 4 characters of your code.");
+    return;
+  }
+
+  try {
+    const { data, error } = await supabase
+      .from("reset_codes")
+      .select("code, created_at")
+      .eq("email", email.toLowerCase().trim())
+      .gt("created_at", new Date(Date.now() - 5 * 60 * 1000).toISOString()) // code is less than 5 mins old
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .single();
+
+    if (error || !data) {
+      alert("No valid code found for this email.");
+      return;
+    }
+
+    if (data.code === fullCode) {
+      // Delete all codes for cleanup
+      await supabase
+        .from("reset_codes")
+        .delete()
+        .eq("email", email.toLowerCase().trim());
+
+      navigation.navigate("ChangePassword", { email });
+    } else {
+      alert("Incorrect code. Please try again.");
+    }
+  } catch (err) {
+    console.error("Verification error:", err);
+    alert("An error occurred. Please try again.");
+  }
+  };
+
+  const generateCode = () => {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < 4; i++) {
+      result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result;
+  };
+
+  const handleResendCode = async () => {
+    const { email } = route.params || {};
+    if (!email) return;
+  
+    const newCode = generateCode(); 
+  
+    await supabase.from("reset_codes").insert([
+      {
+        email: email.toLowerCase().trim(),
+        code: newCode,
+      },
+    ]);
+  
+    // Send the email again
+    await fetch("https://osldfluzgpxzeuvwfwvu.functions.supabase.co/send-reset-code", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+      },
+      body: JSON.stringify({ to: email, code: newCode }),
+    });
+  
+    alert("A new verification code has been sent!");
+  
+    setTimer(20);
+    setCanResend(false);
   };
 
   return (
@@ -50,6 +139,7 @@ export default function Verification({ navigation }) {
       <Text style={styles.title}>Verification</Text>
       <Text style={styles.subtitle}>
         We've sent the verification code to your email.
+        The code is case sensitive!
       </Text>
 
       {/* Code Inputs */}
@@ -59,7 +149,6 @@ export default function Verification({ navigation }) {
             key={index}
             ref={(ref) => (inputRefs.current[index] = ref)}
             style={styles.codeInput}
-            keyboardType="numeric"
             maxLength={1}
             value={digit}
             onChangeText={(text) => handleChange(text, index)}
@@ -68,15 +157,23 @@ export default function Verification({ navigation }) {
       </View>
 
       {/* Send Button */}
-      <TouchableOpacity style={styles.sendBtn}>
+      <TouchableOpacity
+        style={styles.sendBtn}
+        onPress={handleSend} >
         <Text style={styles.sendText}>SEND</Text>
         <Text style={styles.arrow}>➝</Text>
       </TouchableOpacity>
 
       {/* Resend */}
-      <Text style={styles.resendText}>
-        Re-send code in <Text style={styles.timer}>{`0:${timer < 10 ? `0${timer}` : timer}`}</Text>
-      </Text>
+      {canResend ? (
+        <TouchableOpacity onPress={handleResendCode}>
+          <Text style={[styles.resendText, styles.resendLink]}>Didn't get it? Tap to resend code</Text>
+        </TouchableOpacity>
+      ) : (
+        <Text style={styles.resendText}>
+          Re-send code in <Text style={styles.timer}>{`0:${timer < 10 ? `0${timer}` : timer}`}</Text>
+        </Text>
+      )}
     </KeyboardAvoidingView>
   );
 }
@@ -117,6 +214,11 @@ const styles = StyleSheet.create({
     padding: 24,
     backgroundColor: "#fff",
     alignItems: "center",
+  },
+  resendLink: {
+    color: "#4f6df5",
+    fontWeight: "600",
+    textDecorationLine: "underline",
   },
   resendText: {
     marginTop: 20,

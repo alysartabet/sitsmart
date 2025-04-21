@@ -25,7 +25,7 @@ const roomData = [
     name: "Room 103",
     location: "8. Hudson Ave",
     capacity: 24,
-    image: require("../assets/images/room.png"), // Replace with a different image if needed
+    image: require("../assets/images/room.png"), 
   },
 ];
 
@@ -37,12 +37,12 @@ export default function Search({navigation}) {
         <Text style={styles.roomName}>{item.name}</Text>
         <View style={styles.row}>
           <Image
-            source={require("../assets/images/searchblack.png")}
+            source={require("../assets/images/location.png")}
             style={styles.icon}
           />
           <Text style={styles.meta}>{item.location}</Text>
+          <Text style={styles.meta}>Capacity: {item.capacity}</Text>
         </View>
-        <Text style={styles.meta}>Capacity: {item.capacity}</Text>
         <TouchableOpacity style={styles.bookButton}>
           <Text style={styles.bookText}>BOOK</Text>
         </TouchableOpacity>
@@ -55,7 +55,7 @@ export default function Search({navigation}) {
       {/* Search Bar */}
       <View style={styles.searchBar}>
         <Image
-          source={require("../assets/images/searchblack.png")}
+          source={require("../assets/images/search.png")}
           style={styles.searchIcon}
         />
         <TextInput
@@ -77,16 +77,16 @@ export default function Search({navigation}) {
       {/* Bottom Navigation Bar (static mockup for now) */}
         <View style={styles.navbar}>
             <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-                <Image source={require("../assets/images/homeblack.png")} style={styles.navIcon} />
+                <Image source={require("../assets/images/home.png")} style={styles.navIcon} />
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate("Search")}>
-                <Image source={require("../assets/images/searchblue.png")} style={styles.navIcon} />
+                <Image source={require("../assets/images/search.png")} style={styles.navTouch} />
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate("Calendar")}>
-                <Image source={require("../assets/images/calendarblack.png")} style={styles.navIcon} />
+                <Image source={require("../assets/images/calendar.png")} style={styles.navIcon} />
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate("Notifications")}>
-                <Image source={require("../assets/images/bellblack.png")} style={styles.navIcon} />
+                <Image source={require("../assets/images/bell.png")} style={styles.navIcon} />
             </TouchableOpacity>
         </View>
     </View>
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
   bookButton: {
     backgroundColor: "#4f6df5",
     position: "absolute",
-    top: 12,
+    bottom: 12,
     right: 12,
     paddingVertical: 6,
     paddingHorizontal: 14,
@@ -130,19 +130,23 @@ const styles = StyleSheet.create({
     width: 14,
     height: 14,
     tintColor: "#555",
-    marginRight: 4,
+    marginRight: -5,
+    resizeMode: "contain",
   },
   meta: {
+    flexDirection: "row",
     fontSize: 13,
     color: "#555",
     fontFamily: "Gilroy-Regular",
+    paddingHorizontal: 10,
+    paddingTop: 6,
   },
   navbar: {
     position: "absolute",
     bottom: 0,
     left: 0,
     right: 0,
-    height: 70,
+    height: 100,
     backgroundColor: "#fff",
     borderTopColor: "#eee",
     borderTopWidth: 1,
@@ -152,9 +156,17 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   navIcon: {
-    width: 24,
-    height: 24,
+    width: 28,
+    height: 28,
     resizeMode: "contain",
+    marginBottom: 18,
+  },
+  navTouch: {
+    width: 28,
+    height: 28,
+    resizeMode: "contain",
+    marginBottom: 18,
+    tintColor: "#1e90ff",
   },
   roomImage: {
     width: "100%",
@@ -171,6 +183,7 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: "row",
+    justifyContent: "flex-start",
     alignItems: "center",
     marginBottom: 2,
   },

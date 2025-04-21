@@ -19,6 +19,11 @@ export default function AcctSettings({navigation}) {
       style={styles.container}
       behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
+      {/* Back Arrow */}
+      <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backArrow}>
+        <Text style={styles.backArrowText}>←</Text>
+      </TouchableOpacity>
+
       <Text style={styles.title}>Account Details</Text>
 
       <Text style={styles.label}>Full name</Text>
@@ -63,6 +68,15 @@ export default function AcctSettings({navigation}) {
 }
 
 const styles = StyleSheet.create({
+  backArrow: {
+    position: "absolute",
+    top: 50,
+    left: 28,
+  },
+  backArrowText: {
+    fontSize: 26,
+    color: "#333",
+  },
   container: {
     flex: 1,
     padding: 24,
@@ -72,14 +86,15 @@ const styles = StyleSheet.create({
     fontSize: 26,
     fontWeight: "700",
     textAlign: "center",
+    marginTop: 60,
     marginBottom: 30,
     fontFamily: "Gilroy-Bold",
   },
   label: {
     fontSize: 16,
     fontWeight: "500",
-    marginTop: 12,
-    marginBottom: 4,
+    marginTop: 15,
+    marginBottom: 10,
     fontFamily: "Gilroy-SemiBold",
   },
   input: {
@@ -97,7 +112,7 @@ const styles = StyleSheet.create({
     color: "#aaa",
   },
   saveButton: {
-    marginTop: 32,
+    marginTop: 40,
     backgroundColor: "#4f6df5",
     paddingVertical: 16,
     borderRadius: 16,

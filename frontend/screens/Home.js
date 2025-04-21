@@ -42,16 +42,16 @@ export default function Home({navigation}) {
       {/* Bottom Navigation Bar (static mockup for now) */}
       <View style={styles.navbar}>
         <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-            <Image source={require("../assets/images/homeblue.png")} style={styles.navIcon} />
+            <Image source={require("../assets/images/home.png")} style={styles.navTouch} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("Search")}>
-            <Image source={require("../assets/images/searchblack.png")} style={styles.navIcon} />
+            <Image source={require("../assets/images/search.png")} style={styles.navIcon} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("Calendar")}>
-            <Image source={require("../assets/images/calendarblack.png")} style={styles.navIcon} />
+            <Image source={require("../assets/images/calendar.png")} style={styles.navIcon} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("Notifications")}>
-            <Image source={require("../assets/images/bellblack.png")} style={styles.navIcon} />
+            <Image source={require("../assets/images/bell.png")} style={styles.navIcon} />
         </TouchableOpacity>
       </View>
     </View>
@@ -62,11 +62,15 @@ const styles = StyleSheet.create({
   bookingCard: {
     backgroundColor: "#f9f9f9",
     borderRadius: 16,
-    marginTop: 8,
+    marginTop: 10,
     overflow: "hidden",
   },
   bookingDetails: {
     padding: 12,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    justifyContent: "flex-start",
+    gap: 20,
   },
   bookingText: {
     fontSize: 14,
@@ -74,10 +78,11 @@ const styles = StyleSheet.create({
     color: "#333",
   },
   bulbIcon: {
-    width: 24,
-    height: 24,
+    width: 30,
+    height: 30,
     resizeMode: "contain",
-    marginRight: 12,
+    marginRight: 14,
+    marginLeft: -10,
   },
   container: {
     flex: 1,
@@ -86,20 +91,22 @@ const styles = StyleSheet.create({
     paddingTop: 60,
   },
   greeting: {
-    fontSize: 28,
+    fontSize: 40,
     fontFamily: "Gilroy-ExtraBold",
   },
   header: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
+    gap: 20,
+
   },
   navbar: {
     position: "absolute",
     bottom: 0,
     left: 0,
     right: 0,
-    height: 70,
+    height: 100,
     backgroundColor: "#fff",
     borderTopColor: "#eee",
     borderTopWidth: 1,
@@ -109,14 +116,25 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   navIcon: {
-    width: 24,
-    height: 24,
+    width: 28,
+    height: 28,
     resizeMode: "contain",
+    marginBottom: 18,
+  },
+  navTouch: {
+    width: 28,
+    height: 28,
+    resizeMode: "contain",
+    marginBottom: 18,
+    tintColor: "#1e90ff",
   },
   profileIcon: {
-    width: 32,
-    height: 32,
+    width: 60,
+    height: 60,
     resizeMode: "contain",
+    marginTop: 4,
+    marginLeft: 10,
+    
   },
   roomImage: {
     width: "100%",
@@ -124,52 +142,54 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
   },
   sectionTitle: {
-    marginTop: 24,
-    fontSize: 18,
-    fontFamily: "Gilroy-ExtraBold",
+    marginTop: 35,
+    fontSize: 20,
+    fontFamily: "Gilroy-Regular",
   },
   sessionContainer: {
     backgroundColor: "#e9f1fb",
     borderRadius: 16,
-    marginTop: 8,
-    padding: 20,
-    alignItems: "center",
-    position: "relative",
+    marginTop: 15,
+    padding: 45,
   },
   sessionLabel: {
-    fontSize: 16,
+    fontSize: 17,
     fontFamily: "Gilroy-Regular",
-    marginBottom: 10,
     color: "#333",
+    textAlign: "left",
+    position: "absolute",
+    top: 20,
+    left: 35,
   },
   timerIcon: {
     position: "absolute",
-    right: 30,
-    top: 25,
-    width: 80,
-    height: 80,
+    right: 20,
+    top: -40,
+    width: 110,
+    height: 110,
     resizeMode: "contain",
   },
   timerText: {
-    fontSize: 24,
+    fontSize: 23,
     fontFamily: "Gilroy-ExtraBold",
     color: "#243a78",
     position: "absolute",
-    right: 55,
-    top: 55,
+    right: 48,
+    top: 0,
   },
   tipContainer: {
     flexDirection: "row",
     backgroundColor: "#f9f9f9",
     borderRadius: 16,
-    padding: 16,
+    padding: 24,
     alignItems: "center",
     marginTop: 8,
   },
   tipText: {
-    fontSize: 14,
+    fontSize: 15,
     fontFamily: "Gilroy-Regular",
     flex: 1,
     color: "#333",
+    lineHeight: 20,
   },
 });

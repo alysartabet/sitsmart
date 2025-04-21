@@ -49,29 +49,41 @@ export default function ResetPassword({ navigation }) {
       return;
     }
 
-    console.log("anon key:", SUPABASE_ANON_KEY);
-
     // Call Edge Function
-    const response = await fetch("https://osldfluzgpxzeuvwfwvu.functions.supabase.co/send-reset-code", {
-      method: "POST",
-      headers: { "Content-Type": "application/json",
-        "Authorization": `Bearer ${SUPABASE_ANON_KEY}`
-       },
-      body: JSON.stringify({ to: cleanedEmail, code })
-    });
-    console.log("Using anon key:", SUPABASE_ANON_KEY.slice(0, 10) + "...");
+    try{
+      const response = await fetch("https://osldfluzgpxzeuvwfwvu.functions.supabase.co/send-reset-code", {
+        method: "POST",
+        headers: { "Content-Type": "application/json",
+          "Authorization": `Bearer ${SUPABASE_ANON_KEY}`
+         },
+        body: JSON.stringify({ to: cleanedEmail, code })
+      });
+  
+      const contentType = response.headers.get("content-type");
 
-    const result = await response.json(); 
-    console.log("Email function result:", result);
-
-    if (!response.ok) {
-      alert("Failed to send reset code email.");
-      return;
+      let result;
+      if (contentType && contentType.includes("application/json")) {
+        result = await response.json();
+      } else {
+        result = await response.text();  
+      }
+      
+      try {
+        if (!response.ok) {
+          alert("Failed to send reset code email.");
+          return;
+        }
+    
+        alert("Verification code sent to your email.");
+        navigation.navigate("Verification", { email: cleanedEmail });
+      } catch (err) {
+        console.error("Navigation error:", err);
+      }
+    } catch (err) {
+      console.error("Fetch error:", err);
+      alert("Something went wrong sending the email.");
     }
-
-    alert("Verification code sent to your email.");
-    navigation.navigate("Verification", { email: cleanedEmail });
-
+    
   };
 
   return (

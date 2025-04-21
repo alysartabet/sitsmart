@@ -85,7 +85,7 @@ export default function SignIn({ navigation }) {
         </TouchableOpacity>
 
         <Text style={styles.footer}>
-          Don’t have an account? <Text style={styles.signup} onPress={() => navigation.navigate("SignUp")}>Sign up</Text>
+          Don't have an account? <Text style={styles.signup} onPress={() => navigation.navigate("SignUp")}>Sign up</Text>
         </Text>
       </ScrollView>
     </KeyboardAvoidingView>

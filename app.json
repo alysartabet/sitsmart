@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "03170f02-420b-4fdb-a004-c3ea72008066"
+      }
+    },
+    "owner": "alysar",
+    "name": "SitSmart",
+    "slug": "sitsmart",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "orientation": "portrait",
+    "icon": "./frontend/assets/images/icon.png",
+    "splash": {
+      "image": "./frontend/assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/03170f02-420b-4fdb-a004-c3ea72008066"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./frontend/assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    }
+  }
+}

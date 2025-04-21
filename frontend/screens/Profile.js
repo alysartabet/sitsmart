@@ -12,13 +12,13 @@ export default function Profile({ navigation }) {
           <Text style={styles.backArrow}>←</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("Notifications")}>
-          <Image source={require("../assets/images/bellblack.png")} style={styles.bellIcon} />
+          <Image source={require("../assets/images/bell.png")} style={styles.bellIcon} />
         </TouchableOpacity>
       </View>
 
       {/* Profile Image with Camera Button */}
       <View style={styles.profileContainer}>
-        <Image source={require("../assets/images/profile.png")} style={styles.profilePic} />
+        <Image source={require("../assets/images/profileplaceholder.png")} style={styles.profilePic} />
         <TouchableOpacity style={styles.cameraButton}>
           <Image source={require("../assets/images/camera.png")} style={styles.cameraIcon} />
         </TouchableOpacity>
@@ -28,7 +28,7 @@ export default function Profile({ navigation }) {
       
       <View style={styles.optionRow}>
       <TouchableOpacity onPress={() => navigation.navigate("AcctSettings")}>
-        <Image source={require("../assets/images/profile.png")} style={styles.optionIcon} />
+        <Image source={require("../assets/images/account.png")} style={styles.optionIcon} />
         </TouchableOpacity>
         <Text style={styles.optionText}>Account Details</Text>
       </View>
@@ -36,14 +36,14 @@ export default function Profile({ navigation }) {
 
       <View style={styles.optionRow}>
        <TouchableOpacity onPress={() => navigation.navigate("FAQ")}>
-            <Image source={require("../assets/images/bulb.png")} style={styles.optionIcon} />
+            <Image source={require("../assets/images/help.png")} style={styles.optionIcon} />
         </TouchableOpacity>
         <Text style={styles.optionText}>Help</Text>
       </View>
 
       <View style={styles.optionRow}>
         <TouchableOpacity onPress={() => navigation.navigate("SSSettings")}>
-        <Image source={require("../assets/images/logo.png")} style={styles.optionIcon} />
+        <Image source={require("../assets/images/settings.png")} style={styles.optionIcon} />
         </TouchableOpacity>
         <Text style={styles.optionText}>SitSmart Settings</Text>
       </View>
@@ -83,16 +83,16 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   profilePic: {
-    width: 100,
-    height: 100,
+    width: 200,
+    height: 200,
     borderRadius: 50,
     resizeMode: "cover",
     marginBottom: 10,
   },
   cameraButton: {
     position: "absolute",
-    bottom: 0,
-    right: 0,
+    bottom: 40,
+    right: 30,
     backgroundColor: "#4f6df5",
     borderRadius: 16,
     width: 28,
