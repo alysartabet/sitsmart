@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { format, startOfWeek, addDays, parseISO } from "date-fns";
 import {
   View,
   Text,
@@ -7,23 +8,60 @@ import {
   ScrollView,
   Image,
 } from "react-native";
+import { useRoute } from "@react-navigation/native";
 
 export default function Calendar({ navigation }) {
-  const [selectedDate, setSelectedDate] = useState("17");
+  const route = useRoute();
+  const passedDate = route.params?.selectedDate;
 
-  const days = [
-    { day: "S", date: "13" },
-    { day: "M", date: "14" },
-    { day: "T", date: "15" },
-    { day: "W", date: "16" },
-    { day: "T", date: "17" },
-    { day: "F", date: "18" },
-    { day: "S", date: "19" },
-  ];
+  const today = passedDate ? parseISO(passedDate) : new Date();
+  const start = startOfWeek(today, { weekStartsOn: 0 });
+
+  const [selectedDate, setSelectedDate] = useState(format(today, "yyyy-MM-dd"));
+
+  const days = Array.from({ length: 7 }).map((_, index) => {
+    const date = addDays(start, index);
+    return {
+      day: format(date, "E")[0],   // first letter of weekday (S, M, T...)
+      date: format(date, "d"),     // date of month (e.g. 21)
+      fullDate: format(date, "yyyy-MM-dd") // e.g. 2025-04-21 (for filtering reservations)
+    };
+  });
+
+  const mockReservedDates = ["2025-04-22", "2025-04-20"]; //test dates here
+  const hasReservation = mockReservedDates.includes(selectedDate);
+
+  const TimeScheduleWithKoala = () => (
+    <View style={styles.timeGrid}>
+      {[9, 10, 11, 12, 13, 14, 15, 16].map((hour) => (
+        <View key={hour} style={styles.timeRow}>
+          <Text style={styles.timeLabel}>{formatHour(hour)}</Text>
+          <View style={styles.line} />
+        </View>
+      ))}
+      <Image
+        source={require("../assets/images/lazykoala.png")}
+        style={styles.lazyKoala}
+      />
+    </View>
+  );
+
+  const formatHour = (hour) => {
+    const suffix = hour >= 12 ? "PM" : "AM";
+    const display = hour > 12 ? hour - 12 : hour;
+    return `${display} ${suffix}`;
+  };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>My Reservations</Text>
+      <View style={styles.headerRow}>
+        <Text style={styles.heading}>My Reservations</Text>
+        <TouchableOpacity onPress={() => navigation.navigate("FullCalendar", {
+          initialDate: selectedDate, 
+        })}>
+          <Image source={require("../assets/images/fullcalendar.png")} style={styles.calendarIcon} />
+      </TouchableOpacity>
+      </View>
 
       {/* Calendar Strip */}
       <View style={styles.calendarStrip}>
@@ -32,14 +70,14 @@ export default function Calendar({ navigation }) {
             key={idx}
             style={[
               styles.dateItem,
-              d.date === selectedDate && styles.activeDate,
+              d.fullDate === selectedDate && styles.activeDate,
             ]}
-            onPress={() => setSelectedDate(d.date)}
+            onPress={() => setSelectedDate(d.fullDate)}
           >
             <Text
               style={[
                 styles.dayText,
-                d.date === selectedDate && styles.activeDayText,
+                d.fullDate === selectedDate && styles.activeDayText,
               ]}
             >
               {d.day}
@@ -47,7 +85,7 @@ export default function Calendar({ navigation }) {
             <Text
               style={[
                 styles.dateText,
-                d.date === selectedDate && styles.activeDateText,
+                d.fullDate === selectedDate && styles.activeDateText,
               ]}
             >
               {d.date}
@@ -56,7 +94,7 @@ export default function Calendar({ navigation }) {
         ))}
       </View>
 
-      {/* Reservation Card */}
+      {hasReservation ? (
       <View style={styles.card}>
         <Text style={styles.room}>Room 101</Text>
         <Text style={styles.building}>Building 16w</Text>
@@ -70,8 +108,11 @@ export default function Calendar({ navigation }) {
           </TouchableOpacity>
         </View>
       </View>
+    ) : (
+      <TimeScheduleWithKoala />
+    )}
 
-      {/* Bottom Navigation Bar (static mockup for now) */}
+      {/* Bottom Navigation Bar */}
         <View style={styles.navbar}>
             <TouchableOpacity onPress={() => navigation.navigate("Home")}>
                 <Image source={require("../assets/images/home.png")} style={styles.navIcon} />
@@ -106,6 +147,11 @@ const styles = StyleSheet.create({
     color: "#555",
     marginBottom: 10,
     fontFamily: "Gilroy-Regular",
+  },
+  calendarIcon: {
+    width: 30,
+    height: 30,
+    resizeMode: "contain",
   },
   calendarStrip: {
     flexDirection: "row",
@@ -157,11 +203,31 @@ const styles = StyleSheet.create({
     color: "#555",
     fontFamily: "Gilroy-Regular",
   },
+  headerRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 20,
+  },
   heading: {
     fontSize: 22,
     fontWeight: "bold",
     marginBottom: 20,
     fontFamily: "Gilroy-ExtraBold",
+  },
+  lazyKoala: {
+    position: "absolute",
+    top: 60,
+    left: "25%",
+    width: 200,
+    height: 200,
+    resizeMode: "contain",
+  },
+  line: {
+    flex: 1,
+    height: 1,
+    backgroundColor: "#ccc",
+    marginLeft: 10,
   },
   navbar: {
     position: "absolute",
@@ -212,5 +278,22 @@ const styles = StyleSheet.create({
     borderBottomColor: "#ddd",
     paddingBottom: 10,
     marginBottom: 10,
+  },
+  timeGrid: {
+    marginTop: 20,
+    position: "relative",
+    height: 400,
+    justifyContent: "center",
+  },
+  timeLabel: {
+    width: 60,
+    fontSize: 14,
+    fontFamily: "Gilroy-Regular",
+    color: "#333",
+  },
+  timeRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 20,
   },
 });

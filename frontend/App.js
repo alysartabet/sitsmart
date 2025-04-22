@@ -18,6 +18,9 @@ import FAQ from "./screens/FAQ";
 import SignIn from "./screens/SignIn";
 import SignUp from "./screens/SignUp";
 import ChangePassword from "./screens/ChangePassword";
+import Room from "./screens/Room";
+import Book from "./screens/Book";
+import FullCalendar from "./screens/FullCalendar";
 
 const Stack = createNativeStackNavigator();
 
@@ -56,6 +59,9 @@ export default function App() {
         <Stack.Screen name="SSSettings" component={SSSettings} />
         <Stack.Screen name="FAQ" component={FAQ} />
         <Stack.Screen name="ChangePassword" component={ChangePassword} />
+        <Stack.Screen name="Room" component={Room} />
+        <Stack.Screen name="Book" component={Book} />
+        <Stack.Screen name="FullCalendar" component={FullCalendar} />
       </Stack.Navigator>
     </NavigationContainer>
   );

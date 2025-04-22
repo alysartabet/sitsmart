@@ -1,45 +1,137 @@
-import React from "react";
+import React, {useState, useEffect } from "react";
+import { supabase } from "../SupabaseClient"; 
 import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity } from "react-native";
 
 const { width } = Dimensions.get("window");
 
 export default function Home({navigation}) {
+  const [userName, setUserName] = useState("");
+  const [tipOfDay, setTipOfDay] = useState("");
+  const [hasReservation, setHasReservation] = useState(false);
+
+  useEffect(() => {
+    const fetchUserName = async () => {
+      const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+  
+      if (sessionError) {
+        console.error("Session error:", sessionError);
+        return;
+      }
+  
+      const userId = session?.user?.id;
+      if (!userId) {
+        console.warn("No user session found.");
+        return;
+      }
+  
+      const { data, error } = await supabase
+        .from("users")
+        .select("full_name")
+        .eq("id", userId)
+        .single();
+  
+      if (error) {
+        console.error("Error fetching user:", error);
+      } else if (data?.full_name) {
+        const firstName = data.full_name.split(" ")[0];
+        setUserName(firstName);
+      }
+    };
+  
+    fetchUserName();
+  }, []);
+
+  useEffect(() => {
+    const fetchTipOfDay = async () => {
+      const today = new Date().toISOString().split("T")[0]; // e.g., "2025-04-21"
+  
+      // Fetch all tips
+      const { data: tips, error } = await supabase
+        .from("tips")
+        .select("*");
+  
+      if (error) {
+        console.error("Error fetching tips:", error);
+        return;
+      }
+  
+      if (tips?.length > 0) {
+        // Generate a consistent index based on date
+        const hash = [...today].reduce((acc, char) => acc + char.charCodeAt(0), 0);
+        const index = hash % tips.length;
+  
+        setTipOfDay(tips[index].tip_text);
+      }
+    };
+  
+    fetchTipOfDay();
+  }, []);
+
+  useEffect(() => {
+    const checkForReservation = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      const userId = session?.user?.id;
+  
+      // Placeholder logic – replace with real reservation table later
+  
+      if (data?.length > 0) {
+        setHasReservation(true); // Show placeholder reservation
+      } else {
+        setHasReservation(false); // Show lazy koala
+      }
+    };
+  
+    checkForReservation();
+  }, []);
+
   return (
     <View style={styles.container}>
       {/* Greeting */}
       <View style={styles.header}>
-        <Text style={styles.greeting}>Hello, John</Text>
+      <Text style={styles.greeting}>{userName ? `Hello, ${userName}` : "Hello!"}</Text>
         <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
             <Image source={require("../assets/images/profileplaceholder.png")} style={styles.profileIcon} />
         </TouchableOpacity>
       </View>
 
-      {/* Recent Booking */}
-      <Text style={styles.sectionTitle}>Recent Booking</Text>
-      <View style={styles.bookingCard}>
-        <Image source={require("../assets/images/room.png")} style={styles.roomImage} />
-        <View style={styles.bookingDetails}>
-          <Text style={styles.bookingText}>Room 723</Text>
-          <Text style={styles.bookingText}>Capacity: 20</Text>
+      {hasReservation ? (
+      <>
+        <Text style={styles.sectionTitle}>Recent Booking</Text>
+        <View style={styles.bookingCard}>
+          <Image source={require("../assets/images/room.png")} style={styles.roomImage} />
+          <View style={styles.bookingDetails}>
+            <Text style={styles.bookingText}>Room 723</Text>
+            <Text style={styles.bookingText}>Capacity: 20</Text>
+          </View>
         </View>
-      </View>
 
-      {/* Session Timer */}
-      <Text style={styles.sectionTitle}>Session in Progress</Text>
-      <View style={styles.sessionContainer}>
-        <Text style={styles.sessionLabel}>Your time will end in:</Text>
-        <Image source={require("../assets/images/countdowncircle.png")} style={styles.timerIcon} />
-        <Text style={styles.timerText}>42:17</Text>
+        <Text style={styles.sectionTitle}>Session in Progress</Text>
+        <View style={styles.sessionContainer}>
+          <Text style={styles.sessionLabel}>Your time will end in:</Text>
+          <Image source={require("../assets/images/countdowncircle.png")} style={styles.timerIcon} />
+          <Text style={styles.timerText}>42:17</Text>
+        </View>
+      </>
+    ) : (
+      <View style={{ alignItems: "center", marginVertical: 30 }}>
+        <Image
+          source={require("../assets/images/lazykoala.png")}
+          style={{ width: 180, height: 180, resizeMode: "contain", marginBottom: 20 }}
+        />
+        <Text style={{ fontFamily: "Gilroy-Regular", fontSize: 16, color: "#666" }}>
+          No bookings right now. Koala vibes only 🐨💤
+        </Text>
       </View>
+    )}
 
       {/* Tip of the Day */}
       <Text style={styles.sectionTitle}>Tip of the Day</Text>
       <View style={styles.tipContainer}>
         <Image source={require("../assets/images/bulb.png")} style={styles.bulbIcon} />
-        <Text style={styles.tipText}>Book rooms in advance to secure your favorite spot</Text>
+        <Text style={styles.tipText}>{tipOfDay ? tipOfDay : "Loading tip..."}</Text>
       </View>
 
-      {/* Bottom Navigation Bar (static mockup for now) */}
+      {/* Bottom Navigation Bar */}
       <View style={styles.navbar}>
         <TouchableOpacity onPress={() => navigation.navigate("Home")}>
             <Image source={require("../assets/images/home.png")} style={styles.navTouch} />

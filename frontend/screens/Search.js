@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { supabase } from "../SupabaseClient";
 import {
   View,
   Text,
@@ -12,42 +13,67 @@ import {
 
 const { width } = Dimensions.get("window");
 
-const roomData = [
-  {
-    id: "1",
-    name: "Room 821",
-    location: "16. 61ws.st",
-    capacity: 31,
-    image: require("../assets/images/room.png"),
-  },
-  {
-    id: "2",
-    name: "Room 103",
-    location: "8. Hudson Ave",
-    capacity: 24,
-    image: require("../assets/images/room.png"), 
-  },
-];
 
 export default function Search({navigation}) {
+  const [rooms, setRooms] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredRooms, setFilteredRooms] = useState([]);
+
+  useEffect(() => {
+    const fetchRooms = async () => {
+      const { data, error } = await supabase
+        .from("room")
+        .select("room_id, building_id, room_num, room_capacity");
+  
+      if (error) {
+        console.error("Error fetching rooms:", error);
+      } else {
+        setRooms(data);
+        setFilteredRooms(data);
+      }
+    };
+  
+    fetchRooms();
+  }, []);
+
+  useEffect(() => {
+    const query = searchQuery.toLowerCase();
+  
+    const filtered = rooms.filter((room) => {
+      return (
+        room.room_num.toString().includes(query) ||
+        room.building_id.toLowerCase().includes(query) ||
+        room.room_capacity.toString().includes(query)
+      );
+    });
+  
+    setFilteredRooms(filtered);
+  }, [searchQuery, rooms]);
+
   const renderRoomCard = ({ item }) => (
-    <View style={styles.card}>
-      <Image source={item.image} style={styles.roomImage} />
+    <TouchableOpacity
+      style={styles.card}
+      onPress={() => navigation.navigate("Room", { roomId: item.room_id })}
+    >
+      <Image
+        source={require("../assets/images/room.png")} 
+        style={styles.roomImage}
+      />
       <View style={styles.cardContent}>
-        <Text style={styles.roomName}>{item.name}</Text>
+        <Text style={styles.roomName}>Room {item.room_num}</Text>
         <View style={styles.row}>
           <Image
             source={require("../assets/images/location.png")}
             style={styles.icon}
           />
-          <Text style={styles.meta}>{item.location}</Text>
-          <Text style={styles.meta}>Capacity: {item.capacity}</Text>
+          <Text style={styles.meta}>{item.building_id}</Text>
+          <Text style={styles.meta}>Capacity: {item.room_capacity}</Text>
         </View>
         <TouchableOpacity style={styles.bookButton}>
           <Text style={styles.bookText}>BOOK</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 
   return (
@@ -62,19 +88,21 @@ export default function Search({navigation}) {
           placeholder="Search"
           placeholderTextColor="#888"
           style={styles.searchInput}
+          value={searchQuery}
+          onChangeText={setSearchQuery}
         />
       </View>
 
       {/* Room Cards */}
       <FlatList
-        data={roomData}
-        keyExtractor={(item) => item.id}
+        data={filteredRooms}
+        keyExtractor={(item) => item.room_id}
         renderItem={renderRoomCard}
         contentContainerStyle={styles.roomList}
         showsVerticalScrollIndicator={false}
       />
 
-      {/* Bottom Navigation Bar (static mockup for now) */}
+      {/* Bottom Navigation Bar */}
         <View style={styles.navbar}>
             <TouchableOpacity onPress={() => navigation.navigate("Home")}>
                 <Image source={require("../assets/images/home.png")} style={styles.navIcon} />
