@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { supabase } from "../SupabaseClient";
 import {
   View,
   Text,
@@ -10,39 +11,98 @@ import {
 
 const { width } = Dimensions.get("window");
 
-const questions = [
-  {
-    question: "Where in the classroom do you prefer to study?",
-    options: ["Front", "Middle", "Back"],
-  },
-  {
-    question: "How important is natural lighting to you?",
-    options: ["Very Important", "Somewhat important", "Not Important"],
-  },
-  {
-    question: "Do you prefer to work in a group or solo?",
-    options: ["Group", "Solo"],
-  },
-  {
-    question: "What size of classroom do you prefer?",
-    options: ["Massive", "Medium", "Small"],
-  },
-  {
-    question: "How important is noise control in the classroom?",
-    options: ["I need quiet", "Low is ok", "Loud is fine"],
-  },
-];
+
 
 export default function Preferences({ navigation }) {
+  const [questions, setQuestions] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [userResponses, setUserResponses] = useState([]);
+  const [loading, setLoading] = useState(true);
   const currentQuestion = questions[currentIndex];
+
+
+  useEffect(() => {
+    const fetchQuestions = async () => {
+      const { data, error } = await supabase
+        .from("questions")
+        .select("id, question, order, options:options(id, text)")
+        .order("order", { ascending: true });
+
+      console.log("Fetched questions:", data);
+    
+      if (error) console.error("Error loading questions:", error);
+      else setQuestions(data);
+    
+      setLoading(false);
+    };
+    fetchQuestions();
+  }, []);
+    /*const fetchQuestions = async () => {
+      const { data, error } = await supabase
+      .from("questions")
+      .select("*");
+    
+      console.log("🧪 Basic fetch:", { data, error });
+    }
+    fetchQuestions();
+  }, []); */
+
+
+  if (loading) {
+    return (
+      <View style={styles.container}>
+        <Text>Loading...</Text>
+      </View>
+    );
+  }
+
+  if (!currentQuestion) {
+    return (
+      <View style={styles.container}>
+        <Text>No question found at this index.</Text>
+      </View>
+    );
+  }
+  
+  const handleSelectOption = async (option) => {
+    try {
+      const {
+        data: { session },
+        error: sessionError,
+      } = await supabase.auth.getSession();
+  
+      if (sessionError) throw sessionError;
+  
+      const user = session?.user;
+      if (!user) throw new Error("No user session");
+  
+      const question = questions[currentIndex];
+  
+      const { error: upsertError, data: upsertData } = await supabase
+      .from("responses")
+      .upsert({
+        user_id: user.id,
+        question_id: question.id,
+        option_id: option.id,
+      }, {
+        onConflict: ['user_id', 'question_id'], 
+      })
+      .select(); 
+
+      if (upsertError) throw upsertError;
+  
+  
+      handleNext(); 
+    } catch (e) {
+      console.error("Error in handleSelectOption:", e.message);
+    }
+  };
 
   const handleNext = () => {
     if (currentIndex < questions.length - 1) {
       setCurrentIndex((prev) => prev + 1);
     } else {
-      // Submit or navigate elsewhere
-      navigation.navigate("Home"); // Adjust destination as needed
+      navigation.navigate("Home"); 
     }
   };
 
@@ -51,6 +111,8 @@ export default function Preferences({ navigation }) {
       setCurrentIndex((prev) => prev - 1);
     }
   };
+
+  
 
   return (
     <View style={styles.container}>
@@ -88,18 +150,11 @@ export default function Preferences({ navigation }) {
       {/* Options */}
       {currentQuestion.options.map((option, index) => (
         <TouchableOpacity
-          key={index}
+          key={option.id}
           style={styles.option}
-          onPress={handleNext}
+          onPress={() => handleSelectOption(option)}
         >
-          <Text
-            style={[
-              styles.optionText,
-              index === 0 && { color: "black", fontWeight: "600" },
-            ]}
-          >
-            {option}
-          </Text>
+          <Text style={styles.optionText}>{option.text}</Text>
         </TouchableOpacity>
       ))}
 
