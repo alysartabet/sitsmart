@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { supabase } from "../SupabaseClient";
 import {
   View,
   Text,
@@ -9,10 +10,45 @@ import {
   Platform,
 } from "react-native";
 
-export default function AcctSettings({navigation}) {
-  const [name, setName] = useState("John Doe");
+export default function AcctSettings({ navigation }) {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("johndoesmyit.edu");
-  const [studentID, setStudentID] = useState("123456789");
+  const [studentID, setStudentID] = useState("");
+
+  useEffect(() => {
+    const fetchName = async () => {
+      const {
+        data: { session },
+        error: sessionError,
+      } = await supabase.auth.getSession();
+
+      if (sessionError) {
+        console.error("Session error:", sessionError);
+        return;
+      }
+
+      const userId = session?.user?.id;
+      if (!userId) {
+        console.warn("No user session found.");
+        return;
+      }
+
+      const { data, error } = await supabase
+        .from("users")
+        .select("full_name, email")
+        .eq("id", userId)
+        .single();
+
+      if (error) {
+        console.error("Error fetching user:", error);
+      } else if (data?.full_name) {
+        setName(data.full_name);
+        setEmail(data.email);
+      }
+    };
+
+    fetchName();
+  }, []);
 
   return (
     <KeyboardAvoidingView
@@ -20,7 +56,10 @@ export default function AcctSettings({navigation}) {
       behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
       {/* Back Arrow */}
-      <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backArrow}>
+      <TouchableOpacity
+        onPress={() => navigation.goBack()}
+        style={styles.backArrow}
+      >
         <Text style={styles.backArrowText}>←</Text>
       </TouchableOpacity>
 
