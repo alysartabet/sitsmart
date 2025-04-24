@@ -13,8 +13,7 @@ import {
 
 const { width } = Dimensions.get("window");
 
-
-export default function Search({navigation}) {
+export default function Search({ navigation, route }) {
   const [rooms, setRooms] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredRooms, setFilteredRooms] = useState([]);
@@ -24,7 +23,7 @@ export default function Search({navigation}) {
       const { data, error } = await supabase
         .from("room")
         .select("room_id, building_id, room_num, room_capacity");
-  
+
       if (error) {
         console.error("Error fetching rooms:", error);
       } else {
@@ -32,13 +31,13 @@ export default function Search({navigation}) {
         setFilteredRooms(data);
       }
     };
-  
+
     fetchRooms();
   }, []);
 
   useEffect(() => {
     const query = searchQuery.toLowerCase();
-  
+
     const filtered = rooms.filter((room) => {
       return (
         room.room_num.toString().includes(query) ||
@@ -46,7 +45,7 @@ export default function Search({navigation}) {
         room.room_capacity.toString().includes(query)
       );
     });
-  
+
     setFilteredRooms(filtered);
   }, [searchQuery, rooms]);
 
@@ -56,7 +55,7 @@ export default function Search({navigation}) {
       onPress={() => navigation.navigate("Room", { roomId: item.room_id })}
     >
       <Image
-        source={require("../assets/images/room.png")} 
+        source={require("../assets/images/room.png")}
         style={styles.roomImage}
       />
       <View style={styles.cardContent}>
@@ -69,7 +68,10 @@ export default function Search({navigation}) {
           <Text style={styles.meta}>{item.building_id}</Text>
           <Text style={styles.meta}>Capacity: {item.room_capacity}</Text>
         </View>
-        <TouchableOpacity style={styles.bookButton}>
+        <TouchableOpacity
+          style={styles.bookButton}
+          onPress={() => navigation.navigate("Book", { roomId: item.room_id })}
+        >
           <Text style={styles.bookText}>BOOK</Text>
         </TouchableOpacity>
       </View>
@@ -103,20 +105,32 @@ export default function Search({navigation}) {
       />
 
       {/* Bottom Navigation Bar */}
-        <View style={styles.navbar}>
-            <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-                <Image source={require("../assets/images/home.png")} style={styles.navIcon} />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate("Search")}>
-                <Image source={require("../assets/images/search.png")} style={styles.navTouch} />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate("Calendar")}>
-                <Image source={require("../assets/images/calendar.png")} style={styles.navIcon} />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate("Notifications")}>
-                <Image source={require("../assets/images/bell.png")} style={styles.navIcon} />
-            </TouchableOpacity>
-        </View>
+      <View style={styles.navbar}>
+        <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+          <Image
+            source={require("../assets/images/home.png")}
+            style={styles.navIcon}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Search")}>
+          <Image
+            source={require("../assets/images/search.png")}
+            style={styles.navTouch}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Calendar")}>
+          <Image
+            source={require("../assets/images/calendar.png")}
+            style={styles.navIcon}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Notifications")}>
+          <Image
+            source={require("../assets/images/bell.png")}
+            style={styles.navIcon}
+          />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
