@@ -1,9 +1,97 @@
-import React from "react";
-import { View, Text, Image, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
+import React, { useState, useEffect } from "react";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  Dimensions,
+  Alert,
+} from "react-native";
+import * as ImagePicker from "expo-image-picker";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const { width } = Dimensions.get("window");
+const STORAGE_KEY = "userProfileImage";
 
 export default function Profile({ navigation }) {
+  const [profileImage, setProfileImage] = useState(null);
+
+  useEffect(() => {
+    loadProfileImage();
+  }, []);
+
+  const loadProfileImage = async () => {
+    const uri = await AsyncStorage.getItem(STORAGE_KEY);
+    if (uri) setProfileImage(uri);
+  };
+
+  const saveProfileImage = async (uri) => {
+    setProfileImage(uri);
+    await AsyncStorage.setItem(STORAGE_KEY, uri);
+  };
+
+  const removeProfileImage = async () => {
+    setProfileImage(null);
+    await AsyncStorage.removeItem(STORAGE_KEY);
+  };
+
+  const pickImage = async (source) => {
+    let result;
+    if (source === "camera") {
+      const { status } = await ImagePicker.requestCameraPermissionsAsync();
+      if (status !== "granted") {
+        alert("Camera permission is required!");
+        return;
+      }
+      result = await ImagePicker.launchCameraAsync({
+        allowsEditing: true,
+        aspect: [1, 1],
+        quality: 1,
+      });
+    } else {
+      result = await ImagePicker.launchImageLibraryAsync({
+        allowsEditing: true,
+        aspect: [1, 1],
+        quality: 1,
+      });
+    }
+
+    if (!result.canceled) {
+      await saveProfileImage(result.assets[0].uri);
+    }
+  };
+
+  const chooseImageSource = () => {
+    const options = [
+      { text: "Camera", onPress: () => pickImage("camera") },
+      { text: "Gallery", onPress: () => pickImage("gallery") },
+    ];
+
+    if (profileImage) {
+      options.push({
+        text: "Remove Photo",
+        onPress: handleRemoveImage,
+        style: "destructive",
+      });
+    }
+
+    options.push({ text: "Cancel", style: "cancel" });
+
+    Alert.alert("Choose Photo", "Upload from:", options);
+  };
+
+  const handleRemoveImage = () => {
+    Alert.alert(
+      "Remove Photo",
+      "Are you sure you want to remove your profile picture?",
+      [
+        { text: "Cancel", style: "cancel" },
+        { text: "Remove", onPress: removeProfileImage },
+      ]
+    );
+  };
+
   return (
     <View style={styles.container}>
       {/* Top bar */}
@@ -12,45 +100,72 @@ export default function Profile({ navigation }) {
           <Text style={styles.backArrow}>←</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("Notifications")}>
-          <Image source={require("../assets/images/bell.png")} style={styles.bellIcon} />
+          <Image
+            source={require("../assets/images/bell.png")}
+            style={styles.bellIcon}
+          />
         </TouchableOpacity>
       </View>
 
       {/* Profile Image with Camera Button */}
       <View style={styles.profileContainer}>
-        <Image source={require("../assets/images/profileplaceholder.png")} style={styles.profilePic} />
-        <TouchableOpacity style={styles.cameraButton}>
-          <Image source={require("../assets/images/camera.png")} style={styles.cameraIcon} />
+        <Image
+          source={
+            profileImage
+              ? { uri: profileImage }
+              : require("../assets/images/profileplaceholder.png")
+          }
+          style={styles.profilePic}
+        />
+        <TouchableOpacity
+          style={styles.cameraButton}
+          onPress={chooseImageSource}
+        >
+          <Image
+            source={require("../assets/images/camera.png")}
+            style={styles.cameraIcon}
+          />
         </TouchableOpacity>
       </View>
 
       {/* Options List */}
-      
+
       <View style={styles.optionRow}>
-      <TouchableOpacity onPress={() => navigation.navigate("AcctSettings")}>
-        <Image source={require("../assets/images/account.png")} style={styles.optionIcon} />
+        <TouchableOpacity onPress={() => navigation.navigate("AcctSettings")}>
+          <Image
+            source={require("../assets/images/account.png")}
+            style={styles.optionIcon}
+          />
         </TouchableOpacity>
         <Text style={styles.optionText}>Account Details</Text>
       </View>
-      
 
       <View style={styles.optionRow}>
-       <TouchableOpacity onPress={() => navigation.navigate("FAQ")}>
-            <Image source={require("../assets/images/help.png")} style={styles.optionIcon} />
+        <TouchableOpacity onPress={() => navigation.navigate("FAQ")}>
+          <Image
+            source={require("../assets/images/help.png")}
+            style={styles.optionIcon}
+          />
         </TouchableOpacity>
         <Text style={styles.optionText}>Help</Text>
       </View>
 
       <View style={styles.optionRow}>
         <TouchableOpacity onPress={() => navigation.navigate("SSSettings")}>
-        <Image source={require("../assets/images/settings.png")} style={styles.optionIcon} />
+          <Image
+            source={require("../assets/images/settings.png")}
+            style={styles.optionIcon}
+          />
         </TouchableOpacity>
         <Text style={styles.optionText}>SitSmart Settings</Text>
       </View>
 
       <View style={styles.optionRow}>
-       <TouchableOpacity onPress={() => navigation.navigate("Splash")}>
-          <Image source={require("../assets/images/logout.png")} style={styles.optionIcon} />
+        <TouchableOpacity onPress={() => navigation.navigate("Splash")}>
+          <Image
+            source={require("../assets/images/logout.png")}
+            style={styles.optionIcon}
+          />
         </TouchableOpacity>
         <Text style={styles.optionText}>Log Out</Text>
       </View>
@@ -85,7 +200,8 @@ const styles = StyleSheet.create({
   profilePic: {
     width: 200,
     height: 200,
-    borderRadius: 50,
+    borderRadius: 200 / 2,
+    overflow: "hidden",
     resizeMode: "cover",
     marginBottom: 10,
   },
