@@ -62,7 +62,6 @@ export default function Notifications({ navigation }) {
           .from("notifications")
           .update({ status: "confirmed" })
           .eq("id", notification.id);
-
         fetchNotifications();
       }
     } else if (notification.type === "profile_update") {
@@ -77,19 +76,20 @@ export default function Notifications({ navigation }) {
         ]
       );
     } else if (notification.type === "profile_picture_update") {
-      const { data: userData, error: userError } =
-        await supabase.auth.getUser();
-      if (userError) {
-        console.error(
-          "Failed to fetch user for profile picture check",
-          userError
-        );
+      // 👇 Force refresh the session
+      const { data: sessionData, error: sessionError } =
+        await supabase.auth.refreshSession();
+      if (sessionError) {
+        console.error("Failed to refresh session", sessionError);
         return;
       }
 
-      if (userData?.user?.user_metadata?.avatar_url) {
+      const refreshedUser = sessionData?.user;
+
+      if (refreshedUser?.user_metadata?.avatar_url) {
+        // If already has avatar, silently confirm
         console.log(
-          "User already has a profile picture, ignoring notification."
+          "User already has a profile picture, auto-confirming notification."
         );
         await supabase
           .from("notifications")
@@ -97,7 +97,7 @@ export default function Notifications({ navigation }) {
           .eq("id", notification.id);
         fetchNotifications();
       } else {
-        // Only alert if no profile pic
+        // Only show alert if no picture
         Alert.alert(
           "Upload Your Profile Picture",
           "Go upload a profile picture to personalize your account!",
