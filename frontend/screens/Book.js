@@ -143,7 +143,6 @@ export default function Book({ navigation, route }) {
       .from("reservations")
       .insert([
         {
-          user_id: userId,
           room_id: roomId,
           date: formattedDate,
           start_time: formattedStartTime,

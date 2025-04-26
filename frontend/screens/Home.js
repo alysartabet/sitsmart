@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { supabase } from "../SupabaseClient";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { NotificationsContext } from "../NotificationsContext";
 import {
   View,
   Text,
@@ -26,6 +27,9 @@ export default function Home({ navigation }) {
   const [inProgressReservation, setInProgressReservation] = useState(null);
   const sessionEndedOpacity = useState(new Animated.Value(0))[0];
   const [refreshing, setRefreshing] = useState(false);
+
+  const { notifications, fetchNotifications } =
+    useContext(NotificationsContext);
 
   const onRefresh = async () => {
     setRefreshing(true);
@@ -353,6 +357,7 @@ export default function Home({ navigation }) {
             source={require("../assets/images/bell.png")}
             style={styles.navIcon}
           />
+          {notifications.length > 0 && <View style={styles.badgeDot} />}
         </TouchableOpacity>
       </View>
     </View>
@@ -360,6 +365,15 @@ export default function Home({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+  badgeDot: {
+    width: 10,
+    height: 10,
+    backgroundColor: "#1e90ff",
+    borderRadius: 5,
+    position: "absolute",
+    top: 0,
+    right: 0,
+  },
   bookingCard: {
     backgroundColor: "#f9f9f9",
     borderRadius: 16,

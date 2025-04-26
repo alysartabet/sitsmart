@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { supabase } from "../SupabaseClient";
+import { NotificationsContext } from "../NotificationsContext";
 import {
   Alert,
   View,
@@ -76,16 +77,38 @@ export default function Notifications({ navigation }) {
         ]
       );
     } else if (notification.type === "profile_picture_update") {
-      Alert.alert(
-        "Upload Your Profile Picture",
-        "Go upload a profile picture to personalize your account!",
-        [
-          {
-            text: "Go to Profile",
-            onPress: () => navigation.navigate("Profile"),
-          },
-        ]
-      );
+      const { data: userData, error: userError } =
+        await supabase.auth.getUser();
+      if (userError) {
+        console.error(
+          "Failed to fetch user for profile picture check",
+          userError
+        );
+        return;
+      }
+
+      if (userData?.user?.user_metadata?.avatar_url) {
+        console.log(
+          "User already has a profile picture, ignoring notification."
+        );
+        await supabase
+          .from("notifications")
+          .update({ status: "confirmed" })
+          .eq("id", notification.id);
+        fetchNotifications();
+      } else {
+        // Only alert if no profile pic
+        Alert.alert(
+          "Upload Your Profile Picture",
+          "Go upload a profile picture to personalize your account!",
+          [
+            {
+              text: "Go to Profile",
+              onPress: () => navigation.navigate("Profile"),
+            },
+          ]
+        );
+      }
     }
   };
 
@@ -135,36 +158,55 @@ export default function Notifications({ navigation }) {
             <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
           }
         >
-          {notifications.map((notification) => (
-            <TouchableOpacity
-              key={notification.id}
-              style={styles.card}
-              onPress={() => handleNotification(notification)}
-            >
-              <Text style={styles.cardTitle}>
-                {notification.type === "booking_confirmation"
-                  ? "Booking Confirmation"
-                  : notification.type === "profile_update"
-                  ? "Complete Your Profile"
-                  : notification.type === "profile_picture_update"
-                  ? "Upload Your Profile Picture"
-                  : "Notification"}
-              </Text>
-              <Text style={styles.cardText}>
-                {notification.type === "booking_confirmation"
-                  ? "Confirm your booking within 5 minutes to keep it!"
-                  : notification.type === "profile_update"
-                  ? "Please update your account details."
-                  : notification.type === "profile_picture_update"
-                  ? "Add a profile picture to personalize your account!"
-                  : ""}
-              </Text>
-              <Text style={styles.timeText}>
-                {formatDistanceToNowStrict(parseISO(notification.created_at))}{" "}
-                ago
-              </Text>
-            </TouchableOpacity>
-          ))}
+          {notifications.map((notification) => {
+            let iconSource;
+            if (notification.type === "booking_confirmation") {
+              iconSource = require("../assets/images/confirm.png");
+            } else if (notification.type === "profile_update") {
+              iconSource = require("../assets/images/notice.png");
+            } else if (notification.type === "profile_picture_update") {
+              iconSource = require("../assets/images/info.png");
+            } else {
+              iconSource = require("../assets/images/notice.png"); // fallback
+            }
+            return (
+              <TouchableOpacity
+                key={notification.id}
+                style={styles.notificationCard}
+                onPress={() => handleNotification(notification)}
+              >
+                <View style={styles.iconContainer}>
+                  <Image source={iconSource} style={styles.notificationIcon} />
+                </View>
+                <View style={styles.notificationContent}>
+                  <Text style={styles.notificationTitle}>
+                    {notification.type === "booking_confirmation"
+                      ? "Booking Confirmation"
+                      : notification.type === "profile_update"
+                      ? "Complete Your Profile"
+                      : notification.type === "profile_picture_update"
+                      ? "Upload Your Profile Picture"
+                      : "Notification"}
+                  </Text>
+                  <Text style={styles.notificationText}>
+                    {notification.type === "booking_confirmation"
+                      ? "Confirm your booking within 5 minutes to keep it!"
+                      : notification.type === "profile_update"
+                      ? "Please update your account details."
+                      : notification.type === "profile_picture_update"
+                      ? "Add a profile picture to personalize your account!"
+                      : ""}
+                  </Text>
+                  <Text style={styles.timeText}>
+                    {formatDistanceToNowStrict(
+                      parseISO(notification.created_at)
+                    )}{" "}
+                    ago
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            );
+          })}
         </ScrollView>
       )}
 
@@ -193,6 +235,7 @@ export default function Notifications({ navigation }) {
             source={require("../assets/images/bell.png")}
             style={styles.navTouch}
           />
+          {notifications.length > 0 && <View style={styles.badgeDot} />}
         </TouchableOpacity>
       </View>
     </View>
@@ -200,6 +243,15 @@ export default function Notifications({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+  badgeDot: {
+    width: 10,
+    height: 10,
+    backgroundColor: "#1e90ff",
+    borderRadius: 5,
+    position: "absolute",
+    top: 0,
+    right: 0,
+  },
   badge: {
     backgroundColor: "#4f6df5",
     width: 36,
@@ -266,5 +318,56 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
     marginBottom: 18,
     tintColor: "#1e90ff",
+  },
+  notificationCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#fff",
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 16,
+    shadowColor: "#000",
+    shadowOpacity: 0.05,
+    shadowRadius: 5,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 3,
+  },
+
+  iconContainer: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: "#f0f0f0",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: 16,
+  },
+
+  notificationIcon: {
+    width: 30,
+    height: 30,
+    resizeMode: "contain",
+  },
+
+  notificationContent: {
+    flex: 1,
+  },
+
+  notificationTitle: {
+    fontSize: 16,
+    fontFamily: "Gilroy-SemiBold",
+    color: "#333",
+    marginBottom: 4,
+  },
+  notificationText: {
+    fontSize: 14,
+    fontFamily: "Gilroy-Regular",
+    color: "#555",
+    marginBottom: 4,
+  },
+  timeText: {
+    fontSize: 12,
+    fontFamily: "Gilroy-Regular",
+    color: "#999",
   },
 });

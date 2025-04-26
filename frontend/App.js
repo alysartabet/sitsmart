@@ -3,6 +3,7 @@ import { useFonts } from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ThemeProvider } from "./ThemeContext";
+import { NotificationsProvider } from "./NotificationsContext";
 import SplashScreen from "./screens/SplashScreen";
 import Onboarding from "./screens/Onboarding";
 import ResetPassword from "./screens/ResetPassword";
@@ -22,6 +23,7 @@ import ChangePassword from "./screens/ChangePassword";
 import Room from "./screens/Room";
 import Book from "./screens/Book";
 import FullCalendar from "./screens/FullCalendar";
+import Rating from "./screens/Rating";
 
 const Stack = createNativeStackNavigator();
 
@@ -43,31 +45,34 @@ export default function App() {
 
   return (
     <ThemeProvider>
-      <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{ headerShown: false, animation: "fade" }}
-        >
-          <Stack.Screen name="Splash" component={SplashScreen} />
-          <Stack.Screen name="Onboarding" component={Onboarding} />
-          <Stack.Screen name="SignIn" component={SignIn} />
-          <Stack.Screen name="SignUp" component={SignUp} />
-          <Stack.Screen name="ResetPassword" component={ResetPassword} />
-          <Stack.Screen name="Verification" component={Verification} />
-          <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Search" component={Search} />
-          <Stack.Screen name="Calendar" component={Calendar} />
-          <Stack.Screen name="Notifications" component={Notifications} />
-          <Stack.Screen name="Profile" component={Profile} />
-          <Stack.Screen name="Preferences" component={Preferences} />
-          <Stack.Screen name="AcctSettings" component={AcctSettings} />
-          <Stack.Screen name="SSSettings" component={SSSettings} />
-          <Stack.Screen name="FAQ" component={FAQ} />
-          <Stack.Screen name="ChangePassword" component={ChangePassword} />
-          <Stack.Screen name="Room" component={Room} />
-          <Stack.Screen name="Book" component={Book} />
-          <Stack.Screen name="FullCalendar" component={FullCalendar} />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <NotificationsProvider>
+        <NavigationContainer>
+          <Stack.Navigator
+            screenOptions={{ headerShown: false, animation: "fade" }}
+          >
+            <Stack.Screen name="Splash" component={SplashScreen} />
+            <Stack.Screen name="Onboarding" component={Onboarding} />
+            <Stack.Screen name="SignIn" component={SignIn} />
+            <Stack.Screen name="SignUp" component={SignUp} />
+            <Stack.Screen name="ResetPassword" component={ResetPassword} />
+            <Stack.Screen name="Verification" component={Verification} />
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Search" component={Search} />
+            <Stack.Screen name="Calendar" component={Calendar} />
+            <Stack.Screen name="Notifications" component={Notifications} />
+            <Stack.Screen name="Profile" component={Profile} />
+            <Stack.Screen name="Preferences" component={Preferences} />
+            <Stack.Screen name="AcctSettings" component={AcctSettings} />
+            <Stack.Screen name="SSSettings" component={SSSettings} />
+            <Stack.Screen name="FAQ" component={FAQ} />
+            <Stack.Screen name="ChangePassword" component={ChangePassword} />
+            <Stack.Screen name="Room" component={Room} />
+            <Stack.Screen name="Book" component={Book} />
+            <Stack.Screen name="FullCalendar" component={FullCalendar} />
+            <Stack.Screen name="Rating" component={Rating} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </NotificationsProvider>
     </ThemeProvider>
   );
 }

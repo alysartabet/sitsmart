@@ -17,9 +17,11 @@ const { width } = Dimensions.get("window");
 export default function Room({ navigation, route }) {
   const { roomId } = route.params;
   const [roomDetails, setRoomDetails] = useState(null);
+  const [roomRating, setRoomRating] = useState(null); // for av_rating
+  const [ratingsCount, setRatingsCount] = useState(null);
 
   useEffect(() => {
-    const fetchRoomDetails = async () => {
+    const fetchData = async () => {
       const { data, error } = await supabase
         .from("room")
         .select("*")
@@ -31,64 +33,90 @@ export default function Room({ navigation, route }) {
       } else {
         setRoomDetails(data);
       }
+
+      // Fetch room rating from room_rating table
+      const { data: ratingData, error: ratingError } = await supabase
+        .from("room_rating")
+        .select("*")
+        .eq("room_id", roomId)
+        .single();
+
+      if (ratingError) {
+        console.log("No rating yet for this room."); // not an error if none exists
+      } else if (ratingData) {
+        setRoomRating(ratingData.av_rating);
+        setRatingsCount(ratingData.ratings_count);
+      }
     };
-
-    fetchRoomDetails();
+    fetchData();
   }, [roomId]);
-
-  if (!roomDetails) {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.loadingText}>Loading room details...</Text>
-      </View>
-    );
-  }
 
   return (
     <View style={styles.container}>
-      <View style={styles.imageContainer}>
-        <Image
-          source={require("../assets/images/room.png")}
-          style={styles.roomImage}
-        />
-        <View style={styles.topOverlay}>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Text style={styles.backArrow}>←</Text>
+      {roomDetails ? (
+        <>
+          <View style={styles.imageContainer}>
+            <Image
+              source={require("../assets/images/room.png")}
+              style={styles.roomImage}
+            />
+            <View style={styles.topOverlay}>
+              <TouchableOpacity onPress={() => navigation.goBack()}>
+                <Text style={styles.backArrow}>←</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.overlay}>
+              <Text style={styles.roomTitle}>
+                {roomDetails.building_id} {roomDetails.room_num}
+              </Text>
+              {roomRating !== null && ratingsCount !== null && (
+                <Text style={styles.ratingMeta}>
+                  🎋 {roomRating.toFixed(1)} / 5 ({ratingsCount}{" "}
+                  {ratingsCount === 1 ? "rating" : "ratings"})
+                </Text>
+              )}
+            </View>
+          </View>
+
+          <ScrollView contentContainerStyle={styles.scrollContent}>
+            <Text style={styles.infoTitle}>Room Type</Text>
+            <View style={styles.infoContainer}>
+              <Text style={styles.infoDetail}>{roomDetails.room_type}</Text>
+            </View>
+            <Text style={styles.infoTitle}>Capacity: </Text>
+            <View style={styles.infoContainer}>
+              <Text style={styles.infoDetail}>{roomDetails.room_capacity}</Text>
+            </View>
+            <Text style={styles.infoTitle}>Computers:</Text>
+            <View style={styles.infoContainer}>
+              <Text style={styles.infoDetail}>{roomDetails.num_computers}</Text>
+            </View>
+            <Text style={styles.infoTitle}>Whiteboards:</Text>
+            <View style={styles.infoContainer}>
+              <Text style={styles.infoDetail}>
+                {roomDetails.num_whiteboards}
+              </Text>
+            </View>
+          </ScrollView>
+
+          {/* Bottom Booking Button */}
+          <TouchableOpacity
+            style={styles.bookButton}
+            onPress={() => navigation.navigate("Book", { roomId })}
+          >
+            <Text style={styles.bookText}>Book this Room</Text>
           </TouchableOpacity>
-        </View>
-        <View style={styles.overlay}>
-          <Text style={styles.roomTitle}>
-            {roomDetails.building_id} {roomDetails.room_num}
+        </>
+      ) : (
+        // Optional: you can show a loading indicator while waiting
+        <View
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        >
+          <Text style={{ fontSize: 18, color: "#666" }}>
+            Loading room details...
           </Text>
         </View>
-      </View>
-
-      <ScrollView contentContainerStyle={styles.scrollContent}>
-        <Text style={styles.infoTitle}>Room Type</Text>
-        <View style={styles.infoContainer}>
-          <Text style={styles.infoDetail}>{roomDetails.room_type}</Text>
-        </View>
-        <Text style={styles.infoTitle}>Capacity: </Text>
-        <View style={styles.infoContainer}>
-          <Text style={styles.infoDetail}>{roomDetails.room_capacity}</Text>
-        </View>
-        <Text style={styles.infoTitle}>Computers:</Text>
-        <View style={styles.infoContainer}>
-          <Text style={styles.infoDetail}>{roomDetails.num_computers}</Text>
-        </View>
-        <Text style={styles.infoTitle}>Whiteboards:</Text>
-        <View style={styles.infoContainer}>
-          <Text style={styles.infoDetail}>{roomDetails.num_whiteboards}</Text>
-        </View>
-      </ScrollView>
-
-      {/* Bottom Booking Button */}
-      <TouchableOpacity
-        style={styles.bookButton}
-        onPress={() => navigation.navigate("Book", { roomId })}
-      >
-        <Text style={styles.bookText}>Book this Room</Text>
-      </TouchableOpacity>
+      )}
     </View>
   );
 }
@@ -110,6 +138,15 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 90,
     borderBottomRightRadius: 90,
     backgroundColor: "#ccc",
+  },
+  ratingMeta: {
+    fontSize: 16,
+    fontFamily: "Gilroy-Medium",
+    marginTop: 6,
+    color: "#fff",
+    textShadowColor: "rgba(0, 0, 0, 1)",
+    textShadowOffset: { width: 0, height: 2 },
+    textShadowRadius: 4,
   },
   roomImage: {
     width: "100%",

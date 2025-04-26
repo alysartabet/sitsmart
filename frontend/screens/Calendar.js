@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { supabase } from "../SupabaseClient";
+import { NotificationsContext } from "../NotificationsContext";
 import {
   format,
   startOfWeek,
@@ -24,11 +25,16 @@ export default function Calendar({ navigation }) {
   const route = useRoute();
   const passedDate = route.params?.selectedDate;
   const [reservations, setReservations] = useState([]);
+  const [userReviews, setUserReviews] = useState([]);
+  const [user, setUser] = useState(null);
 
   const today = passedDate ? parseISO(passedDate) : new Date();
   const [currentStartOfWeek, setCurrentStartOfWeek] = useState(
     startOfWeek(today, { weekStartsOn: 0 })
   );
+
+  const { notifications, fetchNotifications } =
+    useContext(NotificationsContext);
 
   const handleCancelReservation = (reservationId) => {
     // Ask confirmation
@@ -73,6 +79,42 @@ export default function Calendar({ navigation }) {
 
     fetchReservations();
   }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data: sessionData, error: sessionError } =
+        await supabase.auth.getUser();
+      if (sessionError) {
+        console.error(sessionError);
+        return;
+      }
+      const userId = sessionData.user.id;
+      setUser(userId);
+
+      const { data: reviews, error: reviewError } = await supabase
+        .from("room_review")
+        .select("room_id")
+        .eq("user_id", userId);
+
+      if (reviewError) {
+        console.error(reviewError);
+        return;
+      }
+
+      setUserReviews(reviews.map((r) => r.room_id));
+    };
+
+    fetchData();
+  }, []);
+
+  const isReservationFinished = (date, endTime) => {
+    const endDateTime = new Date(`${date}T${endTime}`);
+    return new Date() > endDateTime; // now is after end time
+  };
+
+  const hasRatedRoom = (roomId) => {
+    return userReviews.includes(roomId);
+  };
 
   const panResponder = PanResponder.create({
     onMoveShouldSetPanResponder: (_, gestureState) => {
@@ -217,26 +259,50 @@ export default function Calendar({ navigation }) {
           showsVerticalScrollIndicator={false}
         >
           <View style={{ gap: 20 }}>
-            {reservationsForSelectedDate.map((res, idx) => (
-              <View key={idx} style={styles.card}>
-                <Text style={styles.room}>{res.room_id}</Text>
-                <Text style={styles.time}>
-                  {formatDisplayTime(res.start_time)} -{" "}
-                  {formatDisplayTime(res.end_time)}
-                </Text>
-                <View style={styles.cardButtons}>
-                  <TouchableOpacity style={styles.overrideBtn}>
-                    <Text style={styles.overrideText}>Rate Room</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={styles.cancelBtn}
-                    onPress={() => handleCancelReservation(res.id)}
-                  >
-                    <Text style={styles.cancelText}>Cancel</Text>
-                  </TouchableOpacity>
+            {reservationsForSelectedDate.map((res, idx) => {
+              const finished = isReservationFinished(res.date, res.end_time);
+              const alreadyRated = hasRatedRoom(res.room_id);
+
+              return (
+                <View key={idx} style={styles.card}>
+                  <Text style={styles.room}>{res.room_id}</Text>
+                  <Text style={styles.time}>
+                    {formatDisplayTime(res.start_time)} -{" "}
+                    {formatDisplayTime(res.end_time)}
+                  </Text>
+                  <View style={styles.cardButtons}>
+                    <TouchableOpacity
+                      style={[
+                        styles.rateBtn,
+                        (!finished || alreadyRated) && {
+                          backgroundColor: "#ccc",
+                        }, // Greyed out
+                      ]}
+                      disabled={!finished || alreadyRated}
+                      onPress={() =>
+                        navigation.navigate("Rating", {
+                          roomName: res.room_id,
+                          roomId: res.room_id,
+                        })
+                      }
+                    >
+                      <Text style={styles.rateText}>
+                        {alreadyRated ? "Rated" : "Rate Room"}
+                      </Text>
+                    </TouchableOpacity>
+
+                    {!finished && (
+                      <TouchableOpacity
+                        style={styles.cancelBtn}
+                        onPress={() => handleCancelReservation(res.id)}
+                      >
+                        <Text style={styles.cancelText}>Cancel</Text>
+                      </TouchableOpacity>
+                    )}
+                  </View>
                 </View>
-              </View>
-            ))}
+              );
+            })}
           </View>
         </ScrollView>
       ) : (
@@ -268,6 +334,7 @@ export default function Calendar({ navigation }) {
             source={require("../assets/images/bell.png")}
             style={styles.navIcon}
           />
+          {notifications.length > 0 && <View style={styles.badgeDot} />}
         </TouchableOpacity>
       </View>
     </View>
@@ -285,6 +352,15 @@ const styles = StyleSheet.create({
   },
   activeDayText: {
     color: "#fff",
+  },
+  badgeDot: {
+    width: 10,
+    height: 10,
+    backgroundColor: "#1e90ff",
+    borderRadius: 5,
+    position: "absolute",
+    top: 0,
+    right: 0,
   },
   building: {
     color: "#555",
@@ -360,10 +436,10 @@ const styles = StyleSheet.create({
   },
   lazyKoala: {
     position: "absolute",
-    top: 60,
-    left: "25%",
-    width: 200,
-    height: 200,
+    top: 20,
+    right: "10%",
+    width: 300,
+    height: 300,
     resizeMode: "contain",
   },
   line: {
@@ -399,13 +475,13 @@ const styles = StyleSheet.create({
     marginBottom: 18,
     tintColor: "#1e90ff",
   },
-  overrideBtn: {
+  rateBtn: {
     backgroundColor: "#e0e0e0",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 8,
   },
-  overrideText: {
+  rateText: {
     fontFamily: "Gilroy-Regular",
     color: "#333",
   },

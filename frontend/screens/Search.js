@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { supabase } from "../SupabaseClient";
+import { NotificationsContext } from "../NotificationsContext";
 import {
   View,
   Text,
@@ -17,6 +18,9 @@ export default function Search({ navigation, route }) {
   const [rooms, setRooms] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredRooms, setFilteredRooms] = useState([]);
+
+  const { notifications, fetchNotifications } =
+    useContext(NotificationsContext);
 
   useEffect(() => {
     const fetchRooms = async () => {
@@ -129,6 +133,7 @@ export default function Search({ navigation, route }) {
             source={require("../assets/images/bell.png")}
             style={styles.navIcon}
           />
+          {notifications.length > 0 && <View style={styles.badgeDot} />}
         </TouchableOpacity>
       </View>
     </View>
@@ -136,6 +141,15 @@ export default function Search({ navigation, route }) {
 }
 
 const styles = StyleSheet.create({
+  badgeDot: {
+    width: 10,
+    height: 10,
+    backgroundColor: "#1e90ff",
+    borderRadius: 5,
+    position: "absolute",
+    top: 0,
+    right: 0,
+  },
   bookButton: {
     backgroundColor: "#4f6df5",
     position: "absolute",

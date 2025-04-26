@@ -143,17 +143,26 @@ export default function AcctSettings({ navigation }) {
 
   const handleEmailChange = async () => {
     try {
+      const { data: sessionData, error: sessionError } =
+        await supabase.auth.getSession();
+
+      if (sessionError || !sessionData?.session?.access_token) {
+        console.error("Could not get session token");
+        Alert.alert("Error", "Could not authenticate user.");
+        return;
+      }
+
       const response = await fetch(
-        "https://sitsmart.functions.supabase.co/delete-user",
+        "https:/osldfluzgpxzeuvwfwvu.functions.supabase.co/clear-user",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${sessionData.session.access_token}`,
           },
           body: JSON.stringify({ userId }),
         }
       );
-
       const text = await response.text();
       console.log("Function response text:", text);
 

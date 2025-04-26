@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { supabase } from "../SupabaseClient";
+import { NotificationsContext } from "../NotificationsContext";
 import {
   View,
   Text,
@@ -46,6 +47,9 @@ const years = Array.from({ length: 2040 - 2022 + 1 }, (_, i) => 2022 + i);
 export default function FullCalendar({ navigation }) {
   const route = useRoute();
   const passedInitialDate = route.params?.initialDate;
+
+  const { notifications, fetchNotifications } =
+    useContext(NotificationsContext);
 
   const [currentDate, setCurrentDate] = useState(
     passedInitialDate ? parseISO(passedInitialDate) : new Date()
@@ -220,6 +224,7 @@ export default function FullCalendar({ navigation }) {
             source={require("../assets/images/bell.png")}
             style={styles.navIcon}
           />
+          {notifications.length > 0 && <View style={styles.badgeDot} />}
         </TouchableOpacity>
       </View>
     </View>
@@ -236,6 +241,15 @@ const styles = StyleSheet.create({
   back: {
     fontSize: 24,
     paddingRight: 10,
+  },
+  badgeDot: {
+    width: 10,
+    height: 10,
+    backgroundColor: "#1e90ff",
+    borderRadius: 5,
+    position: "absolute",
+    top: 0,
+    right: 0,
   },
   container: {
     flex: 1,
