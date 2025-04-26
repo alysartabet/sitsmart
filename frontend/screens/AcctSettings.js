@@ -88,8 +88,6 @@ export default function AcctSettings({ navigation }) {
       );
     } else {
       // Normal update path
-      console.log("Saving full_name:", name);
-      console.log("Using userId:", userId);
       const { error: updateError } = await supabase
         .from("users")
         .update({
@@ -121,7 +119,24 @@ export default function AcctSettings({ navigation }) {
         setTimeout(() => {
           Alert.alert("Success", "Your changes have been saved.");
         }, 100);
-        fetchUserData();
+
+        if (!name || !studentID) {
+          await supabase.from("notifications").insert([
+            {
+              user_id: userId,
+              type: "profile_update",
+              status: "pending",
+            },
+          ]);
+        } else {
+          // If they complete info, mark any pending profile_update as resolved
+          await supabase
+            .from("notifications")
+            .update({ status: "resolved" })
+            .eq("user_id", userId)
+            .eq("type", "profile_update")
+            .eq("status", "pending");
+        }
       }
     }
   };

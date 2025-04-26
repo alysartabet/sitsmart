@@ -9,30 +9,39 @@ import {
   FlatList,
   Dimensions,
   ScrollView,
-  PanResponder
+  PanResponder,
 } from "react-native";
-import { 
-    format, 
-    startOfMonth, 
-    endOfMonth, 
-    startOfWeek, 
-    endOfWeek, 
-    addDays, 
-    addMonths, 
-    subMonths, 
-    isSameMonth, 
-    isToday, 
-    parseISO 
+import {
+  format,
+  startOfMonth,
+  endOfMonth,
+  startOfWeek,
+  endOfWeek,
+  addDays,
+  addMonths,
+  subMonths,
+  isSameMonth,
+  isToday,
+  parseISO,
 } from "date-fns";
 import { useRoute } from "@react-navigation/native";
 
 const { width } = Dimensions.get("window");
 const months = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-  ];
-  const years = Array.from({ length: 2040 - 2022 + 1 }, (_, i) => 2022 + i);
-  
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+const years = Array.from({ length: 2040 - 2022 + 1 }, (_, i) => 2022 + i);
 
 export default function FullCalendar({ navigation }) {
   const route = useRoute();
@@ -67,12 +76,17 @@ export default function FullCalendar({ navigation }) {
   };
 
   const handleMonthChange = (direction) => {
-    const newDate = direction === "next" ? addMonths(currentDate, 1) : subMonths(currentDate, 1);
+    const newDate =
+      direction === "next"
+        ? addMonths(currentDate, 1)
+        : subMonths(currentDate, 1);
     setCurrentDate(newDate);
   };
 
   const handleDatePress = (date) => {
-    navigation.navigate("Calendar", { selectedDate: format(date, "yyyy-MM-dd") });
+    navigation.navigate("Calendar", {
+      selectedDate: format(date, "yyyy-MM-dd"),
+    });
   };
 
   const panResponder = PanResponder.create({
@@ -98,100 +112,114 @@ export default function FullCalendar({ navigation }) {
           <Text style={styles.back}>←</Text>
         </TouchableOpacity>
         <Text style={styles.title}>Full Calendar</Text>
-        <View style={{ width: 28 }} /> 
+        <View style={{ width: 28 }} />
       </View>
 
       <View style={styles.monthNav}>
-      <TouchableOpacity onPress={() => setShowMonthPicker(true)}>
-        <Text style={styles.monthLabel}>{format(currentDate, "MMMM")}</Text>
-      </TouchableOpacity>
+        <TouchableOpacity onPress={() => setShowMonthPicker(true)}>
+          <Text style={styles.monthLabel}>{format(currentDate, "MMMM")}</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => setShowYearPicker(true)}>
-        <Text style={styles.yearLabel}>{format(currentDate, "yyyy")}</Text>
-      </TouchableOpacity>
+        <TouchableOpacity onPress={() => setShowYearPicker(true)}>
+          <Text style={styles.yearLabel}>{format(currentDate, "yyyy")}</Text>
+        </TouchableOpacity>
       </View>
 
       <View {...panResponder.panHandlers}>
         {/* Weekday Labels */}
         <View style={styles.weekRow}>
-            {["S", "M", "T", "W", "T", "F", "S"].map((d, idx) => (
-            <Text key={idx} style={styles.weekday}>{d}</Text>
-            ))}
+          {["S", "M", "T", "W", "T", "F", "S"].map((d, idx) => (
+            <Text key={idx} style={styles.weekday}>
+              {d}
+            </Text>
+          ))}
         </View>
 
         {/* Calendar Grid */}
         <View style={styles.grid}>
-            {calendarDays.map((day, index) => {
+          {calendarDays.map((day, index) => {
             const isCurrentMonth = isSameMonth(day, currentDate);
             const today = isToday(day);
             return (
-                <TouchableOpacity
+              <TouchableOpacity
                 key={index}
                 style={[
-                    styles.dayCell,
-                    today && styles.todayCell,
-                    !isCurrentMonth && styles.faded
+                  styles.dayCell,
+                  today && styles.todayCell,
+                  !isCurrentMonth && styles.faded,
                 ]}
                 onPress={() => handleDatePress(day)}
-                >
+              >
                 <Text style={[styles.dayText, today && styles.todayText]}>
-                    {format(day, "d")}
+                  {format(day, "d")}
                 </Text>
-                </TouchableOpacity>
+              </TouchableOpacity>
             );
-            })}
+          })}
         </View>
 
         {showMonthPicker && (
-        <View style={styles.pickerModal}>
+          <View style={styles.pickerModal}>
             {months.map((month, index) => (
-            <TouchableOpacity
+              <TouchableOpacity
                 key={month}
                 onPress={() => {
-                const newDate = new Date(currentDate);
-                newDate.setMonth(index);
-                setCurrentDate(newDate);
-                setShowMonthPicker(false);
+                  const newDate = new Date(currentDate);
+                  newDate.setMonth(index);
+                  setCurrentDate(newDate);
+                  setShowMonthPicker(false);
                 }}
-            >
+              >
                 <Text style={styles.pickerItem}>{month}</Text>
-            </TouchableOpacity>
+              </TouchableOpacity>
             ))}
-        </View>
+          </View>
         )}
 
         {showYearPicker && (
-        <View style={styles.pickerModal}>
+          <View style={styles.pickerModal}>
             {years.map((year) => (
-            <TouchableOpacity
+              <TouchableOpacity
                 key={year}
                 onPress={() => {
-                const newDate = new Date(currentDate);
-                newDate.setFullYear(year);
-                setCurrentDate(newDate);
-                setShowYearPicker(false);
+                  const newDate = new Date(currentDate);
+                  newDate.setFullYear(year);
+                  setCurrentDate(newDate);
+                  setShowYearPicker(false);
                 }}
-            >
+              >
                 <Text style={styles.pickerItem}>{year.toString()}</Text>
-            </TouchableOpacity>
+              </TouchableOpacity>
             ))}
-        </View>
+          </View>
         )}
       </View>
 
       {/* Bottom Navigation */}
       <View style={styles.navbar}>
         <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-          <Image source={require("../assets/images/home.png")} style={styles.navIcon} />
+          <Image
+            source={require("../assets/images/home.png")}
+            style={styles.navIcon}
+          />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("Search")}>
-          <Image source={require("../assets/images/search.png")} style={styles.navIcon} />
+          <Image
+            source={require("../assets/images/search.png")}
+            style={styles.navIcon}
+          />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("Calendar")}>
-          <Image source={require("../assets/images/calendar.png")} style={styles.navTouch} />
+          <Image
+            source={require("../assets/images/calendar.png")}
+            style={styles.navTouch}
+          />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("Notifications")}>
-          <Image source={require("../assets/images/bell.png")} style={styles.navIcon} />
+          <Image
+            source={require("../assets/images/bell.png")}
+            style={styles.navIcon}
+          />
         </TouchableOpacity>
       </View>
     </View>
@@ -256,7 +284,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: 14,
+    marginBottom: 16,
+    marginTop: 20,
   },
   navbar: {
     position: "absolute",

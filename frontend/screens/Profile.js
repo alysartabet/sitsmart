@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { supabase } from "../SupabaseClient";
 import {
   View,
   Text,
@@ -20,6 +21,14 @@ export default function Profile({ navigation }) {
   useEffect(() => {
     loadProfileImage();
   }, []);
+
+  useEffect(() => {
+    if (profileImage === null) {
+      createProfilePicNotification();
+    } else {
+      removeProfilePicNotification();
+    }
+  }, [profileImage]);
 
   const loadProfileImage = async () => {
     const uri = await AsyncStorage.getItem(STORAGE_KEY);
@@ -90,6 +99,48 @@ export default function Profile({ navigation }) {
         { text: "Remove", onPress: removeProfileImage },
       ]
     );
+  };
+
+  const createProfilePicNotification = async () => {
+    const {
+      data: { user },
+      error: sessionError,
+    } = await supabase.auth.getUser();
+    if (sessionError || !user) return;
+
+    // Check if notification already exists
+    const { data: existing, error } = await supabase
+      .from("notifications")
+      .select("*")
+      .eq("user_id", user.id)
+      .eq("type", "profile_picture_update")
+      .eq("status", "pending")
+      .single();
+
+    if (!existing) {
+      await supabase.from("notifications").insert([
+        {
+          user_id: user.id,
+          type: "profile_picture_update",
+          status: "pending",
+        },
+      ]);
+    }
+  };
+
+  const removeProfilePicNotification = async () => {
+    const {
+      data: { user },
+      error: sessionError,
+    } = await supabase.auth.getUser();
+    if (sessionError || !user) return;
+
+    await supabase
+      .from("notifications")
+      .update({ status: "confirmed" })
+      .eq("user_id", user.id)
+      .eq("type", "profile_picture_update")
+      .eq("status", "pending");
   };
 
   return (

@@ -1,39 +1,112 @@
 import React, { useState, useEffect } from "react";
-import { format, startOfWeek, addDays, parseISO } from "date-fns";
+import { supabase } from "../SupabaseClient";
 import {
+  format,
+  startOfWeek,
+  addDays,
+  parseISO,
+  addWeeks,
+  subWeeks,
+} from "date-fns";
+import {
+  Alert,
   View,
   Text,
   StyleSheet,
   TouchableOpacity,
   ScrollView,
   Image,
+  PanResponder,
 } from "react-native";
 import { useRoute } from "@react-navigation/native";
 
 export default function Calendar({ navigation }) {
   const route = useRoute();
   const passedDate = route.params?.selectedDate;
+  const [reservations, setReservations] = useState([]);
 
   const today = passedDate ? parseISO(passedDate) : new Date();
-  const start = startOfWeek(today, { weekStartsOn: 0 });
+  const [currentStartOfWeek, setCurrentStartOfWeek] = useState(
+    startOfWeek(today, { weekStartsOn: 0 })
+  );
+
+  const handleCancelReservation = (reservationId) => {
+    // Ask confirmation
+    alertConfirm(
+      "Cancel Reservation",
+      "Are you sure you want to cancel this reservation?",
+      async () => {
+        const { error } = await supabase
+          .from("reservations")
+          .delete()
+          .eq("id", reservationId);
+
+        if (error) {
+          console.error("Error cancelling reservation:", error);
+          alert("Failed to cancel reservation. Please try again.");
+        } else {
+          // Refetch reservations after successful delete
+          const { data: updatedData, error: fetchError } = await supabase
+            .from("reservations")
+            .select("*");
+
+          if (fetchError) {
+            console.error("Error fetching updated reservations:", fetchError);
+          } else {
+            setReservations(updatedData);
+          }
+        }
+      }
+    );
+  };
+
+  useEffect(() => {
+    const fetchReservations = async () => {
+      const { data, error } = await supabase.from("reservations").select("*");
+
+      if (error) {
+        console.error("Error fetching reservations:", error);
+      } else {
+        setReservations(data);
+      }
+    };
+
+    fetchReservations();
+  }, []);
+
+  const panResponder = PanResponder.create({
+    onMoveShouldSetPanResponder: (_, gestureState) => {
+      return Math.abs(gestureState.dx) > 20; // only respond to horizontal swipes
+    },
+    onPanResponderRelease: (_, gestureState) => {
+      if (gestureState.dx > 50) {
+        // Swipe right - go to previous week
+        setCurrentStartOfWeek((prev) => subWeeks(prev, 1));
+      } else if (gestureState.dx < -50) {
+        // Swipe left - go to next week
+        setCurrentStartOfWeek((prev) => addWeeks(prev, 1));
+      }
+    },
+  });
 
   const [selectedDate, setSelectedDate] = useState(format(today, "yyyy-MM-dd"));
 
   const days = Array.from({ length: 7 }).map((_, index) => {
-    const date = addDays(start, index);
+    const date = addDays(currentStartOfWeek, index);
     return {
-      day: format(date, "E")[0],   // first letter of weekday (S, M, T...)
-      date: format(date, "d"),     // date of month (e.g. 21)
-      fullDate: format(date, "yyyy-MM-dd") // e.g. 2025-04-21 (for filtering reservations)
+      day: format(date, "E")[0],
+      date: format(date, "d"),
+      fullDate: format(date, "yyyy-MM-dd"),
     };
   });
 
-  const mockReservedDates = ["2025-04-22", "2025-04-20"]; //test dates here
-  const hasReservation = mockReservedDates.includes(selectedDate);
+  const reservationsForSelectedDate = reservations.filter(
+    (r) => r.date === selectedDate
+  );
 
   const TimeScheduleWithKoala = () => (
     <View style={styles.timeGrid}>
-      {[9, 10, 11, 12, 13, 14, 15, 16].map((hour) => (
+      {[9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19].map((hour) => (
         <View key={hour} style={styles.timeRow}>
           <Text style={styles.timeLabel}>{formatHour(hour)}</Text>
           <View style={styles.line} />
@@ -46,87 +119,157 @@ export default function Calendar({ navigation }) {
     </View>
   );
 
+  const formatDisplayTime = (timeString) => {
+    if (!timeString) return "";
+    const [hour, minute] = timeString.split(":");
+    const dateObj = new Date();
+    dateObj.setHours(parseInt(hour));
+    dateObj.setMinutes(parseInt(minute));
+    return dateObj.toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  };
+
   const formatHour = (hour) => {
     const suffix = hour >= 12 ? "PM" : "AM";
     const display = hour > 12 ? hour - 12 : hour;
     return `${display} ${suffix}`;
   };
 
+  const alertConfirm = (title, message, onConfirm) => {
+    if (window.confirm) {
+      // Web
+      if (window.confirm(`${title}\n\n${message}`)) {
+        onConfirm();
+      }
+    } else {
+      // React Native
+      Alert.alert(
+        title,
+        message,
+        [
+          { text: "No", style: "cancel" },
+          { text: "Yes", onPress: onConfirm },
+        ],
+        { cancelable: true }
+      );
+    }
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.headerRow}>
         <Text style={styles.heading}>My Reservations</Text>
-        <TouchableOpacity onPress={() => navigation.navigate("FullCalendar", {
-          initialDate: selectedDate, 
-        })}>
-          <Image source={require("../assets/images/fullcalendar.png")} style={styles.calendarIcon} />
-      </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate("FullCalendar", {
+              initialDate: selectedDate,
+            })
+          }
+        >
+          <Image
+            source={require("../assets/images/fullcalendar.png")}
+            style={styles.calendarIcon}
+          />
+        </TouchableOpacity>
       </View>
 
       {/* Calendar Strip */}
-      <View style={styles.calendarStrip}>
-        {days.map((d, idx) => (
-          <TouchableOpacity
-            key={idx}
-            style={[
-              styles.dateItem,
-              d.fullDate === selectedDate && styles.activeDate,
-            ]}
-            onPress={() => setSelectedDate(d.fullDate)}
-          >
-            <Text
+      <Text style={styles.dateText}>
+        {format(currentStartOfWeek, "MMMM yyyy")}
+      </Text>
+      <View {...panResponder.panHandlers}>
+        <View style={styles.calendarStrip}>
+          {days.map((d, idx) => (
+            <TouchableOpacity
+              key={idx}
               style={[
-                styles.dayText,
-                d.fullDate === selectedDate && styles.activeDayText,
+                styles.dateItem,
+                d.fullDate === selectedDate && styles.activeDate,
               ]}
+              onPress={() => setSelectedDate(d.fullDate)}
             >
-              {d.day}
-            </Text>
-            <Text
-              style={[
-                styles.dateText,
-                d.fullDate === selectedDate && styles.activeDateText,
-              ]}
-            >
-              {d.date}
-            </Text>
-          </TouchableOpacity>
-        ))}
-      </View>
-
-      {hasReservation ? (
-      <View style={styles.card}>
-        <Text style={styles.room}>Room 101</Text>
-        <Text style={styles.building}>Building 16w</Text>
-        <Text style={styles.time}>2:00 PM - 3:00 PM</Text>
-        <View style={styles.cardButtons}>
-          <TouchableOpacity style={styles.overrideBtn}>
-            <Text style={styles.overrideText}>Override</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.cancelBtn}>
-            <Text style={styles.cancelText}>Cancel</Text>
-          </TouchableOpacity>
+              <Text
+                style={[
+                  styles.dayText,
+                  d.fullDate === selectedDate && styles.activeDayText,
+                ]}
+              >
+                {d.day}
+              </Text>
+              <Text
+                style={[
+                  styles.dateText,
+                  d.fullDate === selectedDate && styles.activeDateText,
+                ]}
+              >
+                {d.date}
+              </Text>
+            </TouchableOpacity>
+          ))}
         </View>
       </View>
-    ) : (
-      <TimeScheduleWithKoala />
-    )}
+
+      {reservationsForSelectedDate.length > 0 ? (
+        <ScrollView
+          style={{ marginBottom: 120 }}
+          showsVerticalScrollIndicator={false}
+        >
+          <View style={{ gap: 20 }}>
+            {reservationsForSelectedDate.map((res, idx) => (
+              <View key={idx} style={styles.card}>
+                <Text style={styles.room}>{res.room_id}</Text>
+                <Text style={styles.time}>
+                  {formatDisplayTime(res.start_time)} -{" "}
+                  {formatDisplayTime(res.end_time)}
+                </Text>
+                <View style={styles.cardButtons}>
+                  <TouchableOpacity style={styles.overrideBtn}>
+                    <Text style={styles.overrideText}>Rate Room</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={styles.cancelBtn}
+                    onPress={() => handleCancelReservation(res.id)}
+                  >
+                    <Text style={styles.cancelText}>Cancel</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            ))}
+          </View>
+        </ScrollView>
+      ) : (
+        <TimeScheduleWithKoala />
+      )}
 
       {/* Bottom Navigation Bar */}
-        <View style={styles.navbar}>
-            <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-                <Image source={require("../assets/images/home.png")} style={styles.navIcon} />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate("Search")}>
-                <Image source={require("../assets/images/search.png")} style={styles.navIcon} />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate("Calendar")}>
-                <Image source={require("../assets/images/calendar.png")} style={styles.navTouch} />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate("Notifications")}>
-                <Image source={require("../assets/images/bell.png")} style={styles.navIcon} />
-            </TouchableOpacity>
-        </View>
+      <View style={styles.navbar}>
+        <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+          <Image
+            source={require("../assets/images/home.png")}
+            style={styles.navIcon}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Search")}>
+          <Image
+            source={require("../assets/images/search.png")}
+            style={styles.navIcon}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Calendar")}>
+          <Image
+            source={require("../assets/images/calendar.png")}
+            style={styles.navTouch}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Notifications")}>
+          <Image
+            source={require("../assets/images/bell.png")}
+            style={styles.navIcon}
+          />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -280,7 +423,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   timeGrid: {
-    marginTop: 20,
+    marginTop: 80,
     position: "relative",
     height: 400,
     justifyContent: "center",
@@ -294,6 +437,6 @@ const styles = StyleSheet.create({
   timeRow: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 20,
+    marginBottom: 40,
   },
 });

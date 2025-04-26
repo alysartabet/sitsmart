@@ -46,19 +46,40 @@ export default function Room({ navigation, route }) {
 
   return (
     <View style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollContent}>
+      <View style={styles.imageContainer}>
         <Image
           source={require("../assets/images/room.png")}
           style={styles.roomImage}
         />
-        <Text style={styles.roomTitle}>Room {roomDetails.room_num}</Text>
-        <Text style={styles.meta}>Building: {roomDetails.building_id}</Text>
-        <Text style={styles.meta}>Room Type: {roomDetails.room_type}</Text>
-        <Text style={styles.meta}>Capacity: {roomDetails.room_capacity}</Text>
-        <Text style={styles.meta}>Computers: {roomDetails.num_computers}</Text>
-        <Text style={styles.meta}>
-          Whiteboards: {roomDetails.num_whiteboards}
-        </Text>
+        <View style={styles.topOverlay}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Text style={styles.backArrow}>←</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.overlay}>
+          <Text style={styles.roomTitle}>
+            {roomDetails.building_id} {roomDetails.room_num}
+          </Text>
+        </View>
+      </View>
+
+      <ScrollView contentContainerStyle={styles.scrollContent}>
+        <Text style={styles.infoTitle}>Room Type</Text>
+        <View style={styles.infoContainer}>
+          <Text style={styles.infoDetail}>{roomDetails.room_type}</Text>
+        </View>
+        <Text style={styles.infoTitle}>Capacity: </Text>
+        <View style={styles.infoContainer}>
+          <Text style={styles.infoDetail}>{roomDetails.room_capacity}</Text>
+        </View>
+        <Text style={styles.infoTitle}>Computers:</Text>
+        <View style={styles.infoContainer}>
+          <Text style={styles.infoDetail}>{roomDetails.num_computers}</Text>
+        </View>
+        <Text style={styles.infoTitle}>Whiteboards:</Text>
+        <View style={styles.infoContainer}>
+          <Text style={styles.infoDetail}>{roomDetails.num_whiteboards}</Text>
+        </View>
       </ScrollView>
 
       {/* Bottom Booking Button */}
@@ -73,57 +94,121 @@ export default function Room({ navigation, route }) {
 }
 
 const styles = StyleSheet.create({
+  backArrow: {
+    fontSize: 26,
+    fontWeight: "600",
+    color: "#333",
+  },
   container: {
     flex: 1,
     backgroundColor: "#fff",
   },
-  scrollContent: {
-    padding: 24,
-    paddingBottom: 100, // To make space for bottom button
-  },
-  loadingText: {
-    marginTop: 100,
-    textAlign: "center",
-    fontSize: 18,
-    fontFamily: "Gilroy-Regular",
-    color: "#888",
+  imageContainer: {
+    width: "100%",
+    height: 400,
+    overflow: "hidden",
+    borderBottomLeftRadius: 90,
+    borderBottomRightRadius: 90,
+    backgroundColor: "#ccc",
   },
   roomImage: {
     width: "100%",
-    height: 200,
-    borderRadius: 16,
+    height: 420,
     resizeMode: "cover",
-    marginBottom: 20,
+  },
+  scrollContent: {
+    marginTop: -32,
+    paddingTop: 100,
+    paddingHorizontal: 24,
+    paddingBottom: 100,
   },
   roomTitle: {
-    fontSize: 24,
+    fontSize: 30,
     fontFamily: "Gilroy-Bold",
-    marginBottom: 10,
+    color: "#fff",
+    marginBottom: 8,
+    textShadowColor: "rgba(0, 0, 0, 1)",
+    textShadowOffset: { width: 0, height: 2 },
+    textShadowRadius: 4,
+  },
+  infoTitle: {
+    fontFamily: "Gilroy-SemiBold",
+    fontSize: 20,
+    color: "#333",
+    marginBottom: 6,
+  },
+  infoContainer: {
+    backgroundColor: "rgba(75, 73, 73, 0.1)",
+    borderRadius: 10,
+    paddingVertical: 12,
+    paddingHorizontal: 15,
+    shadowColor: "#000",
+    shadowOpacity: 0.05,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 6,
+    elevation: 3,
+    alignSelf: "flex-start",
+    marginLeft: 10,
+    marginBottom: 15,
+  },
+  infoDetail: {
+    fontFamily: "Gilroy-SemiBold",
+    fontSize: 16,
+    color: "rgb(37, 32, 32)",
   },
   meta: {
     fontSize: 16,
     fontFamily: "Gilroy-Regular",
+    color: "#666",
+    marginBottom: 20,
+  },
+  overlay: {
+    position: "absolute",
+    bottom: 40,
+    left: 20,
+    paddingHorizontal: 12,
+    paddingVertical: 0,
+    borderRadius: 12,
+  },
+  descriptionTitle: {
+    fontSize: 18,
+    fontFamily: "Gilroy-SemiBold",
     color: "#333",
     marginBottom: 8,
   },
+  descriptionText: {
+    fontSize: 14,
+    fontFamily: "Gilroy-Regular",
+    color: "#666",
+    lineHeight: 20,
+    marginBottom: 16,
+  },
   bookButton: {
     position: "absolute",
-    bottom: 20,
+    bottom: 40,
     left: 24,
     right: 24,
     backgroundColor: "#4f6df5",
-    borderRadius: 12,
-    paddingVertical: 16,
+    borderRadius: 24,
+    paddingVertical: 18,
     alignItems: "center",
     shadowColor: "#000",
-    shadowOpacity: 0.1,
-    shadowOffset: { width: 0, height: 3 },
-    shadowRadius: 5,
-    elevation: 6,
+    shadowOpacity: 0.15,
+    shadowOffset: { width: 0, height: 4 },
+    shadowRadius: 6,
+    elevation: 8,
   },
   bookText: {
     color: "#fff",
-    fontSize: 16,
+    fontSize: 18,
     fontFamily: "Gilroy-SemiBold",
+  },
+  topOverlay: {
+    position: "absolute",
+    top: 40,
+    left: 20,
+    paddingHorizontal: 12,
+    paddingVertical: 0,
+    borderRadius: 12,
   },
 });
