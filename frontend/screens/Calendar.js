@@ -275,7 +275,7 @@ export default function Calendar({ navigation }) {
                       style={[
                         styles.rateBtn,
                         (!finished || alreadyRated) && {
-                          backgroundColor: "#ccc",
+                          backgroundColor: "rgba(83, 89, 93, 0.1)0)",
                         }, // Greyed out
                       ]}
                       disabled={!finished || alreadyRated}
@@ -286,7 +286,7 @@ export default function Calendar({ navigation }) {
                         })
                       }
                     >
-                      <Text style={styles.rateText}>
+                      <Text style={styles.ratedText}>
                         {alreadyRated ? "Rated" : "Rate Room"}
                       </Text>
                     </TouchableOpacity>
@@ -476,14 +476,18 @@ const styles = StyleSheet.create({
     tintColor: "#1e90ff",
   },
   rateBtn: {
-    backgroundColor: "#e0e0e0",
+    backgroundColor: "rgb(38, 101, 157)",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 8,
   },
   rateText: {
     fontFamily: "Gilroy-Regular",
-    color: "#333",
+    color: "rgb(232, 228, 228)",
+  },
+  ratedText: {
+    fontFamily: "Gilroy-Regular",
+    color: "rgb(6, 6, 6)",
   },
   room: {
     fontSize: 18,

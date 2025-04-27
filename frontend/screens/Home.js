@@ -81,12 +81,23 @@ export default function Home({ navigation }) {
       console.error("Error fetching reservations:", error);
       return;
     }
-
     const now = new Date();
+    if (!reservations || reservations.length === 0) {
+      console.log("No reservations found for this user.");
+      return; // stop early
+    }
+    console.log("Now:", now.toISOString());
+    console.log("Fetched reservations:", reservations);
+
+    console.log("Next Reservation found:", nextReservation);
+
     const nextReservation = reservations.find((r) => {
-      const startDateTime = new Date(`${r.date}T${r.start_time}`);
-      const endDateTime = new Date(`${r.date}T${r.end_time}`);
-      return endDateTime > now; // any booking whose end is still in the future
+      const startDateTime = new Date(`${r.date}T${r.start_time}Z`);
+      const endDateTime = new Date(`${r.date}T${r.end_time}Z`);
+      console.log(
+        `Checking reservation: Start ${startDateTime.toISOString()} End ${endDateTime.toISOString()}`
+      );
+      return startDateTime <= now && now <= endDateTime;
     });
 
     if (nextReservation) {
@@ -97,6 +108,12 @@ export default function Home({ navigation }) {
       );
       const endDateTime = new Date(
         `${nextReservation.date}T${nextReservation.end_time}`
+      );
+
+      console.log(`Start: ${startDateTime}, End: ${endDateTime}`);
+      console.log(
+        `Is session in progress?`,
+        startDateTime <= now && endDateTime > now
       );
 
       if (startDateTime <= now && endDateTime > now) {

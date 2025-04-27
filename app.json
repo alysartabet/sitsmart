@@ -34,7 +34,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./frontend/assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.sitsmart.sitsmart"
     },
     "runtimeVersion": {
       "policy": "appVersion"
