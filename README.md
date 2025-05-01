@@ -18,7 +18,7 @@
 
 ---
 
-## 🌟 Project Overview
+## Project Overview
 SitSmart optimizes space usage in educational institutions by streamlining the reservation process. Designed for efficiency, it empowers students and faculty with intuitive tools to book classrooms and study spaces effortlessly.
 
 - **Real-Time Availability**: Track open rooms and seats instantly.
