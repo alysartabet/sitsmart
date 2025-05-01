@@ -126,13 +126,11 @@ The API supports key functionality for SitSmart. Find detailed documentation in 
 ---
 
 ## Contributors
-- **Alysar Tabet** (@alysartabet): -------------------
-- **Kisn Mathema** (@kisndalgory): ----------------------
-- **Jonathan Figuereo** (@JonIFig): -----------------------
-- **Sodikjon Ismoilov** (@sodikjonismoilov): ------------------------
-- **Sameer Ramkissoon** (@rrreeemcs): -------------------
-
-
+- **Alysar Tabet** ([@alysartabet](https://github.com/alysartabet)): Project Management, UX/UI Design, Full-Stack Integration
+- **Kisn Mathema** ([@kisndalgory](https://github.com/kisndalgory)): Frontend Development, QA Testing
+- **Jonathan Figuereo** ([@JonIFig](https://github.com/JonIFig)): Backend Development, Database Management, QA Testing
+- **Sodikjon Ismoilov** ([@sodikjonismoilov](https://github.com/sodikjonismoilov)): Frontend Development, Security Engineering
+- **Sameer Ramkissoon** ([@rrreeemcs](https://github.com/rrreeemcs)): Backend Development, Database Management, QA Testing
 
 ---
 
