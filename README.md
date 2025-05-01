@@ -6,8 +6,8 @@
 ## 📋 Table of Contents
 - [Project Overview](#project-overview)
 - [Features](#features)
-- [Installation Guide](#installation-guide)
-- [Usage Instructions](#usage-instructions)
+- [Setup Guide](#setup-guide)
+- [User Guide](#user-guide)
 - [Technology Stack](#technology-stack)
 - [API Documentation](#api-documentation)
 - [Contributors](#contributors)
@@ -39,7 +39,7 @@ SitSmart offers a robust set of tools to enhance space management:
 
 ---
 
-## Installation Guide
+## Setup Guide
 Set up SitSmart locally with these steps.
 
 ### Prerequisites
@@ -86,7 +86,7 @@ Set up SitSmart locally with these steps.
 
 ---
 
-## Usage Instructions
+## User Guide
 Get started with SitSmart in a few simple steps:
 
 1. **Launch the App**:
