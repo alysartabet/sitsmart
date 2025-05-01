@@ -53,9 +53,8 @@ Set up SitSmart locally with these steps.
 ### Steps
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/SitSmart_v1.0.git
+   https://github.com/alysartabet/sitsmart.git
    ```
-   *Replace `yourusername` with your GitHub username.*
 
 2. **Frontend Setup**:
    ```bash
@@ -90,9 +89,9 @@ Set up SitSmart locally with these steps.
 Get started with SitSmart in a few simple steps:
 
 1. **Launch the App**:
-   - Run `expo start` in the frontend directory and scan the QR code with Expo Go.
+   - Run `npx expo start` in the frontend directory and scan the QR code with Expo Go.
 2. **Log In/Sign Up**:
-   - Use OAuth 2.0 for institutional access or create a manual account.
+   - Create manual account and you can save you login information with Remember Me button.
 3. **Book a Room**:
    - Browse available spaces and reserve a classroom or study area.
 4. **Smart Seat Selection**:
