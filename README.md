@@ -108,7 +108,7 @@ SitSmart leverages modern technologies for a seamless experience:
 - **Backend**: Python (Flask/FastAPI)
 - **Database**: PostgreSQL (Supabase for production)
 - **Authentication**: Supabase
-- **Push Notifications**: Firebase Cloud Messaging or OneSignal
+- **Email Notifications**: Twilio SendGrid
 - **Version Control**: Git
 - **Languages**: JavaScript, Python
 - **UI/UX Design**: Figma, Canva
