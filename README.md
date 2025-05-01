@@ -28,7 +28,7 @@ SitSmart optimizes space usage in educational institutions by streamlining the r
 
 ---
 
-## ✨ Features
+##  Features ✨
 SitSmart offers a robust set of tools to enhance space management:
 
 - 🕒 **Real-Time Room Availability**: Monitor open spaces instantly.
