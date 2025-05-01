@@ -61,7 +61,7 @@ Set up SitSmart locally with these steps.
    ```bash
    cd frontend
    npm install
-   expo start
+   npx expo start
    ```
    - Open Expo Go on your mobile device and scan the QR code to launch the app.
 
@@ -108,7 +108,7 @@ SitSmart leverages modern technologies for a seamless experience:
 - **Frontend**: React Native, Expo Go
 - **Backend**: Python (Flask/FastAPI)
 - **Database**: PostgreSQL (Supabase for production)
-- **Authentication**: Supabase (OAuth 2.0/Okta)
+- **Authentication**: Supabase
 - **Push Notifications**: Firebase Cloud Messaging or OneSignal
 - **Version Control**: Git
 - **Languages**: JavaScript, Python
