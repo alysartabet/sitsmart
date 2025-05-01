@@ -28,7 +28,7 @@ SitSmart optimizes space usage in educational institutions by streamlining the r
 
 ---
 
-## Features ✨
+## Features 
 SitSmart offers a robust set of tools to enhance space management:
 
 - 🕒 **Real-Time Room Availability**: Monitor open spaces instantly.
@@ -39,7 +39,7 @@ SitSmart offers a robust set of tools to enhance space management:
 
 ---
 
-## 🛠️ Installation Guide
+## Installation Guide
 Set up SitSmart locally with these steps.
 
 ### Prerequisites
@@ -86,7 +86,7 @@ Set up SitSmart locally with these steps.
 
 ---
 
-## 🚀 Usage Instructions
+## Usage Instructions
 Get started with SitSmart in a few simple steps:
 
 1. **Launch the App**:
@@ -102,7 +102,7 @@ Get started with SitSmart in a few simple steps:
 
 ---
 
-## 🧰 Technology Stack
+## Technology Stack
 SitSmart leverages modern technologies for a seamless experience:
 
 - **Frontend**: React Native, Expo Go
@@ -116,7 +116,7 @@ SitSmart leverages modern technologies for a seamless experience:
 
 ---
 
-## 📚 API Documentation
+## API Documentation
 The API supports key functionality for SitSmart. Find detailed documentation in the `api/` directory or at `/docs/api` (when the backend server is running). Key endpoints include:
 
 - `POST /login`: Authenticate users and return a token.
@@ -126,7 +126,7 @@ The API supports key functionality for SitSmart. Find detailed documentation in 
 
 ---
 
-## 👥 Contributors
+## Contributors
 - **Alysar Tabet** (@alysartabet): -------------------
 - **Kisn Mathema** (@kisndalgory): ----------------------
 - **Jonathan Figuereo** (@JonIFig): -----------------------
@@ -137,7 +137,7 @@ The API supports key functionality for SitSmart. Find detailed documentation in 
 
 ---
 
-## ⚠️ Challenges, Limitations, and Future Work
+## Challenges, Limitations, and Future Work
 ### Challenges
 - **Database Implementation**:
   - **Issue**: Initial PostgreSQL setup faced timeout errors for external connections.
@@ -157,14 +157,14 @@ The API supports key functionality for SitSmart. Find detailed documentation in 
 
 ---
 
-## 🔮 Future Enhancements
+## Future Enhancements
 - **AI-Powered Recommendations**: Suggest optimal seats based on room conditions.
 - **Advanced Filters**: Search by noise levels, lighting, or other preferences.
 - **Analytics Dashboard**: Track usage patterns for better space management.
 
 ---
 
-## 🛡️ Troubleshooting
+## Troubleshooting
 Resolve common issues with these solutions:
 
 - **Room Availability Not Updating**:
@@ -176,5 +176,5 @@ Resolve common issues with these solutions:
 
 ---
 
-## 📜 License
+## License
 
