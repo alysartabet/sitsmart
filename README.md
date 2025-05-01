@@ -1,5 +1,5 @@
 # SitSmart - Real-Time Classroom and Study Space Reservation System
-**SitSmart (v1.0)** is a mobile-first, progressive web app that revolutionizes classroom and study space management in educational institutions. With real-time availability tracking, smart seat recommendations, and faculty reservation controls, SitSmart ensures seamless space management. Built with **React Native**, **Python**, and **PostgreSQL**, it offers a dynamic, user-friendly experience for students and faculty.
+**SitSmart (v1.0)** is a mobile-first, progressive mobile app that revolutionizes classroom and study space management in educational institutions. With real-time availability tracking, smart seat recommendations, and faculty reservation controls, SitSmart ensures seamless space management. Built with **React Native**, **Python**, and **PostgreSQL**, it offers a dynamic, user-friendly experience for students and faculty.
 
 ---
 
@@ -24,7 +24,7 @@ SitSmart optimizes space usage in educational institutions by streamlining the r
 - **Real-Time Availability**: Track open rooms and seats instantly.
 - **Smart Recommendations**: Find the perfect seat based on preferences like lighting or noise levels.
 - **Faculty Controls**: Reserve entire classrooms with ease.
-- **Cross-Platform**: Access via a mobile-first progressive web app.
+- **Cross-Platform**: Access via a mobile-first progressive mobile app.
 
 ---
 
