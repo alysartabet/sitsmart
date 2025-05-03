@@ -46,11 +46,10 @@ Set up SitSmart locally with these steps.
 - **Operating System**: Windows, macOS, or Linux
 - **Software**:
   - Node.js and npm (for React Native)
-  - Python 3.x (for backend)
   - PostgreSQL (for database)
-  - Expo Go (for mobile app testing)
+  - Expo Go (for mobile app visualization)
 
-### Steps
+### Installation Steps
 1. **Clone the Repository**:
    ```bash
    https://github.com/alysartabet/sitsmart.git
@@ -58,31 +57,20 @@ Set up SitSmart locally with these steps.
 
 2. **Frontend Setup**:
    ```bash
+   npm install
    cd frontend
    npm install
    npx expo start
    ```
+   - Do npm install in root directory of project, THEN npm install in the frontend directory
    - Open Expo Go on your mobile device and scan the QR code to launch the app.
 
-3. **Backend Setup**:
+3. **Running the Application**:
    ```bash
-   cd backend
-   python3 -m venv env
-   source env/bin/activate  # On Windows: env\Scripts\activate
-   pip install -r requirements.txt
-   python app.py
+   cd frontend
+   npx expo start
    ```
-
-4. **Database Setup**:
-   - Install PostgreSQL and run the provided schema:
-     ```bash
-     psql -U postgres -f database/schema.sql
-     ```
-
-5. **Supabase Authentication**:
-   - Create a Supabase project and configure OAuth 2.0.
-   - Add Supabase keys to `backend/config.py`.
-
+   - Open Expo Go on your mobile device and scan the QR code to launch the app.
 ---
 
 ## User Guide
@@ -105,7 +93,7 @@ Get started with SitSmart in a few simple steps:
 SitSmart leverages modern technologies for a seamless experience:
 
 - **Frontend**: React Native, Expo Go
-- **Backend**: Python (Flask/FastAPI)
+- **Backend**: JavaScript
 - **Database**: PostgreSQL (Supabase for production)
 - **Authentication**: Supabase
 - **Email Notifications**: Twilio SendGrid
@@ -147,7 +135,7 @@ The API supports key functionality for SitSmart. Find detailed documentation in 
 - Manual user verification due to lack of institutional OAuth access.
 - No advanced analytics for room usage trends in v1.0.
 
-### Future Work
+### Future Works
 - 🧠 AI-driven study space recommendations.
 - 📈 Heatmap analytics for space allocation.
 - 📋 Faculty reporting for booking history.
