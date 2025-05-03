@@ -60,10 +60,8 @@ Set up SitSmart locally with these steps.
    npm install
    cd frontend
    npm install
-   npx expo start
    ```
    - Do npm install in root directory of project, THEN npm install in the frontend directory
-   - Open Expo Go on your mobile device and scan the QR code to launch the app.
 
 3. **Running the Application**:
    ```bash
